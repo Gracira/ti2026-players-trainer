@@ -1,3 +1,6 @@
+const trainer = document.getElementById("trainer");
+const trainerToolbar = document.querySelector(".trainer-toolbar");
+const emptyState = document.getElementById("emptyState");
 const guessForm = document.getElementById("guessForm");
 const guessFeedback = document.getElementById("guessFeedback");
 const revealButton = document.getElementById("revealButton");
@@ -17,6 +20,7 @@ const progressLists = {
 let people = [];
 let currentPerson = null;
 let activeListView = "";
+let skipInProgress = false;
 
 const fixStyles = document.createElement("style");
 fixStyles.textContent = `
@@ -165,6 +169,20 @@ function syncCurrentPerson() {
   currentPerson = findCurrentPerson();
 }
 
+function isAnswered(person) {
+  return Boolean(person && (progressLists.known.has(person.uid) || progressLists.learning.has(person.uid)));
+}
+
+function remainingPeople() {
+  return people.filter((person) => !isAnswered(person));
+}
+
+function setTrainerVisible(visible) {
+  if (trainer) trainer.hidden = !visible;
+  if (trainerToolbar) trainerToolbar.hidden = !visible;
+  if (emptyState && visible) emptyState.hidden = true;
+}
+
 function hideGuessFormSoon() {
   window.setTimeout(() => {
     if (guessForm) guessForm.hidden = true;
@@ -174,6 +192,52 @@ function hideGuessFormSoon() {
 function showGuessFormSoon() {
   window.setTimeout(() => {
     if (guessForm) guessForm.hidden = false;
+  }, 0);
+}
+
+function showAllDone() {
+  activeListView = "done";
+  setTrainerVisible(false);
+  const head = document.createElement("div");
+  const heading = document.createElement("strong");
+  const text = document.createElement("p");
+
+  head.className = "progress-list-panel__head";
+  heading.textContent = "Все карточки разобраны";
+  text.className = "progress-list-panel__empty";
+  text.textContent = "В общей колоде больше нет карточек. Нажми «Сбросить», чтобы начать заново.";
+  head.appendChild(heading);
+  listPanel.replaceChildren(head, text);
+  listPanel.hidden = false;
+}
+
+function skipAnsweredCardsSoon() {
+  if (skipInProgress || activeListView) return;
+
+  window.setTimeout(() => {
+    if (skipInProgress || activeListView) return;
+    if (!remainingPeople().length) {
+      showAllDone();
+      return;
+    }
+
+    skipInProgress = true;
+    let guard = people.length + 2;
+    const step = () => {
+      syncCurrentPerson();
+      if (!currentPerson || !isAnswered(currentPerson) || !guard) {
+        skipInProgress = false;
+        setTrainerVisible(true);
+        showGuessFormSoon();
+        return;
+      }
+
+      nextButton?.click();
+      guard -= 1;
+      window.setTimeout(step, 0);
+    };
+
+    step();
   }, 0);
 }
 
@@ -229,6 +293,8 @@ function createPersonCard(person) {
 
 function renderList(kind) {
   activeListView = kind;
+  setTrainerVisible(false);
+
   const title = kind === "known" ? "Верно" : "Ошибки";
   const items = peopleFor(kind);
   const head = document.createElement("div");
@@ -239,10 +305,10 @@ function renderList(kind) {
   heading.textContent = `${title}: ${items.length}`;
   close.type = "button";
   close.className = "progress-list-panel__close";
-  close.textContent = "Скрыть";
+  close.textContent = "Продолжить";
   close.addEventListener("click", () => {
-    activeListView = "";
-    listPanel.hidden = true;
+    hideList();
+    skipAnsweredCardsSoon();
   });
   head.append(heading, close);
 
@@ -264,12 +330,14 @@ function renderList(kind) {
 }
 
 function renderActiveList() {
-  if (activeListView) renderList(activeListView);
+  if (activeListView === "known" || activeListView === "learning") renderList(activeListView);
 }
 
 function hideList() {
   activeListView = "";
   listPanel.hidden = true;
+  setTrainerVisible(true);
+  showGuessFormSoon();
 }
 
 fetch("./data/players.json", { cache: "no-store" })
@@ -282,7 +350,10 @@ fetch("./data/players.json", { cache: "no-store" })
     people = [];
   });
 
-new MutationObserver(syncCurrentPerson).observe(portrait, {
+new MutationObserver(() => {
+  syncCurrentPerson();
+  skipAnsweredCardsSoon();
+}).observe(portrait, {
   childList: true,
   subtree: true,
   attributes: true,
@@ -310,25 +381,29 @@ guessForm?.addEventListener("submit", () => {
 
 for (const button of restoreButtons) {
   button.addEventListener("click", () => {
+    if (activeListView) return;
     showGuessFormSoon();
-    window.setTimeout(syncCurrentPerson, 0);
+    window.setTimeout(() => {
+      syncCurrentPerson();
+      skipAnsweredCardsSoon();
+    }, 0);
   });
 }
 
 for (const filter of [document.getElementById("roleFilter"), document.getElementById("regionFilter")].filter(Boolean)) {
   filter.addEventListener("input", () => {
-    showGuessFormSoon();
     hideList();
+    skipAnsweredCardsSoon();
   });
 }
 
 document.querySelectorAll(".score-card[data-view]").forEach((button) => {
   button.addEventListener("click", () => {
-    showGuessFormSoon();
     if (button.dataset.view === "known" || button.dataset.view === "learning") {
       window.setTimeout(() => renderList(button.dataset.view), 0);
     } else {
       hideList();
+      skipAnsweredCardsSoon();
     }
   });
 });
@@ -346,7 +421,11 @@ resetButton?.addEventListener("click", () => {
 
 window.addEventListener("keydown", (event) => {
   if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    if (activeListView) return;
     showGuessFormSoon();
-    window.setTimeout(syncCurrentPerson, 0);
+    window.setTimeout(() => {
+      syncCurrentPerson();
+      skipAnsweredCardsSoon();
+    }, 0);
   }
 });
