@@ -217,6 +217,49 @@ function heroesRow(heroes) {
   return row;
 }
 
+function statusLabel(person) {
+  if (state.known.has(person.uid)) return "Знал";
+  if (state.learning.has(person.uid)) return "Не знал";
+  return "";
+}
+
+function renderDeckList() {
+  const list = $("deckList");
+  const current = currentPerson();
+  list.replaceChildren();
+
+  for (const [index, person] of state.deck.entries()) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `deck-item ${current?.uid === person.uid ? "is-current" : ""}`;
+    button.addEventListener("click", () => {
+      state.index = index;
+      state.revealed = false;
+      render();
+    });
+
+    const number = document.createElement("span");
+    number.className = "deck-item__number";
+    number.textContent = `${index + 1}`;
+
+    const main = document.createElement("span");
+    main.className = "deck-item__main";
+    const title = document.createElement("strong");
+    const alreadyVisible = state.known.has(person.uid) || state.learning.has(person.uid) || current?.uid === person.uid && state.revealed;
+    title.textContent = alreadyVisible ? person.nickname : "Скрыто";
+    const meta = document.createElement("small");
+    meta.textContent = `${person.team} · ${person.roleLabel}`;
+    main.append(title, meta);
+
+    const status = document.createElement("span");
+    status.className = "deck-item__status";
+    status.textContent = statusLabel(person);
+
+    button.append(number, main, status);
+    list.appendChild(button);
+  }
+}
+
 function renderInfo(person) {
   $("teamName").textContent = person.team || "";
   $("roleName").textContent = person.roleLabel || "";
@@ -224,7 +267,6 @@ function renderInfo(person) {
   rows.replaceChildren();
 
   if (!state.revealed) {
-    $("infoTitle").textContent = "Угадай ник";
     rows.append(
       infoRow("Команда", person.team),
       infoRow("Роль", person.roleLabel),
@@ -233,10 +275,8 @@ function renderInfo(person) {
     return;
   }
 
-  $("infoTitle").textContent = person.nickname;
   rows.append(
     ...[
-      infoRow("Ник", person.nickname),
       infoRow("Имя", person.romanizedName || person.profileTitle),
       infoRow("Родился", displayDateWithAge(person.birthDate)),
       infoRow("Страна", person.country),
@@ -263,18 +303,20 @@ function render() {
   document.querySelector(".trainer-actions").hidden = !hasCards;
   $("emptyState").hidden = hasCards;
 
-  $("visibleCount").textContent = `${state.deck.length} карточек в стопке`;
+  $("visibleCount").textContent = `${state.deck.length}`;
   $("positionCount").textContent = hasCards ? `${state.index + 1}/${state.deck.length}` : "0/0";
   $("knownCount").textContent = state.known.size;
   $("learningCount").textContent = state.learning.size;
   updateTabs();
+  renderDeckList();
 
   if (!person) return;
 
   $("flashcard").className = `flashcard ${state.revealed ? "is-revealed" : "is-hidden"}`;
   $("answerNick").textContent = state.revealed ? person.nickname : "?";
   $("answerSub").textContent = `${person.team} · ${person.roleLabel} · ${person.region}`;
-  document.querySelector(".answer-panel__hint").textContent = state.revealed ? "Ответ открыт" : "Нажми, чтобы открыть ник";
+  $("answerHint").textContent = state.revealed ? "Ответ открыт" : "Ответ скрыт";
+  $("cardHint").textContent = state.revealed ? "Ответ открыт справа" : "Нажми, чтобы открыть ответ";
   controls.reveal.textContent = state.revealed ? "Скрыть ник" : "Показать ник";
 
   setPortrait(person);

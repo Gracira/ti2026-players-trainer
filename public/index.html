@@ -61,30 +61,36 @@
         <button class="tab" type="button" data-view="learning">Не знал</button>
       </nav>
 
-      <section class="status-line" aria-live="polite">
-        <span id="visibleCount">0 карточек</span>
-      </section>
-
-      <section id="trainer" class="trainer" aria-label="Тренажер карточек">
-        <article id="flashcard" class="flashcard is-hidden">
-          <button id="cardButton" class="flashcard__button" type="button">
-            <div id="portrait" class="flashcard__portrait"></div>
-            <div id="answerPanel" class="answer-panel">
-              <span class="answer-panel__hint">Нажми, чтобы открыть ник</span>
-              <strong id="answerNick">?</strong>
-              <span id="answerSub"></span>
-            </div>
-          </button>
-        </article>
-
-        <aside class="info-panel">
-          <div class="info-panel__top">
-            <span id="teamName" class="team-pill"></span>
-            <span id="roleName" class="role-pill"></span>
+      <section class="study-layout">
+        <aside class="deck-panel" aria-label="Список карточек">
+          <div class="deck-panel__top">
+            <strong>Список</strong>
+            <span id="visibleCount">0</span>
           </div>
-          <h2 id="infoTitle">Угадай ник</h2>
-          <div id="infoRows" class="info-rows"></div>
+          <div id="deckList" class="deck-list"></div>
         </aside>
+
+        <section id="trainer" class="trainer" aria-label="Тренажер карточек">
+          <article id="flashcard" class="flashcard is-hidden">
+            <button id="cardButton" class="flashcard__button" type="button">
+              <div id="portrait" class="flashcard__portrait"></div>
+              <span id="cardHint" class="card-hint">Нажми, чтобы открыть ответ</span>
+            </button>
+          </article>
+
+          <aside class="info-panel">
+            <div class="info-panel__top">
+              <span id="teamName" class="team-pill"></span>
+              <span id="roleName" class="role-pill"></span>
+            </div>
+            <div class="answer-box">
+              <span id="answerHint">Ответ</span>
+              <strong id="answerNick">?</strong>
+              <small id="answerSub"></small>
+            </div>
+            <div id="infoRows" class="info-rows"></div>
+          </aside>
+        </section>
       </section>
 
       <section class="trainer-actions" aria-label="Ответ">

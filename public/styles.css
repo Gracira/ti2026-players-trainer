@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -41,7 +45,7 @@ select {
 }
 
 .topbar__inner {
-  width: min(1040px, calc(100% - 32px));
+  width: min(1640px, calc(100% - 36px));
   min-height: 106px;
   margin: 0 auto;
   display: flex;
@@ -91,8 +95,8 @@ h1 {
 }
 
 main {
-  width: min(1040px, calc(100% - 32px));
-  margin: 18px auto 38px;
+  width: min(1640px, calc(100% - 36px));
+  margin: 18px auto 34px;
 }
 
 .controls {
@@ -156,18 +160,110 @@ button:hover {
   background: rgba(74, 182, 168, 0.18);
 }
 
-.status-line {
-  min-height: 30px;
+.study-layout {
+  display: grid;
+  grid-template-columns: 330px minmax(0, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.deck-panel {
+  height: clamp(620px, calc(100vh - 250px), 830px);
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 16px 38px var(--shadow);
+  overflow: hidden;
+}
+
+.deck-panel__top {
+  min-height: 54px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.deck-panel__top strong {
+  font-size: 18px;
+}
+
+.deck-panel__top span {
   color: var(--muted);
-  font-size: 13px;
+  font-weight: 800;
+}
+
+.deck-list {
+  height: calc(100% - 54px);
+  overflow: auto;
+  padding: 8px;
+}
+
+.deck-item {
+  width: 100%;
+  min-height: 58px;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  padding: 8px;
+  text-align: left;
+}
+
+.deck-item.is-current {
+  border-color: var(--teal);
+  background: rgba(74, 182, 168, 0.16);
+}
+
+.deck-item__number {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 12px;
+}
+
+.deck-item__main {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.deck-item__main strong,
+.deck-item__main small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.deck-item__main strong {
+  font-size: 14px;
+}
+
+.deck-item__main small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.deck-item__status {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
 }
 
 .trainer {
+  min-width: 0;
   display: grid;
-  grid-template-columns: minmax(280px, 420px) minmax(270px, 1fr);
-  gap: 14px;
+  grid-template-columns: minmax(360px, 560px) minmax(420px, 1fr);
+  gap: 16px;
   align-items: stretch;
 }
 
@@ -183,9 +279,9 @@ button:hover {
 
 .flashcard__button {
   width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto auto;
+  height: clamp(620px, calc(100vh - 250px), 830px);
+  display: block;
+  position: relative;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -196,7 +292,7 @@ button:hover {
 
 .flashcard__portrait {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: 100%;
   background: #0b0d11;
 }
 
@@ -214,28 +310,44 @@ button:hover {
   background: #202631;
 }
 
-.answer-panel {
-  min-height: 94px;
+.card-hint {
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  min-height: 42px;
   display: grid;
-  gap: 3px;
-  align-content: center;
-  padding: 13px;
-  border-top: 1px solid var(--line);
-  background: rgba(9, 11, 15, 0.92);
-  text-align: center;
+  place-items: center;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  background: rgba(9, 11, 15, 0.86);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 800;
 }
 
-.answer-panel__hint {
+.answer-box {
+  display: grid;
+  gap: 6px;
+  margin-bottom: 18px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.answer-box span {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 750;
   text-transform: uppercase;
 }
 
 #answerNick {
-  min-height: 38px;
+  min-height: 64px;
   color: var(--text);
-  font-size: 34px;
+  font-size: clamp(44px, 5vw, 72px);
   line-height: 1.05;
   overflow-wrap: anywhere;
 }
@@ -247,12 +359,14 @@ button:hover {
 
 #answerSub {
   color: var(--muted);
-  font-size: 13px;
+  font-size: 17px;
   overflow-wrap: anywhere;
 }
 
 .info-panel {
-  padding: 14px;
+  height: clamp(620px, calc(100vh - 250px), 830px);
+  padding: 18px;
+  overflow: auto;
 }
 
 .info-panel__top {
@@ -282,25 +396,18 @@ button:hover {
   background: var(--gold);
 }
 
-.info-panel h2 {
-  margin: 0 0 12px;
-  font-size: 25px;
-  line-height: 1.1;
-  overflow-wrap: anywhere;
-}
-
 .info-rows {
   display: grid;
-  gap: 7px;
+  gap: 10px;
 }
 
 .info-row {
   display: grid;
-  grid-template-columns: 86px minmax(0, 1fr);
-  gap: 9px;
-  padding-bottom: 7px;
+  grid-template-columns: 120px minmax(0, 1fr);
+  gap: 14px;
+  padding-bottom: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .info-row span {
@@ -326,8 +433,8 @@ button:hover {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  min-height: 28px;
-  padding: 3px 6px;
+  min-height: 36px;
+  padding: 5px 8px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: rgba(255, 255, 255, 0.04);
@@ -335,14 +442,14 @@ button:hover {
 }
 
 .hero-chip img {
-  width: 38px;
-  height: 22px;
+  width: 52px;
+  height: 30px;
   object-fit: contain;
 }
 
 .hero-chip span {
   color: var(--text);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .trainer-actions {
@@ -371,7 +478,7 @@ button:hover {
 }
 
 .site-footer {
-  width: min(1040px, calc(100% - 32px));
+  width: min(1640px, calc(100% - 36px));
   margin: 0 auto 24px;
   display: flex;
   flex-wrap: wrap;
@@ -400,13 +507,29 @@ button:hover {
     grid-column: 1 / -1;
   }
 
+  .study-layout,
   .trainer {
     grid-template-columns: 1fr;
   }
 
   .flashcard {
-    max-width: 420px;
+    max-width: none;
     margin: 0 auto;
+  }
+
+  .deck-panel,
+  .flashcard__button,
+  .info-panel {
+    height: auto;
+  }
+
+  .deck-panel {
+    max-height: 360px;
+  }
+
+  .flashcard__button {
+    height: 70vh;
+    min-height: 520px;
   }
 }
 
@@ -414,7 +537,7 @@ button:hover {
   .topbar__inner,
   main,
   .site-footer {
-    width: min(100% - 20px, 1040px);
+    width: min(100% - 20px, 1640px);
   }
 
   h1 {
