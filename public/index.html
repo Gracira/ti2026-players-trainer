@@ -38,10 +38,6 @@
     <main>
       <section class="controls" aria-label="Фильтры">
         <label class="control">
-          <span>Поиск</span>
-          <input id="searchInput" type="search" placeholder="Ник, имя">
-        </label>
-        <label class="control">
           <span>Роль</span>
           <select id="roleFilter"></select>
         </label>
@@ -89,9 +85,12 @@
 
             <form id="guessForm" class="guess-form" autocomplete="off">
               <label for="guessInput">Ник игрока</label>
-              <div class="guess-row">
-                <input id="guessInput" type="text" inputmode="text" autocomplete="off" placeholder="Введи ник">
-                <button id="guessButton" type="submit">Проверить</button>
+              <div class="guess-field">
+                <div class="guess-row">
+                  <input id="guessInput" type="text" inputmode="text" autocomplete="off" placeholder="Введи ник или имя" aria-controls="guessSuggestions" aria-autocomplete="list">
+                  <button id="guessButton" type="submit">Проверить</button>
+                </div>
+                <div id="guessSuggestions" class="guess-suggestions" role="listbox" aria-label="Подсказки ников" hidden></div>
               </div>
               <p id="guessFeedback" class="guess-feedback" aria-live="polite"></p>
             </form>
