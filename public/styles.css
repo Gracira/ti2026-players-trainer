@@ -66,26 +66,26 @@ input:disabled {
 
 .topbar__inner {
   width: min(1640px, calc(100% - 36px));
-  min-height: 184px;
+  min-height: 132px;
   margin: 0 auto;
-  padding: 24px 0 20px;
+  padding: 16px 0 14px;
   display: grid;
   justify-items: center;
-  gap: 18px;
+  gap: 12px;
   text-align: center;
 }
 
 .eyebrow {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: var(--gold);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 800;
   text-transform: uppercase;
 }
 
 h1 {
   margin: 0;
-  font-size: clamp(46px, 6vw, 82px);
+  font-size: clamp(40px, 4.6vw, 64px);
   line-height: 1;
   letter-spacing: 0;
 }
@@ -98,8 +98,8 @@ h1 {
 }
 
 .score-card {
-  min-height: 64px;
-  padding: 9px 10px;
+  min-height: 56px;
+  padding: 7px 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -120,7 +120,7 @@ button.score-card:hover,
 
 .scoreboard span {
   display: block;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 850;
 }
 
@@ -131,12 +131,12 @@ button.score-card:hover,
 
 main {
   width: min(1640px, calc(100% - 36px));
-  margin: 18px auto 34px;
+  margin: 12px auto 22px;
 }
 
 .controls {
   display: grid;
-  grid-template-columns: minmax(220px, 1.4fr) repeat(2, minmax(140px, 0.8fr)) auto;
+  grid-template-columns: repeat(2, minmax(160px, 1fr)) auto;
   gap: 10px;
   align-items: end;
 }
@@ -154,7 +154,6 @@ main {
   text-transform: uppercase;
 }
 
-.control input,
 .control select,
 .guess-row input {
   width: 100%;
@@ -166,10 +165,76 @@ main {
   color: var(--text);
 }
 
+.guess-field {
+  position: relative;
+}
+
+.guess-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
 .guess-row input {
   min-height: 52px;
   font-size: 20px;
   font-weight: 750;
+}
+
+.guess-row button {
+  min-width: 128px;
+  min-height: 52px;
+  border-color: rgba(74, 182, 168, 0.7);
+  background: rgba(74, 182, 168, 0.18);
+  font-weight: 900;
+}
+
+.guess-suggestions {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  max-height: 236px;
+  overflow: auto;
+  display: grid;
+  gap: 4px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #11151c;
+  box-shadow: 0 16px 36px var(--shadow);
+}
+
+.guess-suggestion {
+  width: 100%;
+  display: grid;
+  gap: 2px;
+  min-height: 48px;
+  padding: 7px 9px;
+  border-radius: 6px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.guess-suggestion:hover,
+.guess-suggestion:focus-visible {
+  border-color: var(--teal);
+  background: rgba(74, 182, 168, 0.14);
+}
+
+.guess-suggestion strong {
+  font-size: 16px;
+  line-height: 1.1;
+}
+
+.guess-suggestion small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .actions,
@@ -182,7 +247,7 @@ main {
 .trainer-toolbar {
   display: flex;
   justify-content: flex-end;
-  margin: 14px 0 10px;
+  margin: 12px 0 10px;
 }
 
 .study-layout {
@@ -209,7 +274,7 @@ main {
 
 .flashcard__frame {
   width: 100%;
-  height: clamp(620px, calc(100vh - 300px), 830px);
+  height: clamp(560px, calc(100vh - 300px), 780px);
   display: block;
   position: relative;
   padding: 0;
@@ -238,8 +303,8 @@ main {
 }
 
 .info-panel {
-  height: clamp(620px, calc(100vh - 300px), 830px);
-  padding: 18px;
+  height: clamp(560px, calc(100vh - 300px), 780px);
+  padding: 16px;
   overflow: auto;
 }
 
@@ -247,7 +312,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .role-pill {
@@ -265,8 +330,8 @@ main {
 .answer-box {
   display: grid;
   gap: 8px;
-  margin-bottom: 14px;
-  padding: 16px;
+  margin-bottom: 12px;
+  padding: 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
@@ -286,18 +351,18 @@ main {
 }
 
 .answer-name {
-  min-height: 20px;
+  min-height: 18px;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 750;
   overflow-wrap: anywhere;
 }
 
 .answer-main {
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) minmax(210px, 260px);
+  grid-template-columns: minmax(240px, 1fr) minmax(200px, 250px);
   align-items: center;
-  column-gap: 16px;
+  column-gap: 14px;
 }
 
 .answer-box > span {
@@ -308,9 +373,9 @@ main {
 }
 
 #answerNick {
-  min-height: 64px;
+  min-height: 56px;
   color: var(--text);
-  font-size: clamp(42px, 3.8vw, 58px);
+  font-size: clamp(38px, 3.4vw, 54px);
   line-height: 1.05;
   overflow-wrap: anywhere;
 }
@@ -318,22 +383,22 @@ main {
 .answer-team {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  min-width: 210px;
-  max-width: 260px;
-  padding: 11px 13px;
+  gap: 10px;
+  min-width: 200px;
+  max-width: 250px;
+  padding: 10px 12px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.06);
   color: var(--text);
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 850;
   overflow-wrap: anywhere;
 }
 
 .answer-team img {
-  width: 64px;
-  height: 64px;
+  width: 56px;
+  height: 56px;
   flex: 0 0 auto;
   border-radius: 10px;
   object-fit: contain;
@@ -342,26 +407,12 @@ main {
 .guess-form {
   display: grid;
   gap: 8px;
-  margin-bottom: 18px;
-  padding: 14px;
+  margin-bottom: 16px;
+  padding: 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.035);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.guess-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 8px;
-}
-
-.guess-row button {
-  min-width: 128px;
-  min-height: 52px;
-  border-color: rgba(74, 182, 168, 0.7);
-  background: rgba(74, 182, 168, 0.18);
-  font-weight: 900;
 }
 
 .guess-feedback {
@@ -394,7 +445,7 @@ main {
   gap: 14px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .info-row span {
@@ -504,9 +555,30 @@ main {
   }
 }
 
+@media (min-width: 1200px) and (max-height: 1080px) {
+  .topbar__inner {
+    min-height: 126px;
+    padding-top: 14px;
+    padding-bottom: 12px;
+  }
+
+  .score-card {
+    min-height: 52px;
+  }
+
+  .trainer-toolbar {
+    margin: 10px 0 8px;
+  }
+
+  .flashcard__frame,
+  .info-panel {
+    height: clamp(560px, calc(100vh - 286px), 776px);
+  }
+}
+
 @media (max-width: 900px) {
   .topbar__inner {
-    min-height: 160px;
+    min-height: 150px;
   }
 
   .scoreboard {
@@ -536,8 +608,8 @@ main {
   }
 
   .flashcard__frame {
-    height: 70vh;
-    min-height: 520px;
+    height: 68vh;
+    min-height: 480px;
   }
 }
 
@@ -548,7 +620,7 @@ main {
   }
 
   h1 {
-    font-size: 42px;
+    font-size: 40px;
   }
 
   .scoreboard,
@@ -577,6 +649,11 @@ main {
   .answer-team {
     width: 100%;
     max-width: none;
+  }
+
+  .guess-suggestions {
+    position: static;
+    margin-top: 6px;
   }
 
   .info-row {
