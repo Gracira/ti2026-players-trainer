@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TI 2026 Players Trainer</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div>
+          <p class="eyebrow">The International 2026</p>
+          <h1>Тренажер игроков</h1>
+        </div>
+        <div class="scoreboard" aria-live="polite">
+          <div>
+            <span id="revealedCount">0</span>
+            <small>открыто</small>
+          </div>
+          <div>
+            <span id="totalCount">0</span>
+            <small>карточек</small>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Фильтры">
+        <label class="control">
+          <span>Поиск</span>
+          <input id="searchInput" type="search" placeholder="Ник, имя, команда">
+        </label>
+        <label class="control">
+          <span>Команда</span>
+          <select id="teamFilter"></select>
+        </label>
+        <label class="control">
+          <span>Роль</span>
+          <select id="roleFilter"></select>
+        </label>
+        <label class="control">
+          <span>Регион</span>
+          <select id="regionFilter"></select>
+        </label>
+        <label class="control">
+          <span>Показ</span>
+          <select id="revealFilter">
+            <option value="all">Все</option>
+            <option value="hidden">Скрытые</option>
+            <option value="revealed">Открытые</option>
+          </select>
+        </label>
+        <div class="actions" aria-label="Действия">
+          <button id="shuffleButton" type="button">Перемешать</button>
+          <button id="hideAllButton" type="button">Скрыть все</button>
+          <button id="showAllButton" type="button">Открыть все</button>
+        </div>
+      </section>
+
+      <section class="status-line" aria-live="polite">
+        <span id="visibleCount">0</span>
+        <span id="dataUpdated"></span>
+      </section>
+
+      <section id="cards" class="card-grid" aria-label="Карточки игроков"></section>
+
+      <section id="emptyState" class="empty-state" hidden>
+        Ничего не найдено.
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Данные: <a href="https://liquipedia.net/dota2/The_International/2026" rel="noreferrer">Liquipedia Dota 2 Wiki</a>.</span>
+      <span>Текст/code Liquipedia: CC-BY-SA; лицензии медиа отличаются.</span>
+    </footer>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
+
