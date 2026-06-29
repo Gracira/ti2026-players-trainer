@@ -1,4 +1,5 @@
 const DATA_URL = "./data/players.json";
+const SUGGESTION_LIMIT = 8;
 
 const state = {
   people: [],
@@ -15,7 +16,6 @@ const state = {
 const $ = (id) => document.getElementById(id);
 
 const controls = {
-  search: $("searchInput"),
   role: $("roleFilter"),
   region: $("regionFilter"),
   shuffle: $("shuffleButton"),
@@ -26,6 +26,7 @@ const controls = {
   guessForm: $("guessForm"),
   guessInput: $("guessInput"),
   guessButton: $("guessButton"),
+  guessSuggestions: $("guessSuggestions"),
   guessFeedback: $("guessFeedback")
 };
 
@@ -83,6 +84,23 @@ function roleWithNumber(person) {
   return /^\d+$/.test(person.role || "") ? `${person.roleLabel} (${person.role})` : person.roleLabel;
 }
 
+function roleOrderValue(roleName) {
+  const position = roleName.match(/\((\d+)\)$/)?.[1];
+  if (position) return Number(position);
+
+  const normalizedRole = normalize(roleName);
+  if (normalizedRole.includes("assistant") || normalizedRole.includes("помощ")) return 7;
+  if (normalizedRole.includes("coach") || normalizedRole.includes("тренер")) return 6;
+  return 99;
+}
+
+function orderedRoles(people) {
+  return uniqueSorted(people, roleWithNumber).sort((a, b) => {
+    const orderDelta = roleOrderValue(a) - roleOrderValue(b);
+    return orderDelta || a.localeCompare(b);
+  });
+}
+
 function profileFullName(person) {
   const given = person.info?.find((item) => item.label === "Given name")?.value || "";
   const family = person.info?.find((item) => item.label === "Family name")?.value || "";
@@ -102,25 +120,7 @@ function shuffleArray(items) {
   return shuffled;
 }
 
-function personSearchText(person) {
-  return [
-    person.nickname,
-    profileFullName(person),
-    person.romanizedName,
-    person.country,
-    person.team,
-    person.roleLabel,
-    roleWithNumber(person),
-    person.region,
-    person.aliases,
-    person.earnings,
-    ...(person.signatureHeroes || []).map((hero) => hero.name)
-  ].join(" ");
-}
-
 function passesFilters(person) {
-  const query = normalize(controls.search.value);
-  if (query && !normalize(personSearchText(person)).includes(query)) return false;
   if (controls.role.value !== "all" && roleWithNumber(person) !== controls.role.value) return false;
   if (controls.region.value !== "all" && person.region !== controls.region.value) return false;
   if (state.view === "known" && !state.known.has(person.uid)) return false;
@@ -144,12 +144,16 @@ function currentPerson() {
   return state.deck[state.index] || null;
 }
 
+function hideGuessSuggestions() {
+  controls.guessSuggestions.replaceChildren();
+  controls.guessSuggestions.hidden = true;
+}
+
 function resetRound() {
   state.revealed = false;
   state.feedback = "";
-  if (controls.guessInput) {
-    controls.guessInput.value = "";
-  }
+  controls.guessInput.value = "";
+  hideGuessSuggestions();
 }
 
 function applyFilters({ keepRound = false } = {}) {
@@ -205,6 +209,7 @@ function revealAsLearning() {
   state.streak = 0;
   state.revealed = true;
   state.feedback = "answer";
+  hideGuessSuggestions();
   render();
 }
 
@@ -217,16 +222,90 @@ function answerCandidates(person) {
   return [person.nickname, id, ...aliases].filter(Boolean);
 }
 
+function suggestionSearchValues(person) {
+  const nameInfo = person.info?.find((item) => item.label === "Name")?.value || "";
+  const id = person.info?.find((item) => item.label === "ID")?.value || "";
+  return [
+    person.nickname,
+    id,
+    person.profileTitle,
+    profileFullName(person),
+    person.romanizedName,
+    person.name,
+    nameInfo,
+    person.aliases
+  ].filter(Boolean);
+}
+
 function isCorrectGuess(person, guess) {
   const normalizedGuess = normalizeGuess(guess);
   if (!normalizedGuess) return false;
   return answerCandidates(person).some((candidate) => normalizeGuess(candidate) === normalizedGuess);
 }
 
+function personMatchesSuggestion(person, normalizedQuery) {
+  return suggestionSearchValues(person).some((value) => normalizeGuess(value).includes(normalizedQuery));
+}
+
+function renderGuessSuggestions() {
+  if (state.revealed || controls.guessInput.disabled) {
+    hideGuessSuggestions();
+    return;
+  }
+
+  const normalizedQuery = normalizeGuess(controls.guessInput.value);
+  if (!normalizedQuery) {
+    hideGuessSuggestions();
+    return;
+  }
+
+  const seen = new Set();
+  const matches = state.people
+    .filter(passesFilters)
+    .filter((person) => personMatchesSuggestion(person, normalizedQuery))
+    .filter((person) => {
+      const key = normalizeGuess(person.nickname);
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .slice(0, SUGGESTION_LIMIT);
+
+  if (!matches.length) {
+    hideGuessSuggestions();
+    return;
+  }
+
+  controls.guessSuggestions.replaceChildren(
+    ...matches.map((person) => {
+      const button = document.createElement("button");
+      const fullName = profileFullName(person);
+      const nickname = document.createElement("strong");
+      const details = document.createElement("small");
+      button.type = "button";
+      button.className = "guess-suggestion";
+      button.setAttribute("role", "option");
+      button.setAttribute("aria-label", fullName ? `${person.nickname}, ${fullName}` : person.nickname);
+      nickname.textContent = person.nickname;
+      details.textContent = [fullName, person.team].filter(Boolean).join(" · ");
+      button.append(nickname, details);
+      button.addEventListener("mousedown", (event) => event.preventDefault());
+      button.addEventListener("click", () => {
+        controls.guessInput.value = person.nickname;
+        hideGuessSuggestions();
+        controls.guessInput.focus({ preventScroll: true });
+      });
+      return button;
+    })
+  );
+  controls.guessSuggestions.hidden = false;
+}
+
 function checkGuess() {
   const person = currentPerson();
   if (!person || state.revealed) return;
   const guess = controls.guessInput.value;
+  hideGuessSuggestions();
   if (isCorrectGuess(person, guess)) {
     state.known.add(person.uid);
     state.learning.delete(person.uid);
@@ -383,7 +462,10 @@ function render() {
   $("streakCount").textContent = state.streak;
   updateScoreButtons();
 
-  if (!person) return;
+  if (!person) {
+    hideGuessSuggestions();
+    return;
+  }
 
   $("flashcard").className = `flashcard ${state.revealed ? "is-revealed" : "is-hidden"}`;
   $("answerNick").textContent = state.revealed ? person.nickname : "?";
@@ -401,6 +483,7 @@ function render() {
 
   setPortrait(person);
   renderInfo(person);
+  renderGuessSuggestions();
 
   if (!state.revealed && !["INPUT", "SELECT"].includes(document.activeElement?.tagName)) {
     controls.guessInput.focus({ preventScroll: true });
@@ -408,13 +491,21 @@ function render() {
 }
 
 function bindControls() {
-  for (const control of [controls.search, controls.role, controls.region]) {
+  for (const control of [controls.role, controls.region]) {
     control.addEventListener("input", () => applyFilters());
   }
   controls.shuffle.addEventListener("click", shuffleDeck);
   controls.reset.addEventListener("click", resetProgress);
   controls.reveal.addEventListener("click", revealAsLearning);
   controls.next.addEventListener("click", goNext);
+  controls.guessInput.addEventListener("input", renderGuessSuggestions);
+  controls.guessInput.addEventListener("focus", renderGuessSuggestions);
+  controls.guessInput.addEventListener("blur", () => {
+    window.setTimeout(hideGuessSuggestions, 120);
+  });
+  controls.guessInput.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") hideGuessSuggestions();
+  });
   controls.guessForm.addEventListener("submit", (event) => {
     event.preventDefault();
     checkGuess();
@@ -443,7 +534,7 @@ async function init() {
   state.people = shuffleArray(data.people || []);
   state.deck = [...state.people];
 
-  fillSelect(controls.role, uniqueSorted(state.people, roleWithNumber), "Все роли");
+  fillSelect(controls.role, orderedRoles(state.people), "Все роли");
   fillSelect(controls.region, uniqueSorted(state.people, (person) => person.region), "Все регионы");
 
   render();
