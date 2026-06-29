@@ -2,9 +2,11 @@ const DATA_URL = "./data/players.json";
 
 const state = {
   people: [],
-  visible: [],
-  revealed: new Set(),
-  order: []
+  deck: [],
+  index: 0,
+  revealed: false,
+  known: new Set(),
+  learning: new Set()
 };
 
 const $ = (id) => document.getElementById(id);
@@ -14,10 +16,14 @@ const controls = {
   team: $("teamFilter"),
   role: $("roleFilter"),
   region: $("regionFilter"),
-  reveal: $("revealFilter"),
   shuffle: $("shuffleButton"),
-  hideAll: $("hideAllButton"),
-  showAll: $("showAllButton")
+  reset: $("resetButton"),
+  card: $("cardButton"),
+  reveal: $("revealButton"),
+  prev: $("prevButton"),
+  next: $("nextButton"),
+  known: $("knownButton"),
+  learning: $("learningButton")
 };
 
 function normalize(value) {
@@ -42,24 +48,6 @@ function uniqueSorted(items, key) {
   return [...new Set(items.map(key).filter(Boolean))].sort((a, b) => a.localeCompare(b));
 }
 
-function displayDate(value) {
-  if (!value) return "";
-  const date = new Date(`${value}T00:00:00Z`);
-  if (Number.isNaN(date.getTime())) return value;
-  return date.toLocaleDateString("ru-RU", { year: "numeric", month: "long", day: "numeric" });
-}
-
-function ageFromBirthDate(value) {
-  if (!value) return "";
-  const birth = new Date(`${value}T00:00:00Z`);
-  if (Number.isNaN(birth.getTime())) return "";
-  const today = new Date();
-  let age = today.getFullYear() - birth.getFullYear();
-  const monthDelta = today.getMonth() - birth.getMonth();
-  if (monthDelta < 0 || (monthDelta === 0 && today.getDate() < birth.getDate())) age -= 1;
-  return age > 0 ? `${age}` : "";
-}
-
 function personSearchText(person) {
   return [
     person.nickname,
@@ -80,150 +68,205 @@ function passesFilters(person) {
   if (controls.team.value !== "all" && person.team !== controls.team.value) return false;
   if (controls.role.value !== "all" && person.roleLabel !== controls.role.value) return false;
   if (controls.region.value !== "all" && person.region !== controls.region.value) return false;
-  if (controls.reveal.value === "hidden" && state.revealed.has(person.uid)) return false;
-  if (controls.reveal.value === "revealed" && !state.revealed.has(person.uid)) return false;
   return true;
 }
 
-function detailRow(label, value) {
-  if (!value) return null;
-  const dl = document.createElement("dl");
-  dl.className = "detail-row";
-  const dt = document.createElement("dt");
-  dt.textContent = label;
-  const dd = document.createElement("dd");
-  dd.textContent = value;
-  dl.append(dt, dd);
-  return dl;
+function displayDate(value) {
+  if (!value) return "";
+  const date = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString("ru-RU", { year: "numeric", month: "long", day: "numeric" });
 }
 
-function renderCard(person) {
-  const revealed = state.revealed.has(person.uid);
-  const article = document.createElement("article");
-  article.className = `player-card ${revealed ? "is-revealed" : "is-hidden"}`;
+function ageFromBirthDate(value) {
+  if (!value) return "";
+  const birth = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(birth.getTime())) return "";
+  const today = new Date();
+  let age = today.getFullYear() - birth.getFullYear();
+  const monthDelta = today.getMonth() - birth.getMonth();
+  if (monthDelta < 0 || (monthDelta === 0 && today.getDate() < birth.getDate())) age -= 1;
+  return age > 0 ? `${age}` : "";
+}
 
-  const button = document.createElement("button");
-  button.className = "card-button";
-  button.type = "button";
-  button.setAttribute("aria-label", revealed ? `Скрыть ${person.nickname}` : "Открыть ник");
-  button.addEventListener("click", () => {
-    if (state.revealed.has(person.uid)) state.revealed.delete(person.uid);
-    else state.revealed.add(person.uid);
-    applyFilters();
-  });
+function currentPerson() {
+  return state.deck[state.index] || null;
+}
 
-  const portrait = document.createElement("div");
-  portrait.className = person.image?.url ? "portrait" : "portrait portrait--missing";
+function resetReveal() {
+  state.revealed = false;
+}
 
-  if (person.image?.url) {
+function applyFilters() {
+  state.deck = state.people.filter(passesFilters);
+  state.index = Math.min(state.index, Math.max(state.deck.length - 1, 0));
+  resetReveal();
+  render();
+}
+
+function shuffleDeck() {
+  for (let i = state.deck.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [state.deck[i], state.deck[j]] = [state.deck[j], state.deck[i]];
+  }
+  state.index = 0;
+  resetReveal();
+  render();
+}
+
+function go(delta) {
+  if (!state.deck.length) return;
+  state.index = (state.index + delta + state.deck.length) % state.deck.length;
+  resetReveal();
+  render();
+}
+
+function reveal() {
+  state.revealed = true;
+  render();
+}
+
+function mark(setName) {
+  const person = currentPerson();
+  if (!person) return;
+  if (setName === "known") {
+    state.known.add(person.uid);
+    state.learning.delete(person.uid);
+  } else {
+    state.learning.add(person.uid);
+    state.known.delete(person.uid);
+  }
+  go(1);
+}
+
+function resetProgress() {
+  state.known.clear();
+  state.learning.clear();
+  resetReveal();
+  render();
+}
+
+function imageUrl(person) {
+  return person.image?.localUrl || person.image?.url || "";
+}
+
+function setPortrait(person) {
+  const portrait = $("portrait");
+  portrait.replaceChildren();
+  const url = imageUrl(person);
+  if (url) {
     const image = document.createElement("img");
-    image.src = person.image.url;
-    image.alt = revealed ? `Фото ${person.nickname}` : "Фото игрока";
-    image.loading = "lazy";
+    image.src = url;
+    image.alt = state.revealed ? `Фото ${person.nickname}` : "Фото игрока";
     portrait.appendChild(image);
+    portrait.className = "flashcard__portrait";
   } else {
     const missing = document.createElement("span");
     missing.textContent = "Нет фото";
     portrait.appendChild(missing);
+    portrait.className = "flashcard__portrait flashcard__portrait--missing";
+  }
+}
+
+function infoRow(label, value) {
+  if (!value) return null;
+  const row = document.createElement("div");
+  row.className = "info-row";
+  const key = document.createElement("span");
+  key.textContent = label;
+  const val = document.createElement("strong");
+  val.textContent = value;
+  row.append(key, val);
+  return row;
+}
+
+function renderInfo(person) {
+  $("teamName").textContent = person.team || "";
+  $("roleName").textContent = person.roleLabel || "";
+  $("profileLink").href = person.profileUrl || "#";
+
+  const rows = $("infoRows");
+  rows.replaceChildren();
+
+  if (!state.revealed) {
+    $("infoTitle").textContent = "Сначала угадай ник";
+    $("infoSummary").textContent = `${person.team} · ${person.roleLabel} · ${person.region}`;
+    rows.append(
+      infoRow("Команда", person.team),
+      infoRow("Роль", person.roleLabel),
+      infoRow("Регион", person.region)
+    );
+    return;
   }
 
-  const role = document.createElement("span");
-  role.className = "role-badge";
-  role.textContent = person.roleLabel || person.role || "Role";
+  $("infoTitle").textContent = person.nickname;
+  $("infoSummary").textContent = person.romanizedName || person.name || person.profileTitle || "";
 
-  const region = document.createElement("span");
-  region.className = "region-badge";
-  region.textContent = person.region || "Invite";
-
-  const mask = document.createElement("span");
-  mask.className = "nick-mask";
-  mask.textContent = person.nickname || "Unknown";
-
-  portrait.append(role, region, mask);
-
-  const body = document.createElement("div");
-  body.className = "card-body";
-
-  const team = document.createElement("p");
-  team.className = "team-name";
-  team.textContent = person.team;
-
-  const realName = document.createElement("p");
-  realName.className = "real-name";
-  realName.textContent = revealed ? (person.romanizedName || person.name || person.profileTitle || "") : " ";
-
-  const details = document.createElement("div");
-  details.className = "details";
-
-  const rows = [
-    detailRow("Name", person.name),
-    detailRow("Romanized", person.romanizedName),
-    detailRow("Возраст", ageFromBirthDate(person.birthDate)),
-    detailRow("Родился", displayDate(person.birthDate)),
-    detailRow("Страна", person.country),
-    detailRow("Команда", person.team),
-    detailRow("Роль", person.roleLabel),
-    detailRow("Статус", person.status),
-    detailRow("Aliases", person.aliases),
-    detailRow("Проф. роли", person.profileRoles)
+  const detailRows = [
+    infoRow("Name", person.name),
+    infoRow("Romanized", person.romanizedName),
+    infoRow("Возраст", ageFromBirthDate(person.birthDate)),
+    infoRow("Родился", displayDate(person.birthDate)),
+    infoRow("Страна", person.country),
+    infoRow("Команда", person.team),
+    infoRow("Роль", person.roleLabel),
+    infoRow("Регион", person.region),
+    infoRow("Статус", person.status),
+    infoRow("Aliases", person.aliases),
+    infoRow("Проф. роли", person.profileRoles)
   ].filter(Boolean);
 
-  for (const row of rows) details.appendChild(row);
-
-  for (const item of person.info || []) {
-    if (!item.value || rows.some((row) => row.firstChild?.textContent === item.label)) continue;
-    details.appendChild(detailRow(item.label, item.value));
-  }
-
-  const link = document.createElement("a");
-  link.className = "detail-link";
-  link.href = person.profileUrl;
-  link.rel = "noreferrer";
-  link.target = "_blank";
-  link.textContent = "Профиль Liquipedia";
-  details.appendChild(link);
-
-  body.append(team, realName, details);
-  button.append(portrait, body);
-  article.appendChild(button);
-  return article;
+  rows.append(...detailRows);
 }
 
-function updateStats() {
-  $("totalCount").textContent = state.people.length;
-  $("revealedCount").textContent = state.revealed.size;
-  $("visibleCount").textContent = `Показано: ${state.visible.length}`;
-}
+function render() {
+  const person = currentPerson();
+  const hasCards = Boolean(person);
+  $("trainer").hidden = !hasCards;
+  document.querySelector(".trainer-actions").hidden = !hasCards;
+  $("emptyState").hidden = hasCards;
 
-function applyFilters() {
-  const byId = new Map(state.people.map((person) => [person.uid, person]));
-  state.visible = state.order.map((uid) => byId.get(uid)).filter(Boolean).filter(passesFilters);
-  const cards = $("cards");
-  cards.replaceChildren(...state.visible.map(renderCard));
-  $("emptyState").hidden = state.visible.length !== 0;
-  updateStats();
-}
+  $("visibleCount").textContent = `${state.deck.length} карточек после фильтров`;
+  $("positionCount").textContent = hasCards ? `${state.index + 1}/${state.deck.length}` : "0/0";
+  $("knownCount").textContent = state.known.size;
+  $("learningCount").textContent = state.learning.size;
 
-function shuffle() {
-  for (let i = state.order.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [state.order[i], state.order[j]] = [state.order[j], state.order[i]];
-  }
-  applyFilters();
+  if (!person) return;
+
+  $("flashcard").className = `flashcard ${state.revealed ? "is-revealed" : "is-hidden"}`;
+  $("answerNick").textContent = state.revealed ? person.nickname : "?";
+  $("answerSub").textContent = state.revealed ? `${person.team} · ${person.roleLabel}` : `${person.team} · ${person.roleLabel}`;
+  document.querySelector(".answer-panel__hint").textContent = state.revealed ? "Ответ открыт" : "Нажми, чтобы открыть ник";
+  controls.reveal.textContent = state.revealed ? "Скрыть ник" : "Показать ник";
+
+  setPortrait(person);
+  renderInfo(person);
 }
 
 function bindControls() {
-  for (const control of [controls.search, controls.team, controls.role, controls.region, controls.reveal]) {
+  for (const control of [controls.search, controls.team, controls.role, controls.region]) {
     control.addEventListener("input", applyFilters);
   }
-  controls.shuffle.addEventListener("click", shuffle);
-  controls.hideAll.addEventListener("click", () => {
-    state.revealed.clear();
-    applyFilters();
+  controls.shuffle.addEventListener("click", shuffleDeck);
+  controls.reset.addEventListener("click", resetProgress);
+  controls.card.addEventListener("click", reveal);
+  controls.reveal.addEventListener("click", () => {
+    state.revealed = !state.revealed;
+    render();
   });
-  controls.showAll.addEventListener("click", () => {
-    state.revealed = new Set(state.people.map((person) => person.uid));
-    applyFilters();
+  controls.prev.addEventListener("click", () => go(-1));
+  controls.next.addEventListener("click", () => go(1));
+  controls.known.addEventListener("click", () => mark("known"));
+  controls.learning.addEventListener("click", () => mark("learning"));
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") go(1);
+    if (event.key === "ArrowLeft") go(-1);
+    if (event.key === " " || event.key === "Enter") {
+      if (document.activeElement?.tagName === "INPUT") return;
+      event.preventDefault();
+      state.revealed = !state.revealed;
+      render();
+    }
   });
 }
 
@@ -233,7 +276,7 @@ async function init() {
   if (!response.ok) throw new Error(`Cannot load ${DATA_URL}`);
   const data = await response.json();
   state.people = data.people || [];
-  state.order = state.people.map((person) => person.uid);
+  state.deck = [...state.people];
 
   fillSelect(controls.team, uniqueSorted(state.people, (person) => person.team), "Все команды");
   fillSelect(controls.role, uniqueSorted(state.people, (person) => person.roleLabel), "Все роли");
@@ -246,11 +289,12 @@ async function init() {
       : `Данные обновлены: ${generated.toLocaleString("ru-RU")}`;
   }
 
-  applyFilters();
+  render();
 }
 
 init().catch((error) => {
-  $("cards").replaceChildren();
+  $("trainer").hidden = true;
+  document.querySelector(".trainer-actions").hidden = true;
   $("emptyState").hidden = false;
   $("emptyState").textContent = "Не удалось загрузить данные.";
   console.error(error);

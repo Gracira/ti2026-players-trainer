@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-06-29T10:21:13.375607+00:00",
+    "generatedAt": "2026-06-29T10:38:50.906751+00:00",
     "source": "Liquipedia Dota 2 Wiki",
     "sourceUrl": "https://liquipedia.net/dota2/The_International/2026",
     "tournamentPage": "The_International/2026",
@@ -34,7 +34,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/3/35/Nightfall_2025_Aurora_Gaming.png/600px-Nightfall_2025_Aurora_Gaming.png",
         "fullUrl": "https://liquipedia.net/commons/images/3/35/Nightfall_2025_Aurora_Gaming.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Nightfall_2025_Aurora_Gaming.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/aurora-gaming-1-nightfall-49968d70e2.png"
       },
       "info": [
         {
@@ -138,7 +139,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/5/5a/Mikoto_2025_Aurora_Gaming.jpeg/600px-Mikoto_2025_Aurora_Gaming.jpeg",
         "fullUrl": "https://liquipedia.net/commons/images/5/5a/Mikoto_2025_Aurora_Gaming.jpeg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Mikoto_2025_Aurora_Gaming.jpeg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/aurora-gaming-2-mikoto-b8a07cee8f.jpeg"
       },
       "info": [
         {
@@ -238,7 +240,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/3/33/Ws_BLAST_Slam_II_Dota.jpg/600px-Ws_BLAST_Slam_II_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/3/33/Ws_BLAST_Slam_II_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Ws_BLAST_Slam_II_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/aurora-gaming-3-ws-80f3787dbf.jpg"
       },
       "info": [
         {
@@ -330,7 +333,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/8/8b/Mira_2025_Aurora_Gaming.png/600px-Mira_2025_Aurora_Gaming.png",
         "fullUrl": "https://liquipedia.net/commons/images/8/8b/Mira_2025_Aurora_Gaming.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Mira_2025_Aurora_Gaming.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/aurora-gaming-4-mira-1b9b5b3604.png"
       },
       "info": [
         {
@@ -434,7 +438,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/2/21/Kaori_2025_PGL_Wallachia_Season_3.jpg/600px-Kaori_2025_PGL_Wallachia_Season_3.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/2/21/Kaori_2025_PGL_Wallachia_Season_3.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Kaori_2025_PGL_Wallachia_Season_3.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/aurora-gaming-5-kaori-e701df1ac8.jpg"
       },
       "info": [
         {
@@ -530,7 +535,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/6/6d/Kpii_2024_Leviatan.png/600px-Kpii_2024_Leviatan.png",
         "fullUrl": "https://liquipedia.net/commons/images/6/6d/Kpii_2024_Leviatan.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Kpii_2024_Leviatan.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/aurora-gaming-coach-kpii-83546ab8c1.png"
       },
       "info": [
         {
@@ -634,7 +640,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/e/e4/Kiritych_PGL_Wallachia_Season_6.jpg/600px-Kiritych_PGL_Wallachia_Season_6.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/e/e4/Kiritych_PGL_Wallachia_Season_6.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Kiritych_PGL_Wallachia_Season_6.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/betboom-team-1-kiritych-a275bd89e9.jpg"
       },
       "info": [
         {
@@ -738,7 +745,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/c/c5/Gpk_2025Q4_BetBoom_Team.png/600px-Gpk_2025Q4_BetBoom_Team.png",
         "fullUrl": "https://liquipedia.net/commons/images/c/c5/Gpk_2025Q4_BetBoom_Team.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Gpk_2025Q4_BetBoom_Team.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/betboom-team-2-gpk-de67181656.png"
       },
       "info": [
         {
@@ -838,7 +846,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/2/24/MieRo_2025Q4_BetBoom_Team.png/600px-MieRo_2025Q4_BetBoom_Team.png",
         "fullUrl": "https://liquipedia.net/commons/images/2/24/MieRo_2025Q4_BetBoom_Team.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:MieRo_2025Q4_BetBoom_Team.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/betboom-team-3-miero-8d4b1aabdc.png"
       },
       "info": [
         {
@@ -938,7 +947,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/9/95/Save-_2025Q4_BetBoom_Team.png/600px-Save-_2025Q4_BetBoom_Team.png",
         "fullUrl": "https://liquipedia.net/commons/images/9/95/Save-_2025Q4_BetBoom_Team.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Save-_2025Q4_BetBoom_Team.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/betboom-team-4-save-57955a2903.png"
       },
       "info": [
         {
@@ -1038,7 +1048,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/6/6c/Kataomi_2025Q4_BetBoom_Team.png/600px-Kataomi_2025Q4_BetBoom_Team.png",
         "fullUrl": "https://liquipedia.net/commons/images/6/6c/Kataomi_2025Q4_BetBoom_Team.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Kataomi_2025Q4_BetBoom_Team.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/betboom-team-5-kataomi-acede0fa92.png"
       },
       "info": [
         {
@@ -1134,7 +1145,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/5/57/Boolk_2026_BetBoom_Team.png/600px-Boolk_2026_BetBoom_Team.png",
         "fullUrl": "https://liquipedia.net/commons/images/5/57/Boolk_2026_BetBoom_Team.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Boolk_2026_BetBoom_Team.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/betboom-team-coach-boolk-47115462ca.png"
       },
       "info": [
         {
@@ -1214,7 +1226,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/e/e2/Skiter_BLAST_Slam_VI_Dota.jpg/600px-Skiter_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/e/e2/Skiter_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Skiter_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-falcons-1-skiter-3a89e6f926.jpg"
       },
       "info": [
         {
@@ -1314,7 +1327,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/1/19/Malr1ne_2025_Team_Falcons.png/600px-Malr1ne_2025_Team_Falcons.png",
         "fullUrl": "https://liquipedia.net/commons/images/1/19/Malr1ne_2025_Team_Falcons.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Malr1ne_2025_Team_Falcons.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/team-falcons-2-malr1ne-1c71419a0c.png"
       },
       "info": [
         {
@@ -1414,7 +1428,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/5/54/ATF_2025_Team_Falcons.png/600px-ATF_2025_Team_Falcons.png",
         "fullUrl": "https://liquipedia.net/commons/images/5/54/ATF_2025_Team_Falcons.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:ATF_2025_Team_Falcons.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/team-falcons-3-atf-c99cdc475a.png"
       },
       "info": [
         {
@@ -1514,7 +1529,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/b/b4/Cr1t-_Riyadh_Masters_2024.jpg/600px-Cr1t-_Riyadh_Masters_2024.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/b/b4/Cr1t-_Riyadh_Masters_2024.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Cr1t-_Riyadh_Masters_2024.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-falcons-4-cr1t-150efb3092.jpg"
       },
       "info": [
         {
@@ -1614,7 +1630,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/a/aa/Sneyking_2025_Team_Falcons.png/600px-Sneyking_2025_Team_Falcons.png",
         "fullUrl": "https://liquipedia.net/commons/images/a/aa/Sneyking_2025_Team_Falcons.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Sneyking_2025_Team_Falcons.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/team-falcons-5-sneyking-cbece260cd.png"
       },
       "info": [
         {
@@ -1706,7 +1723,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/f/f5/Aui_2000_2024_PGL_Wallachia_Season_2.jpg/600px-Aui_2000_2024_PGL_Wallachia_Season_2.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/f/f5/Aui_2000_2024_PGL_Wallachia_Season_2.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Aui_2000_2024_PGL_Wallachia_Season_2.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-falcons-coach-aui-2000-f519d7c5c4.jpg"
       },
       "info": [
         {
@@ -1806,7 +1824,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/3/3a/MiCKe_PGL_Wallachia_Season_1.jpg/600px-MiCKe_PGL_Wallachia_Season_1.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/3/3a/MiCKe_PGL_Wallachia_Season_1.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:MiCKe_PGL_Wallachia_Season_1.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-liquid-1-m1cke-04e4b389db.jpg"
       },
       "info": [
         {
@@ -1902,7 +1921,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/d8/Nisha_PGL_Wallachia_Season_1.jpg/600px-Nisha_PGL_Wallachia_Season_1.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/d/d8/Nisha_PGL_Wallachia_Season_1.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Nisha_PGL_Wallachia_Season_1.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-liquid-2-nisha-66cb09a84d.jpg"
       },
       "info": [
         {
@@ -1998,7 +2018,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/2/22/Ace_2025_PGL_Wallachia_Season_6.jpg/600px-Ace_2025_PGL_Wallachia_Season_6.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/2/22/Ace_2025_PGL_Wallachia_Season_6.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Ace_2025_PGL_Wallachia_Season_6.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-liquid-3-ace-697e439024.jpg"
       },
       "info": [
         {
@@ -2098,7 +2119,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/2/2e/Boxi_ESL_One_Kuala_Lumpur_2023.jpg/600px-Boxi_ESL_One_Kuala_Lumpur_2023.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/2/2e/Boxi_ESL_One_Kuala_Lumpur_2023.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Boxi_ESL_One_Kuala_Lumpur_2023.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-liquid-4-boxi-0a746128e8.jpg"
       },
       "info": [
         {
@@ -2198,7 +2220,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/5/59/TOfu_2025_PGL_Wallachia_Season_6.jpg/600px-TOfu_2025_PGL_Wallachia_Season_6.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/5/59/TOfu_2025_PGL_Wallachia_Season_6.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:TOfu_2025_PGL_Wallachia_Season_6.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-liquid-5-tofu-7a1eea976c.jpg"
       },
       "info": [
         {
@@ -2282,7 +2305,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/d0/Blitz_PGL_Wallachia_Season_1.jpg/600px-Blitz_PGL_Wallachia_Season_1.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/d/d0/Blitz_PGL_Wallachia_Season_1.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Blitz_PGL_Wallachia_Season_1.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-liquid-coach-blitz-31e0a7477a.jpg"
       },
       "info": [
         {
@@ -2378,7 +2402,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/d2/Jabbz_2026_Team_Liquid.jpg/600px-Jabbz_2026_Team_Liquid.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/d/d2/Jabbz_2026_Team_Liquid.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Jabbz_2026_Team_Liquid.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-liquid-coach-jabbz-229c10620e.jpg"
       },
       "info": [
         {
@@ -2466,7 +2491,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/e/e1/Pure_2026_1w_Team.webp/600px-Pure_2026_1w_Team.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/e/e1/Pure_2026_1w_Team.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:Pure_2026_1w_Team.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/1w-team-1-pure-338974f932.webp"
       },
       "info": [
         {
@@ -2570,7 +2596,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/6/62/Bzm_2026_1w_Team.webp/600px-Bzm_2026_1w_Team.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/6/62/Bzm_2026_1w_Team.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:Bzm_2026_1w_Team.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/1w-team-2-bzm-6f81bcb56f.webp"
       },
       "info": [
         {
@@ -2670,7 +2697,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/e/ee/33_2026_1w_Team.webp/600px-33_2026_1w_Team.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/e/ee/33_2026_1w_Team.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:33_2026_1w_Team.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/1w-team-3-33-47f50a553e.webp"
       },
       "info": [
         {
@@ -2770,7 +2798,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/e/ed/Ari_2026_1w_Team.webp/600px-Ari_2026_1w_Team.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/e/ed/Ari_2026_1w_Team.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:Ari_2026_1w_Team.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/1w-team-4-ari-fa974f51a5.webp"
       },
       "info": [
         {
@@ -2866,7 +2895,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/2/26/Whitemon_2026_1w_Team.webp/600px-Whitemon_2026_1w_Team.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/2/26/Whitemon_2026_1w_Team.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:Whitemon_2026_1w_Team.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/1w-team-5-whitemon-8db2c726de.webp"
       },
       "info": [
         {
@@ -2966,7 +2996,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/d4/MoonMeander_2026_1w_Team.webp/600px-MoonMeander_2026_1w_Team.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/d/d4/MoonMeander_2026_1w_Team.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:MoonMeander_2026_1w_Team.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/1w-team-coach-moonmeander-453ac32aa9.webp"
       },
       "info": [
         {
@@ -3070,7 +3101,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/d3/Ame_2026_Xtreme_Gaming.png/600px-Ame_2026_Xtreme_Gaming.png",
         "fullUrl": "https://liquipedia.net/commons/images/d/d3/Ame_2026_Xtreme_Gaming.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Ame_2026_Xtreme_Gaming.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/xtreme-gaming-1-ame-80cfa6ee08.png"
       },
       "info": [
         {
@@ -3162,7 +3194,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/4/48/NothingToSay_2026_Xtreme_Gaming.png/600px-NothingToSay_2026_Xtreme_Gaming.png",
         "fullUrl": "https://liquipedia.net/commons/images/4/48/NothingToSay_2026_Xtreme_Gaming.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:NothingToSay_2026_Xtreme_Gaming.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/xtreme-gaming-2-nothingtosay-829aae6860.png"
       },
       "info": [
         {
@@ -3254,7 +3287,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/7/7a/Xxs_2026_Xtreme_Gaming.png/600px-Xxs_2026_Xtreme_Gaming.png",
         "fullUrl": "https://liquipedia.net/commons/images/7/7a/Xxs_2026_Xtreme_Gaming.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Xxs_2026_Xtreme_Gaming.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/xtreme-gaming-3-xxs-96a9652e00.png"
       },
       "info": [
         {
@@ -3342,7 +3376,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/f/f2/Fy_2026_Xtreme_Gaming.png/600px-Fy_2026_Xtreme_Gaming.png",
         "fullUrl": "https://liquipedia.net/commons/images/f/f2/Fy_2026_Xtreme_Gaming.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Fy_2026_Xtreme_Gaming.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/xtreme-gaming-4-fy-f56dbfc43f.png"
       },
       "info": [
         {
@@ -3430,7 +3465,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/dd/XNova_2026_Xtreme_Gaming.png/600px-XNova_2026_Xtreme_Gaming.png",
         "fullUrl": "https://liquipedia.net/commons/images/d/dd/XNova_2026_Xtreme_Gaming.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:XNova_2026_Xtreme_Gaming.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/xtreme-gaming-5-xnova-dc6f15a038.png"
       },
       "info": [
         {
@@ -3538,7 +3574,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/0/0a/Xiao8_2026_Xtreme_Gaming.png/600px-Xiao8_2026_Xtreme_Gaming.png",
         "fullUrl": "https://liquipedia.net/commons/images/0/0a/Xiao8_2026_Xtreme_Gaming.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Xiao8_2026_Xtreme_Gaming.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/xtreme-gaming-coach-xiao8-bc89b3c32e.png"
       },
       "info": [
         {
@@ -3626,7 +3663,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/7/7c/Watson_BLAST_Slam_VI_Dota.jpg/600px-Watson_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/7/7c/Watson_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Watson_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-yandex-1-watson-62326d3774.jpg"
       },
       "info": [
         {
@@ -3734,7 +3772,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/6/65/CHIRA_JUNIOR_BLAST_Slam_VI_Dota.jpg/600px-CHIRA_JUNIOR_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/6/65/CHIRA_JUNIOR_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:CHIRA_JUNIOR_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-yandex-2-chira-junior-c5f58b2504.jpg"
       },
       "info": [
         {
@@ -3814,7 +3853,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/c/c1/DM_2024_PARIVISION.png/600px-DM_2024_PARIVISION.png",
         "fullUrl": "https://liquipedia.net/commons/images/c/c1/DM_2024_PARIVISION.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:DM_2024_PARIVISION.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/team-yandex-3-dm-23063875ac.png"
       },
       "info": [
         {
@@ -3914,7 +3954,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/4/4b/Saksa_BLAST_Slam_VI_Dota.jpg/600px-Saksa_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/4/4b/Saksa_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Saksa_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-yandex-4-saksa-d3990b14f8.jpg"
       },
       "info": [
         {
@@ -4010,7 +4051,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/0/05/Malady_BLAST_Slam_VI_Dota.jpg/600px-Malady_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/0/05/Malady_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Malady_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-yandex-5-malady-9539ae5781.jpg"
       },
       "info": [
         {
@@ -4106,7 +4148,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/6/6c/Accell_Esports_World_Cup_2025.jpg/600px-Accell_Esports_World_Cup_2025.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/6/6c/Accell_Esports_World_Cup_2025.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Accell_Esports_World_Cup_2025.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-yandex-coach-accell-c968d0e9f1.jpg"
       },
       "info": [
         {
@@ -4202,7 +4245,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/4/4b/Yatoro_2025_Team_Spirit.jpg/600px-Yatoro_2025_Team_Spirit.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/4/4b/Yatoro_2025_Team_Spirit.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Yatoro_2025_Team_Spirit.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-spirit-1-yatoro-51aed633c1.jpg"
       },
       "info": [
         {
@@ -4302,7 +4346,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/9/98/Larl_2025_Team_Spirit.jpg/600px-Larl_2025_Team_Spirit.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/9/98/Larl_2025_Team_Spirit.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Larl_2025_Team_Spirit.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-spirit-2-larl-6d2a9c0792.jpg"
       },
       "info": [
         {
@@ -4402,7 +4447,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/1/1d/Collapse_2025_Team_Spirit.jpg/600px-Collapse_2025_Team_Spirit.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/1/1d/Collapse_2025_Team_Spirit.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Collapse_2025_Team_Spirit.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-spirit-3-collapse-0dc767a6ef.jpg"
       },
       "info": [
         {
@@ -4572,7 +4618,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/5/5b/Rue_2025_Team_Spirit.jpg/600px-Rue_2025_Team_Spirit.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/5/5b/Rue_2025_Team_Spirit.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Rue_2025_Team_Spirit.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-spirit-5-rue-3ce0bb5fc8.jpg"
       },
       "info": [
         {
@@ -4664,7 +4711,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/2/25/Miposhka_2025_Team_Spirit.jpg/600px-Miposhka_2025_Team_Spirit.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/2/25/Miposhka_2025_Team_Spirit.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Miposhka_2025_Team_Spirit.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-spirit-coach-miposhka-19bc2bd545.jpg"
       },
       "info": [
         {
@@ -4764,7 +4812,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/3/3c/MiLAN_PGL_Wallachia_Season_1.jpg/600px-MiLAN_PGL_Wallachia_Season_1.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/3/3c/MiLAN_PGL_Wallachia_Season_1.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:MiLAN_PGL_Wallachia_Season_1.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-spirit-coach-milan-0fb8f8d06c.jpg"
       },
       "info": [
         {
@@ -4844,7 +4893,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/b/b7/Satanic_2025_PARIVISION.jpg/600px-Satanic_2025_PARIVISION.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/b/b7/Satanic_2025_PARIVISION.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Satanic_2025_PARIVISION.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-vision-1-satanic-dfdae81dd4.jpg"
       },
       "info": [
         {
@@ -4952,7 +5002,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/7/71/Noone_2024_PARIVISION.png/600px-Noone_2024_PARIVISION.png",
         "fullUrl": "https://liquipedia.net/commons/images/7/71/Noone_2024_PARIVISION.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Noone_2024_PARIVISION.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/team-vision-2-no-o-ne-8d46ee8145.png"
       },
       "info": [
         {
@@ -5040,7 +5091,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/a/aa/Noticed_2025_Team_Yandex.webp/600px-Noticed_2025_Team_Yandex.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/a/aa/Noticed_2025_Team_Yandex.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:Noticed_2025_Team_Yandex.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/team-vision-3-noticed-683d758ccc.webp"
       },
       "info": [
         {
@@ -5132,7 +5184,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/a/ac/9Class_2024_PARIVISION.png/600px-9Class_2024_PARIVISION.png",
         "fullUrl": "https://liquipedia.net/commons/images/a/ac/9Class_2024_PARIVISION.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:9Class_2024_PARIVISION.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/team-vision-4-9class-24a8067bc7.png"
       },
       "info": [
         {
@@ -5224,7 +5277,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/0/0a/Dukalis_2024_PARIVISION.png/600px-Dukalis_2024_PARIVISION.png",
         "fullUrl": "https://liquipedia.net/commons/images/0/0a/Dukalis_2024_PARIVISION.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Dukalis_2024_PARIVISION.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/team-vision-5-dukalis-5a1cdf137d.png"
       },
       "info": [
         {
@@ -5320,7 +5374,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/3/32/Puppey_The_International_2021.jpg/600px-Puppey_The_International_2021.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/3/32/Puppey_The_International_2021.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Puppey_The_International_2021.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-vision-coach-puppey-856ffe9a72.jpg"
       },
       "info": [
         {
@@ -5424,7 +5479,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/4/40/SumaiL_2025_PGL_Wallachia_Season_3.jpg/600px-SumaiL_2025_PGL_Wallachia_Season_3.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/4/40/SumaiL_2025_PGL_Wallachia_Season_3.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:SumaiL_2025_PGL_Wallachia_Season_3.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/nigma-galaxy-1-sumail-fe04707c2a.jpg"
       },
       "info": [
         {
@@ -5532,7 +5588,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/5/54/Lorenof_Esports_World_Cup_2025.jpg/600px-Lorenof_Esports_World_Cup_2025.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/5/54/Lorenof_Esports_World_Cup_2025.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Lorenof_Esports_World_Cup_2025.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/nigma-galaxy-2-lorenof-2d73dadc9d.jpg"
       },
       "info": [
         {
@@ -5624,7 +5681,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/2/2f/Davai_Lama_Esports_World_Cup_2025.jpg/600px-Davai_Lama_Esports_World_Cup_2025.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/2/2f/Davai_Lama_Esports_World_Cup_2025.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Davai_Lama_Esports_World_Cup_2025.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/nigma-galaxy-3-davai-71844ba1cb.jpg"
       },
       "info": [
         {
@@ -5716,7 +5774,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/9/94/OmaR_2024_PGL_Wallachia_Season_2.jpg/600px-OmaR_2024_PGL_Wallachia_Season_2.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/9/94/OmaR_2024_PGL_Wallachia_Season_2.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:OmaR_2024_PGL_Wallachia_Season_2.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/nigma-galaxy-4-omar-42fa9c39eb.jpg"
       },
       "info": [
         {
@@ -5808,7 +5867,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/0/0f/GH_2025_PGL_Wallachia_Season_3.jpg/600px-GH_2025_PGL_Wallachia_Season_3.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/0/0f/GH_2025_PGL_Wallachia_Season_3.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:GH_2025_PGL_Wallachia_Season_3.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/nigma-galaxy-5-gh-2c1d28c218.jpg"
       },
       "info": [
         {
@@ -5908,7 +5968,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/db/Kuroky_profile.jpg/600px-Kuroky_profile.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/d/db/Kuroky_profile.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Kuroky_profile.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/nigma-galaxy-coach-kuroky-2495a8d8ae.jpg"
       },
       "info": [
         {
@@ -6012,7 +6073,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/1/13/Ssnovv1_2026_L1GA_TEAM.webp/600px-Ssnovv1_2026_L1GA_TEAM.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/1/13/Ssnovv1_2026_L1GA_TEAM.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:Ssnovv1_2026_L1GA_TEAM.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/huligani-1-ssnovv1-7613df2ec3.webp"
       },
       "info": [
         {
@@ -6104,7 +6166,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/a/af/Mirage_2026_L1GA_TEAM.webp/600px-Mirage_2026_L1GA_TEAM.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/a/af/Mirage_2026_L1GA_TEAM.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:Mirage_2026_L1GA_TEAM.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/huligani-2-mirage-96f6c3f034.webp"
       },
       "info": [
         {
@@ -6196,7 +6259,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/3/3a/Corrupted_2026_L1GA_TEAM.webp/600px-Corrupted_2026_L1GA_TEAM.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/3/3a/Corrupted_2026_L1GA_TEAM.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:Corrupted_2026_L1GA_TEAM.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/huligani-3-corrupted-816e21e601.webp"
       },
       "info": [
         {
@@ -6276,7 +6340,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/6/60/Sayuw_2026_L1GA_TEAM.webp/600px-Sayuw_2026_L1GA_TEAM.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/6/60/Sayuw_2026_L1GA_TEAM.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:Sayuw_2026_L1GA_TEAM.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/huligani-4-sayuw-182790e186.webp"
       },
       "info": [
         {
@@ -6376,7 +6441,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/e/e0/RESPECT_2026_L1GA_TEAM.webp/600px-RESPECT_2026_L1GA_TEAM.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/e/e0/RESPECT_2026_L1GA_TEAM.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:RESPECT_2026_L1GA_TEAM.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/huligani-5-respect-54a9b0d473.webp"
       },
       "info": [
         {
@@ -6460,7 +6526,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/1/1a/TheChosenOne_2026_L1GA_TEAM.webp/600px-TheChosenOne_2026_L1GA_TEAM.webp.png",
         "fullUrl": "https://liquipedia.net/commons/images/1/1a/TheChosenOne_2026_L1GA_TEAM.webp",
         "descriptionUrl": "https://liquipedia.net/commons/File:TheChosenOne_2026_L1GA_TEAM.webp",
-        "mime": "image/webp"
+        "mime": "image/webp",
+        "localUrl": "./assets/portraits/huligani-coach-thechosenone-eb12d256a6.webp"
       },
       "info": [
         {
@@ -6540,7 +6607,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/d7/YSR-04E_2026_Team_Resilience.jpg/600px-YSR-04E_2026_Team_Resilience.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/d/d7/YSR-04E_2026_Team_Resilience.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:YSR-04E_2026_Team_Resilience.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-resilience-1-ysr-04e-f90d0c6806.jpg"
       },
       "info": [
         {
@@ -6632,7 +6700,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/7/71/Echo_2026_Team_Resilience.jpg/600px-Echo_2026_Team_Resilience.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/7/71/Echo_2026_Team_Resilience.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Echo_2026_Team_Resilience.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-resilience-2-echozz-01ef326155.jpg"
       },
       "info": [
         {
@@ -6720,7 +6789,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/da/Niu_2026_Team_Resilience.jpg/600px-Niu_2026_Team_Resilience.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/d/da/Niu_2026_Team_Resilience.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Niu_2026_Team_Resilience.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-resilience-3-niu-1a3d123f6b.jpg"
       },
       "info": [
         {
@@ -6808,7 +6878,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/d9/Planet_2026_Team_Resilience.jpg/600px-Planet_2026_Team_Resilience.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/d/d9/Planet_2026_Team_Resilience.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Planet_2026_Team_Resilience.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-resilience-4-planet-f64bbe2ddc.jpg"
       },
       "info": [
         {
@@ -6900,7 +6971,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/5/58/Zzq_2026_Team_Resilience.jpg/600px-Zzq_2026_Team_Resilience.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/5/58/Zzq_2026_Team_Resilience.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Zzq_2026_Team_Resilience.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-resilience-5-zzq-510ac40db0.jpg"
       },
       "info": [
         {
@@ -6988,7 +7060,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/dd/Super_2026_Team_Resilience.jpg/600px-Super_2026_Team_Resilience.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/d/dd/Super_2026_Team_Resilience.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Super_2026_Team_Resilience.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/team-resilience-coach-super-d58cbe5e2e.jpg"
       },
       "info": [
         {
@@ -7068,7 +7141,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/e/e5/Shiro_PGL_Wallachia_Season_6.jpg/600px-Shiro_PGL_Wallachia_Season_6.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/e/e5/Shiro_PGL_Wallachia_Season_6.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Shiro_PGL_Wallachia_Season_6.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/vici-gaming-1-shiro-68dffc9421.jpg"
       },
       "info": [
         {
@@ -7156,7 +7230,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/1/1b/Xm_PGL_Wallachia_Season_1.jpg/600px-Xm_PGL_Wallachia_Season_1.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/1/1b/Xm_PGL_Wallachia_Season_1.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Xm_PGL_Wallachia_Season_1.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/vici-gaming-2-xm-8e5276341a.jpg"
       },
       "info": [
         {
@@ -7244,7 +7319,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/4/46/Bach_2025_PGL_Wallachia_Season_3.jpg/600px-Bach_2025_PGL_Wallachia_Season_3.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/4/46/Bach_2025_PGL_Wallachia_Season_3.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Bach_2025_PGL_Wallachia_Season_3.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/vici-gaming-3-bach-5a50f2db12.jpg"
       },
       "info": [
         {
@@ -7340,7 +7416,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/7/7b/XinQ_Esports_World_Cup_2025.jpg/600px-XinQ_Esports_World_Cup_2025.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/7/7b/XinQ_Esports_World_Cup_2025.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:XinQ_Esports_World_Cup_2025.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/vici-gaming-4-xinq-7885d922a8.jpg"
       },
       "info": [
         {
@@ -7428,7 +7505,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/0/09/Y%60_Riyadh_Masters_2024.jpg/600px-Y%60_Riyadh_Masters_2024.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/0/09/Y%60_Riyadh_Masters_2024.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Y%60_Riyadh_Masters_2024.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/vici-gaming-5-y-444ee83c0c.jpg"
       },
       "info": [
         {
@@ -7524,7 +7602,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/2/23/Yao_2025.png/600px-Yao_2025.png",
         "fullUrl": "https://liquipedia.net/commons/images/2/23/Yao_2025.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Yao_2025.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/vici-gaming-coach-yao-65e0aed5f9.png"
       },
       "info": [
         {
@@ -7608,7 +7687,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/1/1b/Natsumi_BLAST_Slam_VI_Dota.jpg/600px-Natsumi_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/1/1b/Natsumi_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Natsumi_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/og-1-natsumi-babe414344.jpg"
       },
       "info": [
         {
@@ -7700,7 +7780,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/7/78/Yopaj_Esports_World_Cup_2025.jpg/600px-Yopaj_Esports_World_Cup_2025.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/7/78/Yopaj_Esports_World_Cup_2025.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Yopaj_Esports_World_Cup_2025.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/og-2-yopaj-53b756a304.jpg"
       },
       "info": [
         {
@@ -7796,7 +7877,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/4/44/Raven_2023_Blacklist_Rivalry.png/600px-Raven_2023_Blacklist_Rivalry.png",
         "fullUrl": "https://liquipedia.net/commons/images/4/44/Raven_2023_Blacklist_Rivalry.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Raven_2023_Blacklist_Rivalry.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/og-3-raven-c7c12e7246.png"
       },
       "info": [
         {
@@ -7896,7 +7978,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/1/10/TIMS_BLAST_Slam_VI_Dota.jpg/600px-TIMS_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/1/10/TIMS_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:TIMS_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/og-4-tims-4b264de09e.jpg"
       },
       "info": [
         {
@@ -8000,7 +8083,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/2/22/Skem_BLAST_Slam_VI_Dota.jpg/600px-Skem_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/2/22/Skem_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Skem_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/og-5-skem-4b11e0f982.jpg"
       },
       "info": [
         {
@@ -8100,7 +8184,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/d9/343_BLAST_Slam_V_Dota.jpg/600px-343_BLAST_Slam_V_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/d/d9/343_BLAST_Slam_V_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:343_BLAST_Slam_V_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/og-coach-343-776b62cdd5.jpg"
       },
       "info": [
         {
@@ -8196,7 +8281,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/e/eb/Ghost_May_2026_GamerLegion.png/600px-Ghost_May_2026_GamerLegion.png",
         "fullUrl": "https://liquipedia.net/commons/images/e/eb/Ghost_May_2026_GamerLegion.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Ghost_May_2026_GamerLegion.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/gamerlegion-1-ghost-3b2e5ec109.png"
       },
       "info": [
         {
@@ -8296,7 +8382,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/0/09/RCY_May_2026_GamerLegion.png/600px-RCY_May_2026_GamerLegion.png",
         "fullUrl": "https://liquipedia.net/commons/images/0/09/RCY_May_2026_GamerLegion.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:RCY_May_2026_GamerLegion.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/gamerlegion-2-rcy-558dfa4884.png"
       },
       "info": [
         {
@@ -8392,7 +8479,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/6/63/Fayde_May_2026_GamerLegion.png/600px-Fayde_May_2026_GamerLegion.png",
         "fullUrl": "https://liquipedia.net/commons/images/6/63/Fayde_May_2026_GamerLegion.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Fayde_May_2026_GamerLegion.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/gamerlegion-3-fayde-1c92e65dc4.png"
       },
       "info": [
         {
@@ -8476,7 +8564,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/3/34/Bignum_May_2026_GamerLegion.png/600px-Bignum_May_2026_GamerLegion.png",
         "fullUrl": "https://liquipedia.net/commons/images/3/34/Bignum_May_2026_GamerLegion.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Bignum_May_2026_GamerLegion.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/gamerlegion-4-bignum-1ed380bf14.png"
       },
       "info": [
         {
@@ -8568,7 +8657,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/d8/Speeed_May_2026_GamerLegion.png/600px-Speeed_May_2026_GamerLegion.png",
         "fullUrl": "https://liquipedia.net/commons/images/d/d8/Speeed_May_2026_GamerLegion.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Speeed_May_2026_GamerLegion.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/gamerlegion-5-speeed-bc49ae45ec.png"
       },
       "info": [
         {
@@ -8660,7 +8750,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/e/ef/Yuma_Esports_World_Cup_2025.jpg/600px-Yuma_Esports_World_Cup_2025.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/e/ef/Yuma_Esports_World_Cup_2025.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Yuma_Esports_World_Cup_2025.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/lgd-gaming-1-yuma-6c78244c7f.jpg"
       },
       "info": [
         {
@@ -8740,7 +8831,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/5/54/TaiLung_BLAST_Slam_VI_Dota.jpg/600px-TaiLung_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/5/54/TaiLung_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:TaiLung_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/lgd-gaming-2-tailung-ca88ce36f0.jpg"
       },
       "info": [
         {
@@ -8840,7 +8932,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/8/8b/Wisper_BLAST_Slam_VI_Dota.jpg/600px-Wisper_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/8/8b/Wisper_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Wisper_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/lgd-gaming-3-wisper-5b7f12b74e.jpg"
       },
       "info": [
         {
@@ -8940,7 +9033,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/5/5f/Thiolicor_BLAST_Slam_VI_Dota.jpg/600px-Thiolicor_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/5/5f/Thiolicor_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Thiolicor_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/lgd-gaming-4-thiolicor-e512470ca7.jpg"
       },
       "info": [
         {
@@ -9040,7 +9134,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/3/35/KJ_BLAST_Slam_VI_Dota.jpg/600px-KJ_BLAST_Slam_VI_Dota.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/3/35/KJ_BLAST_Slam_VI_Dota.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:KJ_BLAST_Slam_VI_Dota.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/lgd-gaming-5-kj-cc83f08394.jpg"
       },
       "info": [
         {
@@ -9136,7 +9231,8 @@
         "url": "https://liquipedia.net/commons/images/thumb/d/d6/Kaffs_Esports_World_Cup_2025.jpg/600px-Kaffs_Esports_World_Cup_2025.jpg",
         "fullUrl": "https://liquipedia.net/commons/images/d/d6/Kaffs_Esports_World_Cup_2025.jpg",
         "descriptionUrl": "https://liquipedia.net/commons/File:Kaffs_Esports_World_Cup_2025.jpg",
-        "mime": "image/jpeg"
+        "mime": "image/jpeg",
+        "localUrl": "./assets/portraits/lgd-gaming-coach-kaffs-f2b25d7bc6.jpg"
       },
       "info": [
         {
@@ -9220,7 +9316,8 @@
         "url": "https://liquipedia.net/commons/images/f/f1/Fcr_2021.png",
         "fullUrl": "https://liquipedia.net/commons/images/f/f1/Fcr_2021.png",
         "descriptionUrl": "https://liquipedia.net/commons/File:Fcr_2021.png",
-        "mime": "image/png"
+        "mime": "image/png",
+        "localUrl": "./assets/portraits/lgd-gaming-assistant-coach-fcr-b08637f2ca.png"
       },
       "info": [
         {

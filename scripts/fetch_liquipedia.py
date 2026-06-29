@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 import gzip
+import hashlib
 import html
 import json
 import re
+import shutil
 import time
 import urllib.parse
 import urllib.request
@@ -14,6 +16,7 @@ API_URL = "https://liquipedia.net/dota2/api.php"
 TOURNAMENT_PAGE = "The_International/2026"
 SOURCE_URL = "https://liquipedia.net/dota2/The_International/2026"
 OUT_PATH = Path(__file__).resolve().parents[1] / "public" / "data" / "players.json"
+ASSET_DIR = Path(__file__).resolve().parents[1] / "public" / "assets" / "portraits"
 USER_AGENT = "TI2026PlayersTrainer/1.0 (https://github.com/ti2026-players-trainer; educational static site)"
 REQUEST_DELAY_SECONDS = 2.1
 MAX_TITLES_PER_REQUEST = 45
@@ -305,6 +308,56 @@ def fetch_imageinfo(client, files):
     return result
 
 
+def image_extension(image):
+    mime = (image.get("mime") or "").lower()
+    url_path = urllib.parse.urlparse(image.get("fullUrl") or image.get("url") or "").path
+    suffix = Path(url_path).suffix.lower()
+    if suffix in {".jpg", ".jpeg", ".png", ".webp"}:
+        return suffix
+    if mime == "image/jpeg":
+        return ".jpg"
+    if mime == "image/png":
+        return ".png"
+    if mime == "image/webp":
+        return ".webp"
+    return ".jpg"
+
+
+def download_portraits(people):
+    if ASSET_DIR.exists():
+        shutil.rmtree(ASSET_DIR)
+    ASSET_DIR.mkdir(parents=True, exist_ok=True)
+
+    downloaded = 0
+    for person in people:
+        image = person.get("image") or {}
+        source_url = image.get("url") or image.get("fullUrl")
+        if not source_url:
+            continue
+
+        digest = hashlib.sha1(source_url.encode("utf-8")).hexdigest()[:10]
+        filename = f"{person['uid']}-{digest}{image_extension(image)}"
+        target = ASSET_DIR / filename
+        request = urllib.request.Request(
+            source_url,
+            headers={
+                "User-Agent": USER_AGENT,
+                "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+                "Referer": SOURCE_URL,
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=45) as response:
+                target.write_bytes(response.read())
+            image["localUrl"] = f"./assets/portraits/{filename}"
+            downloaded += 1
+            time.sleep(0.25)
+        except Exception as exc:
+            print(f"Could not download {person['nickname']} image: {exc}")
+            image["localUrl"] = ""
+    print(f"Downloaded {downloaded} portraits to {ASSET_DIR}")
+
+
 def fetch_page_images(client, titles):
     result = {}
     for offset in range(0, len(titles), MAX_TITLES_PER_REQUEST):
@@ -566,6 +619,7 @@ def main():
     )
     images = fetch_imageinfo(client, image_files)
     people = build_people(participants, profiles, profile_infos, images, fallback_images)
+    download_portraits(people)
 
     payload = {
         "metadata": {

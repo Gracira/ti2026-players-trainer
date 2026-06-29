@@ -11,16 +11,20 @@
       <div class="topbar__inner">
         <div>
           <p class="eyebrow">The International 2026</p>
-          <h1>Тренажер игроков</h1>
+          <h1>Карточки для запоминания игроков</h1>
         </div>
         <div class="scoreboard" aria-live="polite">
           <div>
-            <span id="revealedCount">0</span>
-            <small>открыто</small>
+            <span id="positionCount">0/0</span>
+            <small>карточка</small>
           </div>
           <div>
-            <span id="totalCount">0</span>
-            <small>карточек</small>
+            <span id="knownCount">0</span>
+            <small>знал</small>
+          </div>
+          <div>
+            <span id="learningCount">0</span>
+            <small>учить</small>
           </div>
         </div>
       </div>
@@ -44,27 +48,48 @@
           <span>Регион</span>
           <select id="regionFilter"></select>
         </label>
-        <label class="control">
-          <span>Показ</span>
-          <select id="revealFilter">
-            <option value="all">Все</option>
-            <option value="hidden">Скрытые</option>
-            <option value="revealed">Открытые</option>
-          </select>
-        </label>
         <div class="actions" aria-label="Действия">
           <button id="shuffleButton" type="button">Перемешать</button>
-          <button id="hideAllButton" type="button">Скрыть все</button>
-          <button id="showAllButton" type="button">Открыть все</button>
+          <button id="resetButton" type="button">Сбросить прогресс</button>
         </div>
       </section>
 
       <section class="status-line" aria-live="polite">
-        <span id="visibleCount">0</span>
+        <span id="visibleCount">0 карточек</span>
         <span id="dataUpdated"></span>
       </section>
 
-      <section id="cards" class="card-grid" aria-label="Карточки игроков"></section>
+      <section id="trainer" class="trainer" aria-label="Тренажер карточек">
+        <article id="flashcard" class="flashcard is-hidden">
+          <button id="cardButton" class="flashcard__button" type="button">
+            <div id="portrait" class="flashcard__portrait"></div>
+            <div id="answerPanel" class="answer-panel">
+              <span class="answer-panel__hint">Нажми, чтобы открыть ник</span>
+              <strong id="answerNick">?</strong>
+              <span id="answerSub"></span>
+            </div>
+          </button>
+        </article>
+
+        <aside class="info-panel">
+          <div class="info-panel__top">
+            <span id="teamName" class="team-pill"></span>
+            <span id="roleName" class="role-pill"></span>
+          </div>
+          <h2 id="infoTitle">Сначала угадай ник</h2>
+          <p id="infoSummary" class="info-summary"></p>
+          <div id="infoRows" class="info-rows"></div>
+          <a id="profileLink" class="profile-link" href="#" target="_blank" rel="noreferrer">Профиль Liquipedia</a>
+        </aside>
+      </section>
+
+      <section class="trainer-actions" aria-label="Навигация">
+        <button id="prevButton" type="button">Назад</button>
+        <button id="revealButton" type="button">Показать ник</button>
+        <button id="knownButton" type="button">Знал</button>
+        <button id="learningButton" type="button">Не знал</button>
+        <button id="nextButton" type="button">Дальше</button>
+      </section>
 
       <section id="emptyState" class="empty-state" hidden>
         Ничего не найдено.
@@ -73,10 +98,9 @@
 
     <footer class="site-footer">
       <span>Данные: <a href="https://liquipedia.net/dota2/The_International/2026" rel="noreferrer">Liquipedia Dota 2 Wiki</a>.</span>
-      <span>Текст/code Liquipedia: CC-BY-SA; лицензии медиа отличаются.</span>
+      <span>Портреты сохранены локально из ссылок MediaWiki API; лицензии медиа отличаются.</span>
     </footer>
 
     <script src="./app.js" type="module"></script>
   </body>
 </html>
-
