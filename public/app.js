@@ -27,7 +27,8 @@ const controls = {
   guessInput: $("guessInput"),
   guessButton: $("guessButton"),
   guessSuggestions: $("guessSuggestions"),
-  guessFeedback: $("guessFeedback")
+  guessFeedback: $("guessFeedback"),
+  progressList: $("progressList")
 };
 
 const TEAM_LOGOS = {
@@ -120,12 +121,25 @@ function shuffleArray(items) {
   return shuffled;
 }
 
-function passesFilters(person) {
+function isAnswered(person) {
+  return Boolean(person && (state.known.has(person.uid) || state.learning.has(person.uid)));
+}
+
+function passesBaseFilters(person) {
   if (controls.role.value !== "all" && roleWithNumber(person) !== controls.role.value) return false;
   if (controls.region.value !== "all" && person.region !== controls.region.value) return false;
-  if (state.view === "known" && !state.known.has(person.uid)) return false;
-  if (state.view === "learning" && !state.learning.has(person.uid)) return false;
   return true;
+}
+
+function passesDeckFilters(person) {
+  return passesBaseFilters(person) && !isAnswered(person);
+}
+
+function progressItems(kind) {
+  const ids = kind === "known" ? state.known : state.learning;
+  return state.people
+    .filter((person) => passesBaseFilters(person) && ids.has(person.uid))
+    .sort((a, b) => `${a.team} ${a.role} ${a.nickname}`.localeCompare(`${b.team} ${b.role} ${b.nickname}`));
 }
 
 function displayDateWithAge(value) {
@@ -153,52 +167,42 @@ function resetRound() {
   state.revealed = false;
   state.feedback = "";
   controls.guessInput.value = "";
+  controls.guessForm.hidden = false;
   hideGuessSuggestions();
 }
 
-function applyFilters({ keepRound = false } = {}) {
+function applyFilters({ keepRound = false, randomStart = false } = {}) {
   const currentUid = currentPerson()?.uid;
-  state.deck = state.people.filter(passesFilters);
-  const currentIndex = state.deck.findIndex((person) => person.uid === currentUid);
-  state.index = currentIndex >= 0 ? currentIndex : Math.min(state.index, Math.max(state.deck.length - 1, 0));
+  state.deck = state.people.filter(passesDeckFilters);
+
+  if (randomStart) {
+    state.index = 0;
+  } else {
+    const currentIndex = state.deck.findIndex((person) => person.uid === currentUid);
+    state.index = currentIndex >= 0 ? currentIndex : Math.min(state.index, Math.max(state.deck.length - 1, 0));
+  }
+
   if (!keepRound) resetRound();
   render();
 }
 
 function shuffleDeck() {
-  const filteredIds = new Set(state.deck.map((person) => person.uid));
-  const shuffledVisible = shuffleArray(state.deck);
-  const hidden = state.people.filter((person) => !filteredIds.has(person.uid));
-  state.people = [...shuffledVisible, ...hidden];
+  state.people = shuffleArray(state.people);
   state.index = 0;
   resetRound();
-  applyFilters({ keepRound: true });
+  applyFilters({ keepRound: true, randomStart: true });
 }
 
 function goPrevious() {
-  if (!state.deck.length) return;
+  if (state.view !== "all" || !state.deck.length) return;
   state.index = (state.index - 1 + state.deck.length) % state.deck.length;
   resetRound();
   render();
 }
 
-function moveAfterAnswer(answeredUid) {
-  applyFilters({ keepRound: true });
-  if (!state.deck.length) return;
-  const stillHere = state.deck.findIndex((person) => person.uid === answeredUid);
-  if (stillHere >= 0) {
-    state.index = (stillHere + 1) % state.deck.length;
-  } else {
-    state.index = Math.min(state.index, state.deck.length - 1);
-  }
-  resetRound();
-  render();
-}
-
 function goNext() {
-  const person = currentPerson();
-  if (!person) return;
-  moveAfterAnswer(person.uid);
+  if (state.view !== "all") return;
+  applyFilters();
 }
 
 function revealAsLearning() {
@@ -209,6 +213,7 @@ function revealAsLearning() {
   state.streak = 0;
   state.revealed = true;
   state.feedback = "answer";
+  controls.guessForm.hidden = true;
   hideGuessSuggestions();
   render();
 }
@@ -248,7 +253,7 @@ function personMatchesSuggestion(person, normalizedQuery) {
 }
 
 function renderGuessSuggestions() {
-  if (state.revealed || controls.guessInput.disabled) {
+  if (state.view !== "all" || state.revealed || controls.guessForm.hidden || controls.guessInput.disabled) {
     hideGuessSuggestions();
     return;
   }
@@ -261,7 +266,7 @@ function renderGuessSuggestions() {
 
   const seen = new Set();
   const matches = state.people
-    .filter(passesFilters)
+    .filter(passesDeckFilters)
     .filter((person) => personMatchesSuggestion(person, normalizedQuery))
     .filter((person) => {
       const key = normalizeGuess(person.nickname);
@@ -303,14 +308,14 @@ function renderGuessSuggestions() {
 
 function checkGuess() {
   const person = currentPerson();
-  if (!person || state.revealed) return;
+  if (!person || state.revealed || state.view !== "all") return;
   const guess = controls.guessInput.value;
   hideGuessSuggestions();
+
   if (isCorrectGuess(person, guess)) {
     state.known.add(person.uid);
     state.learning.delete(person.uid);
     state.streak += 1;
-    state.revealed = true;
     state.feedback = "correct";
   } else {
     state.learning.add(person.uid);
@@ -318,6 +323,9 @@ function checkGuess() {
     state.streak = 0;
     state.feedback = "wrong";
   }
+
+  state.revealed = true;
+  controls.guessForm.hidden = true;
   render();
 }
 
@@ -326,8 +334,10 @@ function resetProgress() {
   state.learning.clear();
   state.streak = 0;
   state.view = "all";
+  state.people = shuffleArray(state.people);
+  state.index = 0;
   resetRound();
-  applyFilters({ keepRound: true });
+  applyFilters({ keepRound: true, randomStart: true });
 }
 
 function imageUrls(person) {
@@ -447,16 +457,85 @@ function renderFeedback() {
   }
 }
 
-function render() {
+function createProgressCard(person) {
+  const card = document.createElement("article");
+  const imageSource = person.image?.localUrl || person.image?.url || person.image?.fullUrl;
+  const media = imageSource ? document.createElement("img") : document.createElement("span");
+  const body = document.createElement("div");
+  const nick = document.createElement("strong");
+  const details = document.createElement("small");
+
+  card.className = "progress-card";
+  if (imageSource) {
+    media.src = imageSource;
+    media.alt = person.nickname;
+    media.referrerPolicy = "no-referrer";
+  } else {
+    media.className = "progress-card__missing";
+    media.textContent = "нет";
+  }
+
+  nick.textContent = person.nickname;
+  details.textContent = [profileFullName(person), person.team, roleWithNumber(person)].filter(Boolean).join(" · ");
+  body.append(nick, details);
+  card.append(media, body);
+  return card;
+}
+
+function renderProgressList(kind) {
+  const title = kind === "known" ? "Верно" : "Ошибки";
+  const items = progressItems(kind);
+  const head = document.createElement("div");
+  const heading = document.createElement("strong");
+  const back = document.createElement("button");
+
+  head.className = "progress-list__head";
+  heading.textContent = `${title}: ${items.length}`;
+  back.type = "button";
+  back.textContent = "К карточкам";
+  back.addEventListener("click", () => {
+    state.view = "all";
+    resetRound();
+    applyFilters({ keepRound: true });
+  });
+  head.append(heading, back);
+
+  controls.progressList.replaceChildren(head);
+
+  if (!items.length) {
+    const empty = document.createElement("p");
+    empty.className = "progress-list__empty";
+    empty.textContent = kind === "known" ? "Пока нет верных ответов." : "Пока нет ошибок.";
+    controls.progressList.appendChild(empty);
+  } else {
+    const grid = document.createElement("div");
+    grid.className = "progress-list__grid";
+    grid.append(...items.map(createProgressCard));
+    controls.progressList.appendChild(grid);
+  }
+}
+
+function renderEmptyState() {
+  const filteredTotal = state.people.filter(passesBaseFilters).length;
+  if (!filteredTotal) {
+    $("emptyState").textContent = "Нет карточек по выбранным фильтрам.";
+  } else {
+    $("emptyState").textContent = "В общей колоде больше нет карточек. Нажми «Сбросить», чтобы начать заново.";
+  }
+}
+
+function renderTrainerView() {
   const person = currentPerson();
   const hasCards = Boolean(person);
   const trainer = $("trainer");
+
+  controls.progressList.hidden = true;
   trainer.hidden = !hasCards;
   trainer.dataset.feedback = state.feedback || "";
   document.querySelector(".trainer-actions").hidden = !hasCards;
   $("emptyState").hidden = hasCards;
 
-  $("positionCount").textContent = hasCards ? `${state.index + 1}/${state.deck.length}` : "0/0";
+  $("positionCount").textContent = hasCards ? `${state.index + 1}/${state.deck.length}` : `0/${state.deck.length}`;
   $("knownCount").textContent = state.known.size;
   $("learningCount").textContent = state.learning.size;
   $("streakCount").textContent = state.streak;
@@ -464,6 +543,7 @@ function render() {
 
   if (!person) {
     hideGuessSuggestions();
+    renderEmptyState();
     return;
   }
 
@@ -485,14 +565,49 @@ function render() {
   renderInfo(person);
   renderGuessSuggestions();
 
-  if (!state.revealed && !["INPUT", "SELECT"].includes(document.activeElement?.tagName)) {
+  if (!state.revealed && !controls.guessForm.hidden && !["INPUT", "SELECT"].includes(document.activeElement?.tagName)) {
     controls.guessInput.focus({ preventScroll: true });
   }
 }
 
+function renderListView() {
+  const trainer = $("trainer");
+  trainer.hidden = true;
+  document.querySelector(".trainer-actions").hidden = true;
+  $("emptyState").hidden = true;
+  controls.progressList.hidden = false;
+
+  $("positionCount").textContent = state.deck.length ? `${Math.min(state.index + 1, state.deck.length)}/${state.deck.length}` : `0/${state.deck.length}`;
+  $("knownCount").textContent = state.known.size;
+  $("learningCount").textContent = state.learning.size;
+  $("streakCount").textContent = state.streak;
+  updateScoreButtons();
+  hideGuessSuggestions();
+  renderProgressList(state.view);
+}
+
+function render() {
+  if (state.view === "known" || state.view === "learning") {
+    renderListView();
+  } else {
+    renderTrainerView();
+  }
+}
+
+function setView(view) {
+  state.view = view;
+  state.index = 0;
+  resetRound();
+  applyFilters({ keepRound: true });
+}
+
 function bindControls() {
   for (const control of [controls.role, controls.region]) {
-    control.addEventListener("input", () => applyFilters());
+    control.addEventListener("input", () => {
+      state.index = 0;
+      resetRound();
+      applyFilters({ keepRound: true });
+    });
   }
   controls.shuffle.addEventListener("click", shuffleDeck);
   controls.reset.addEventListener("click", resetProgress);
@@ -511,12 +626,7 @@ function bindControls() {
     checkGuess();
   });
   document.querySelectorAll(".score-card[data-view]").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.view = button.dataset.view;
-      state.index = 0;
-      resetRound();
-      applyFilters({ keepRound: true });
-    });
+    button.addEventListener("click", () => setView(button.dataset.view));
   });
   controls.prev.addEventListener("click", goPrevious);
   window.addEventListener("keydown", (event) => {
@@ -532,7 +642,7 @@ async function init() {
   if (!response.ok) throw new Error(`Cannot load ${DATA_URL}`);
   const data = await response.json();
   state.people = shuffleArray(data.people || []);
-  state.deck = [...state.people];
+  state.deck = state.people.filter(passesDeckFilters);
 
   fillSelect(controls.role, orderedRoles(state.people), "Все роли");
   fillSelect(controls.region, uniqueSorted(state.people, (person) => person.region), "Все регионы");
@@ -543,6 +653,7 @@ async function init() {
 init().catch((error) => {
   $("trainer").hidden = true;
   document.querySelector(".trainer-actions").hidden = true;
+  controls.progressList.hidden = true;
   $("emptyState").hidden = false;
   $("emptyState").textContent = "Не удалось загрузить данные.";
   console.error(error);
