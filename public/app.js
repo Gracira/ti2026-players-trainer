@@ -6,6 +6,8 @@ const state = {
   index: 0,
   view: "all",
   revealed: false,
+  feedback: "",
+  streak: 0,
   known: new Set(),
   learning: new Set()
 };
@@ -18,12 +20,13 @@ const controls = {
   region: $("regionFilter"),
   shuffle: $("shuffleButton"),
   reset: $("resetButton"),
-  card: $("cardButton"),
   reveal: $("revealButton"),
-  inlineReveal: $("inlineRevealButton"),
   prev: $("prevButton"),
-  known: $("knownButton"),
-  learning: $("learningButton")
+  next: $("nextButton"),
+  guessForm: $("guessForm"),
+  guessInput: $("guessInput"),
+  guessButton: $("guessButton"),
+  guessFeedback: $("guessFeedback")
 };
 
 const TEAM_LOGOS = {
@@ -47,6 +50,14 @@ const TEAM_LOGOS = {
 
 function normalize(value) {
   return String(value || "").toLowerCase().trim();
+}
+
+function normalizeGuess(value) {
+  return String(value || "")
+    .normalize("NFKD")
+    .toLowerCase()
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^\p{L}\p{N}]+/gu, "");
 }
 
 function option(value, label) {
@@ -133,12 +144,20 @@ function currentPerson() {
   return state.deck[state.index] || null;
 }
 
-function applyFilters({ keepReveal = false } = {}) {
+function resetRound() {
+  state.revealed = false;
+  state.feedback = "";
+  if (controls.guessInput) {
+    controls.guessInput.value = "";
+  }
+}
+
+function applyFilters({ keepRound = false } = {}) {
   const currentUid = currentPerson()?.uid;
   state.deck = state.people.filter(passesFilters);
   const currentIndex = state.deck.findIndex((person) => person.uid === currentUid);
   state.index = currentIndex >= 0 ? currentIndex : Math.min(state.index, Math.max(state.deck.length - 1, 0));
-  if (!keepReveal) state.revealed = false;
+  if (!keepRound) resetRound();
   render();
 }
 
@@ -148,19 +167,19 @@ function shuffleDeck() {
   const hidden = state.people.filter((person) => !filteredIds.has(person.uid));
   state.people = [...shuffledVisible, ...hidden];
   state.index = 0;
-  state.revealed = false;
-  applyFilters();
+  resetRound();
+  applyFilters({ keepRound: true });
 }
 
 function goPrevious() {
   if (!state.deck.length) return;
   state.index = (state.index - 1 + state.deck.length) % state.deck.length;
-  state.revealed = false;
+  resetRound();
   render();
 }
 
 function moveAfterAnswer(answeredUid) {
-  applyFilters();
+  applyFilters({ keepRound: true });
   if (!state.deck.length) return;
   const stillHere = state.deck.findIndex((person) => person.uid === answeredUid);
   if (stillHere >= 0) {
@@ -168,29 +187,68 @@ function moveAfterAnswer(answeredUid) {
   } else {
     state.index = Math.min(state.index, state.deck.length - 1);
   }
-  state.revealed = false;
+  resetRound();
   render();
 }
 
-function mark(kind) {
+function goNext() {
   const person = currentPerson();
   if (!person) return;
-  if (kind === "known") {
+  moveAfterAnswer(person.uid);
+}
+
+function revealAsLearning() {
+  const person = currentPerson();
+  if (!person) return;
+  state.learning.add(person.uid);
+  state.known.delete(person.uid);
+  state.streak = 0;
+  state.revealed = true;
+  state.feedback = "answer";
+  render();
+}
+
+function answerCandidates(person) {
+  const aliases = String(person.aliases || "")
+    .split(/[,;/|]+/)
+    .map((alias) => alias.trim())
+    .filter(Boolean);
+  const id = person.info?.find((item) => item.label === "ID")?.value || "";
+  return [person.nickname, id, ...aliases].filter(Boolean);
+}
+
+function isCorrectGuess(person, guess) {
+  const normalizedGuess = normalizeGuess(guess);
+  if (!normalizedGuess) return false;
+  return answerCandidates(person).some((candidate) => normalizeGuess(candidate) === normalizedGuess);
+}
+
+function checkGuess() {
+  const person = currentPerson();
+  if (!person || state.revealed) return;
+  const guess = controls.guessInput.value;
+  if (isCorrectGuess(person, guess)) {
     state.known.add(person.uid);
     state.learning.delete(person.uid);
+    state.streak += 1;
+    state.revealed = true;
+    state.feedback = "correct";
   } else {
     state.learning.add(person.uid);
     state.known.delete(person.uid);
+    state.streak = 0;
+    state.feedback = "wrong";
   }
-  moveAfterAnswer(person.uid);
+  render();
 }
 
 function resetProgress() {
   state.known.clear();
   state.learning.clear();
+  state.streak = 0;
   state.view = "all";
-  state.revealed = false;
-  applyFilters();
+  resetRound();
+  applyFilters({ keepRound: true });
 }
 
 function imageUrls(person) {
@@ -291,22 +349,38 @@ function renderInfo(person) {
 }
 
 function updateScoreButtons() {
-  document.querySelectorAll(".score-card").forEach((button) => {
+  document.querySelectorAll(".score-card[data-view]").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.view === state.view);
     button.setAttribute("aria-pressed", button.dataset.view === state.view ? "true" : "false");
   });
 }
 
+function renderFeedback() {
+  controls.guessFeedback.className = `guess-feedback ${state.feedback ? `guess-feedback--${state.feedback}` : ""}`;
+  if (state.feedback === "correct") {
+    controls.guessFeedback.textContent = "Правильно";
+  } else if (state.feedback === "wrong") {
+    controls.guessFeedback.textContent = "Не тот ник";
+  } else if (state.feedback === "answer") {
+    controls.guessFeedback.textContent = "Ответ раскрыт";
+  } else {
+    controls.guessFeedback.textContent = "";
+  }
+}
+
 function render() {
   const person = currentPerson();
   const hasCards = Boolean(person);
-  $("trainer").hidden = !hasCards;
+  const trainer = $("trainer");
+  trainer.hidden = !hasCards;
+  trainer.dataset.feedback = state.feedback || "";
   document.querySelector(".trainer-actions").hidden = !hasCards;
   $("emptyState").hidden = hasCards;
 
   $("positionCount").textContent = hasCards ? `${state.index + 1}/${state.deck.length}` : "0/0";
   $("knownCount").textContent = state.known.size;
   $("learningCount").textContent = state.learning.size;
+  $("streakCount").textContent = state.streak;
   updateScoreButtons();
 
   if (!person) return;
@@ -314,21 +388,23 @@ function render() {
   $("flashcard").className = `flashcard ${state.revealed ? "is-revealed" : "is-hidden"}`;
   $("answerNick").textContent = state.revealed ? person.nickname : "?";
   $("answerFullName").textContent = state.revealed ? profileFullName(person) : "";
-  controls.inlineReveal.hidden = state.revealed;
   $("answerTeam").hidden = !state.revealed;
   $("answerTeamLogo").src = teamLogoUrl(person.team);
   $("answerTeamLogo").alt = person.team ? `Логотип ${person.team}` : "";
   $("answerTeamName").textContent = person.team || "";
-  $("answerHint").textContent = state.revealed ? "Ответ открыт" : "Ответ скрыт";
-  $("cardHint").textContent = state.revealed ? "Ответ открыт справа" : "Нажми, чтобы открыть ответ";
-  controls.reveal.textContent = state.revealed ? "Скрыть ответ" : "Показать ответ";
-  controls.known.classList.toggle("is-selected", state.known.has(person.uid));
-  controls.learning.classList.toggle("is-selected", state.learning.has(person.uid));
-  controls.known.setAttribute("aria-pressed", state.known.has(person.uid) ? "true" : "false");
-  controls.learning.setAttribute("aria-pressed", state.learning.has(person.uid) ? "true" : "false");
+  $("answerHint").textContent = state.revealed ? (state.feedback === "correct" ? "Верно" : "Ответ открыт") : "Ответ скрыт";
+  controls.guessInput.disabled = state.revealed;
+  controls.guessButton.disabled = state.revealed;
+  controls.reveal.hidden = state.revealed;
+  controls.next.hidden = !state.revealed;
+  renderFeedback();
 
   setPortrait(person);
   renderInfo(person);
+
+  if (!state.revealed && !["INPUT", "SELECT"].includes(document.activeElement?.tagName)) {
+    controls.guessInput.focus({ preventScroll: true });
+  }
 }
 
 function bindControls() {
@@ -337,39 +413,25 @@ function bindControls() {
   }
   controls.shuffle.addEventListener("click", shuffleDeck);
   controls.reset.addEventListener("click", resetProgress);
-  controls.card.addEventListener("click", () => {
-    state.revealed = true;
-    render();
+  controls.reveal.addEventListener("click", revealAsLearning);
+  controls.next.addEventListener("click", goNext);
+  controls.guessForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    checkGuess();
   });
-  controls.reveal.addEventListener("click", () => {
-    state.revealed = !state.revealed;
-    render();
-  });
-  controls.inlineReveal.addEventListener("click", () => {
-    state.revealed = true;
-    render();
-  });
-  document.querySelectorAll(".score-card").forEach((button) => {
+  document.querySelectorAll(".score-card[data-view]").forEach((button) => {
     button.addEventListener("click", () => {
       state.view = button.dataset.view;
       state.index = 0;
-      state.revealed = false;
-      applyFilters();
+      resetRound();
+      applyFilters({ keepRound: true });
     });
   });
   controls.prev.addEventListener("click", goPrevious);
-  controls.known.addEventListener("click", () => mark("known"));
-  controls.learning.addEventListener("click", () => mark("learning"));
   window.addEventListener("keydown", (event) => {
     if (document.activeElement?.tagName === "INPUT") return;
     if (event.key === "ArrowLeft") goPrevious();
-    if (event.key === " " || event.key === "Enter") {
-      event.preventDefault();
-      state.revealed = !state.revealed;
-      render();
-    }
-    if (event.key.toLowerCase() === "z") mark("known");
-    if (event.key.toLowerCase() === "x") mark("learning");
+    if (event.key === "ArrowRight" && state.revealed) goNext();
   });
 }
 

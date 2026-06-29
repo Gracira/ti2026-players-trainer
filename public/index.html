@@ -10,23 +10,27 @@
   <body>
     <header class="topbar">
       <div class="topbar__inner">
-        <div>
+        <div class="topbar__title">
           <p class="eyebrow">The International 2026</p>
           <h1>Кто этот игрок?</h1>
         </div>
-        <div class="scoreboard" aria-label="Стопки карточек" aria-live="polite">
+        <div class="scoreboard" aria-label="Счет тренировки" aria-live="polite">
           <button class="score-card is-active" type="button" data-view="all">
             <span id="positionCount">0/0</span>
-            <small>карточка</small>
+            <small>карта</small>
           </button>
           <button class="score-card" type="button" data-view="known">
             <span id="knownCount">0</span>
-            <small>знал</small>
+            <small>верно</small>
           </button>
           <button class="score-card" type="button" data-view="learning">
             <span id="learningCount">0</span>
-            <small>не знал</small>
+            <small>ошибки</small>
           </button>
+          <div class="score-card score-card--streak">
+            <span id="streakCount">0</span>
+            <small>стрик</small>
+          </div>
         </div>
       </div>
     </header>
@@ -51,22 +55,20 @@
         </div>
       </section>
 
-      <section class="trainer-toolbar" aria-label="Ответ">
+      <section class="trainer-toolbar" aria-label="Карточка">
         <div class="trainer-actions">
           <button id="prevButton" class="ghost-button" type="button">Назад</button>
-          <button id="revealButton" class="ghost-button" type="button">Показать ответ</button>
-          <button id="knownButton" class="mark-button mark-button--known" type="button" aria-pressed="false">Знал</button>
-          <button id="learningButton" class="mark-button mark-button--learning" type="button" aria-pressed="false">Не знал</button>
+          <button id="revealButton" class="ghost-button" type="button">Сдаться</button>
+          <button id="nextButton" class="mark-button mark-button--known" type="button" hidden>Дальше</button>
         </div>
       </section>
 
       <section class="study-layout">
         <section id="trainer" class="trainer" aria-label="Тренажер карточек">
-          <article id="flashcard" class="flashcard is-hidden">
-            <button id="cardButton" class="flashcard__button" type="button">
+          <article id="flashcard" class="flashcard">
+            <div class="flashcard__frame">
               <div id="portrait" class="flashcard__portrait"></div>
-              <span id="cardHint" class="card-hint">Нажми, чтобы открыть ответ</span>
-            </button>
+            </div>
           </article>
 
           <aside class="info-panel">
@@ -74,17 +76,26 @@
               <span id="roleName" class="role-pill"></span>
             </div>
             <div class="answer-box">
-              <span id="answerHint">Ответ</span>
+              <span id="answerHint">Ответ скрыт</span>
               <small id="answerFullName" class="answer-name"></small>
               <div class="answer-main">
                 <strong id="answerNick">?</strong>
-                <button id="inlineRevealButton" class="inline-reveal-button" type="button">Показать ответ</button>
                 <span id="answerTeam" class="answer-team" hidden>
                   <img id="answerTeamLogo" alt="" referrerpolicy="no-referrer">
                   <span id="answerTeamName"></span>
                 </span>
               </div>
             </div>
+
+            <form id="guessForm" class="guess-form" autocomplete="off">
+              <label for="guessInput">Ник игрока</label>
+              <div class="guess-row">
+                <input id="guessInput" type="text" inputmode="text" autocomplete="off" placeholder="Введи ник">
+                <button id="guessButton" type="submit">Проверить</button>
+              </div>
+              <p id="guessFeedback" class="guess-feedback" aria-live="polite"></p>
+            </form>
+
             <div id="infoRows" class="info-rows"></div>
           </aside>
         </section>
@@ -94,10 +105,6 @@
         Нет карточек по выбранным фильтрам.
       </section>
     </main>
-
-    <footer class="site-footer">
-      <span>Данные: <a href="https://liquipedia.net/dota2/The_International/2026" rel="noreferrer">Liquipedia Dota 2 Wiki</a>.</span>
-    </footer>
 
     <script src="./app.js" type="module"></script>
   </body>

@@ -39,6 +39,26 @@ select {
   font: inherit;
 }
 
+button {
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel-2);
+  color: var(--text);
+  cursor: pointer;
+}
+
+button:hover {
+  border-color: var(--teal);
+}
+
+button:disabled,
+input:disabled {
+  opacity: 0.72;
+  cursor: default;
+}
+
 .topbar {
   border-bottom: 1px solid var(--line);
   background: #151922;
@@ -46,52 +66,61 @@ select {
 
 .topbar__inner {
   width: min(1640px, calc(100% - 36px));
-  min-height: 106px;
+  min-height: 184px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
+  padding: 24px 0 20px;
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+  text-align: center;
 }
 
 .eyebrow {
-  margin: 0 0 6px;
+  margin: 0 0 8px;
   color: var(--gold);
-  font-size: 12px;
-  font-weight: 750;
+  font-size: 15px;
+  font-weight: 800;
   text-transform: uppercase;
 }
 
 h1 {
   margin: 0;
-  font-size: 28px;
-  line-height: 1.12;
+  font-size: clamp(46px, 6vw, 82px);
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 .scoreboard {
+  width: min(620px, 100%);
   display: grid;
-  grid-template-columns: repeat(3, minmax(72px, 1fr));
+  grid-template-columns: repeat(4, minmax(76px, 1fr));
   gap: 8px;
 }
 
 .score-card {
-  min-height: 62px;
+  min-height: 64px;
   padding: 9px 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
+  color: var(--text);
   text-align: center;
 }
 
-.score-card:hover,
+button.score-card:hover,
 .score-card.is-active {
   border-color: var(--teal);
   background: rgba(74, 182, 168, 0.16);
 }
 
+.score-card--streak {
+  display: grid;
+  place-items: center;
+}
+
 .scoreboard span {
   display: block;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 850;
 }
 
@@ -117,7 +146,8 @@ main {
   gap: 5px;
 }
 
-.control span {
+.control span,
+.guess-form label {
   color: var(--muted);
   font-size: 11px;
   font-weight: 750;
@@ -125,14 +155,21 @@ main {
 }
 
 .control input,
-.control select {
+.control select,
+.guess-row input {
   width: 100%;
-  min-height: 38px;
-  padding: 7px 9px;
+  min-height: 42px;
+  padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--panel);
   color: var(--text);
+}
+
+.guess-row input {
+  min-height: 52px;
+  font-size: 20px;
+  font-weight: 750;
 }
 
 .actions,
@@ -140,20 +177,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-}
-
-button {
-  min-height: 38px;
-  padding: 8px 12px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--panel-2);
-  color: var(--text);
-  cursor: pointer;
-}
-
-button:hover {
-  border-color: var(--teal);
 }
 
 .trainer-toolbar {
@@ -184,17 +207,13 @@ button:hover {
   overflow: hidden;
 }
 
-.flashcard__button {
+.flashcard__frame {
   width: 100%;
-  height: clamp(620px, calc(100vh - 250px), 830px);
+  height: clamp(620px, calc(100vh - 300px), 830px);
   display: block;
   position: relative;
   padding: 0;
-  border: 0;
-  border-radius: 0;
   background: transparent;
-  color: inherit;
-  text-align: left;
 }
 
 .flashcard__portrait {
@@ -208,7 +227,7 @@ button:hover {
   height: 100%;
   display: block;
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center center;
 }
 
 .flashcard__portrait--missing {
@@ -218,31 +237,52 @@ button:hover {
   background: #202631;
 }
 
-.card-hint {
-  position: absolute;
-  left: 14px;
-  right: 14px;
-  bottom: 14px;
-  min-height: 42px;
-  display: grid;
-  place-items: center;
-  padding: 8px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+.info-panel {
+  height: clamp(620px, calc(100vh - 300px), 830px);
+  padding: 18px;
+  overflow: auto;
+}
+
+.info-panel__top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 12px;
+}
+
+.role-pill {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
   border-radius: 6px;
-  background: rgba(9, 11, 15, 0.86);
-  color: var(--text);
-  font-size: 14px;
-  font-weight: 800;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 850;
 }
 
 .answer-box {
   display: grid;
-  gap: 6px;
-  margin-bottom: 18px;
+  gap: 8px;
+  margin-bottom: 14px;
   padding: 16px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.trainer[data-feedback="correct"] .answer-box {
+  border-color: rgba(111, 196, 122, 0.95);
+  box-shadow: 0 0 0 3px rgba(111, 196, 122, 0.18);
+  animation: correctPulse 0.44s ease;
+}
+
+.trainer[data-feedback="wrong"] .guess-form {
+  border-color: rgba(214, 107, 97, 0.95);
+  box-shadow: 0 0 0 3px rgba(214, 107, 97, 0.16);
+  animation: wrongShake 0.3s ease;
 }
 
 .answer-name {
@@ -255,12 +295,12 @@ button:hover {
 
 .answer-main {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(260px, 1fr) minmax(210px, 260px);
   align-items: center;
-  column-gap: clamp(42px, 7vw, 130px);
+  column-gap: 16px;
 }
 
-.answer-box span {
+.answer-box > span {
   color: var(--muted);
   font-size: 12px;
   font-weight: 750;
@@ -270,79 +310,77 @@ button:hover {
 #answerNick {
   min-height: 64px;
   color: var(--text);
-  font-size: clamp(44px, 5vw, 72px);
+  font-size: clamp(42px, 3.8vw, 58px);
   line-height: 1.05;
   overflow-wrap: anywhere;
-}
-
-.flashcard.is-hidden #answerNick {
-  color: transparent;
-  text-shadow: 0 0 14px rgba(244, 240, 232, 0.95);
-}
-
-.inline-reveal-button {
-  min-width: 150px;
-  border-color: rgba(214, 179, 95, 0.65);
-  background: rgba(214, 179, 95, 0.18);
-  color: var(--text);
-  font-weight: 900;
 }
 
 .answer-team {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  min-width: 180px;
-  max-width: 280px;
-  padding: 9px 11px;
+  gap: 12px;
+  min-width: 210px;
+  max-width: 260px;
+  padding: 11px 13px;
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.06);
   color: var(--text);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 850;
   overflow-wrap: anywhere;
 }
 
 .answer-team img {
-  width: 38px;
-  height: 38px;
+  width: 64px;
+  height: 64px;
   flex: 0 0 auto;
-  border-radius: 9px;
+  border-radius: 10px;
   object-fit: contain;
 }
 
-.info-panel {
-  height: clamp(620px, calc(100vh - 250px), 830px);
-  padding: 18px;
-  overflow: auto;
+.guess-form {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.info-panel__top {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin-bottom: 12px;
+.guess-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
 }
 
-.team-pill,
-.role-pill {
-  min-height: 28px;
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 8px;
-  border-radius: 6px;
-  color: var(--ink);
-  font-size: 12px;
+.guess-row button {
+  min-width: 128px;
+  min-height: 52px;
+  border-color: rgba(74, 182, 168, 0.7);
+  background: rgba(74, 182, 168, 0.18);
+  font-weight: 900;
+}
+
+.guess-feedback {
+  min-height: 22px;
+  margin: 0;
+  font-size: 16px;
   font-weight: 850;
 }
 
-.team-pill {
-  background: var(--teal);
+.guess-feedback--correct {
+  color: var(--green);
 }
 
-.role-pill {
-  background: var(--gold);
+.guess-feedback--wrong {
+  color: var(--red);
+}
+
+.guess-feedback--answer {
+  color: var(--gold);
 }
 
 .info-rows {
@@ -422,19 +460,9 @@ button:hover {
   transform: translateY(-1px);
 }
 
-.mark-button.is-selected {
-  outline: 2px solid rgba(244, 240, 232, 0.28);
-  outline-offset: 2px;
-}
-
-#knownButton {
+.mark-button--known {
   border-color: rgba(111, 196, 122, 0.55);
   background: rgba(111, 196, 122, 0.22);
-}
-
-#learningButton {
-  border-color: rgba(214, 107, 97, 0.55);
-  background: rgba(214, 107, 97, 0.22);
 }
 
 .empty-state {
@@ -447,22 +475,38 @@ button:hover {
   background: var(--panel);
 }
 
-.site-footer {
-  width: min(1640px, calc(100% - 36px));
-  margin: 0 auto 24px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-  color: var(--muted);
-  font-size: 12px;
+@keyframes correctPulse {
+  0% {
+    transform: scale(0.99);
+  }
+
+  60% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wrongShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-6px);
+  }
+
+  75% {
+    transform: translateX(6px);
+  }
 }
 
 @media (max-width: 900px) {
   .topbar__inner {
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px 0;
+    min-height: 160px;
   }
 
   .scoreboard {
@@ -486,12 +530,12 @@ button:hover {
     margin: 0 auto;
   }
 
-  .flashcard__button,
+  .flashcard__frame,
   .info-panel {
     height: auto;
   }
 
-  .flashcard__button {
+  .flashcard__frame {
     height: 70vh;
     min-height: 520px;
   }
@@ -499,17 +543,17 @@ button:hover {
 
 @media (max-width: 560px) {
   .topbar__inner,
-  main,
-  .site-footer {
+  main {
     width: min(100% - 20px, 1640px);
   }
 
   h1 {
-    font-size: 25px;
+    font-size: 42px;
   }
 
   .scoreboard,
-  .controls {
+  .controls,
+  .guess-row {
     grid-template-columns: 1fr;
   }
 
@@ -522,7 +566,7 @@ button:hover {
   }
 
   #answerNick {
-    font-size: 30px;
+    font-size: 34px;
   }
 
   .answer-main {
