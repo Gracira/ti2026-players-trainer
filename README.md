@@ -22,12 +22,11 @@ Then open `http://localhost:4173`.
 
 Use Render Static Site:
 
-- Build command: `python scripts/fetch_liquipedia.py`
+- Build command: `python -c "print('Using committed static snapshot')"`
 - Publish directory: `public`
 
-The committed `public/data/players.json` is a fallback snapshot; Render will refresh it during each build.
+The committed `public/data/players.json` and local image assets are the published snapshot. Run the generator manually when you want to refresh Liquipedia data.
 
 ## Attribution
 
-Data is sourced from Liquipedia Dota 2 Wiki. Liquipedia text/code is available under CC-BY-SA. Licenses for media vary; images are loaded from Liquipedia/Commons URLs returned by the MediaWiki API.
-
+Data is sourced from Liquipedia Dota 2 Wiki. Liquipedia text/code is available under CC-BY-SA. Licenses for media vary.

@@ -16,7 +16,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -110,7 +110,25 @@
           "label": "Player ID",
           "value": "124801257"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        },
+        {
+          "name": "Medusa",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/medusa.png",
+          "localUrl": "./assets/heroes/medusa-17f536cfa5.png"
+        },
+        {
+          "name": "Terrorblade",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/terrorblade.png",
+          "localUrl": "./assets/heroes/terrorblade-47406992f2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "aurora-gaming-2-mikoto",
@@ -121,7 +139,7 @@
       "role": "2",
       "roleLabel": "Mid",
       "kind": "player",
-      "region": "Invite",
+      "region": "Southeast Asia",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -211,7 +229,25 @@
           "label": "Player ID",
           "value": "301750126"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Ember Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "localUrl": "./assets/heroes/ember-spirit-c05af97241.png"
+        },
+        {
+          "name": "Templar Assassin",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/templar_assassin.png",
+          "localUrl": "./assets/heroes/templar-assassin-028e362664.png"
+        },
+        {
+          "name": "Puck",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/puck.png",
+          "localUrl": "./assets/heroes/puck-72403bf225.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "aurora-gaming-3-ws",
@@ -222,7 +258,7 @@
       "role": "3",
       "roleLabel": "Offlane",
       "kind": "player",
-      "region": "Invite",
+      "region": "Southeast Asia",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -304,7 +340,25 @@
           "label": "Player ID",
           "value": "126842529"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Mars",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png",
+          "localUrl": "./assets/heroes/mars-d91b4f6463.png"
+        },
+        {
+          "name": "Timbersaw",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png",
+          "localUrl": "./assets/heroes/timbersaw-1089d9a662.png"
+        },
+        {
+          "name": "Slardar",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/slardar.png",
+          "localUrl": "./assets/heroes/slardar-fe979e2ee9.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "aurora-gaming-4-mira",
@@ -315,7 +369,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -409,7 +463,25 @@
           "label": "Player ID",
           "value": "256156323"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Techies",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/techies.png",
+          "localUrl": "./assets/heroes/techies-57dacfca2b.png"
+        },
+        {
+          "name": "Mirana",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+          "localUrl": "./assets/heroes/mirana-417b8445ab.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "aurora-gaming-5-kaori",
@@ -420,7 +492,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -506,7 +578,25 @@
           "label": "Player ID",
           "value": "320219866"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Phoenix",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
+          "localUrl": "./assets/heroes/phoenix-fb4d01cdf3.png"
+        },
+        {
+          "name": "Shadow Shaman",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shadow_shaman.png",
+          "localUrl": "./assets/heroes/shadow-shaman-df915ee110.png"
+        },
+        {
+          "name": "Clockwerk",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+          "localUrl": "./assets/heroes/clockwerk-14d750a06b.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "aurora-gaming-coach-kpii",
@@ -517,7 +607,7 @@
       "role": "coach",
       "roleLabel": "Coach",
       "kind": "coach",
-      "region": "Invite",
+      "region": "Oceania",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -611,7 +701,25 @@
           "label": "Player ID",
           "value": "87012746"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Enigma",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enigma.png",
+          "localUrl": "./assets/heroes/enigma-5071aa49c3.png"
+        },
+        {
+          "name": "Axe",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/axe.png",
+          "localUrl": "./assets/heroes/axe-f99c2196a1.png"
+        },
+        {
+          "name": "Slardar",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/slardar.png",
+          "localUrl": "./assets/heroes/slardar-fe979e2ee9.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "betboom-team-1-kiritych",
@@ -622,7 +730,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -716,7 +824,25 @@
           "label": "Player ID",
           "value": "172099728"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Terrorblade",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/terrorblade.png",
+          "localUrl": "./assets/heroes/terrorblade-47406992f2.png"
+        },
+        {
+          "name": "Anti-Mage",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/antimage.png",
+          "localUrl": "./assets/heroes/anti-mage-e5be3dbe73.png"
+        },
+        {
+          "name": "Juggernaut",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/juggernaut.png",
+          "localUrl": "./assets/heroes/juggernaut-072644a8ee.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "betboom-team-2-gpk",
@@ -727,7 +853,7 @@
       "role": "2",
       "roleLabel": "Mid",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -817,7 +943,25 @@
           "label": "Player ID",
           "value": "480412663"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Ember Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "localUrl": "./assets/heroes/ember-spirit-c05af97241.png"
+        },
+        {
+          "name": "Invoker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+          "localUrl": "./assets/heroes/invoker-2272c8aa0d.png"
+        },
+        {
+          "name": "Templar Assassin",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/templar_assassin.png",
+          "localUrl": "./assets/heroes/templar-assassin-028e362664.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "betboom-team-3-miero",
@@ -828,7 +972,7 @@
       "role": "3",
       "roleLabel": "Offlane",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -918,7 +1062,25 @@
           "label": "Player ID",
           "value": "165564598"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Doom",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/doom_bringer.png",
+          "localUrl": "./assets/heroes/doom-0018120101.png"
+        },
+        {
+          "name": "Enigma",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enigma.png",
+          "localUrl": "./assets/heroes/enigma-5071aa49c3.png"
+        },
+        {
+          "name": "Beastmaster",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/beastmaster.png",
+          "localUrl": "./assets/heroes/beastmaster-e86dd63cbc.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "betboom-team-4-save",
@@ -929,7 +1091,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1019,7 +1181,25 @@
           "label": "Player ID",
           "value": "317880638"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Windranger",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+          "localUrl": "./assets/heroes/windranger-5b7727432c.png"
+        },
+        {
+          "name": "Muerta",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/muerta.png",
+          "localUrl": "./assets/heroes/muerta-f7b196fc9c.png"
+        },
+        {
+          "name": "Techies",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/techies.png",
+          "localUrl": "./assets/heroes/techies-57dacfca2b.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "betboom-team-5-kataomi",
@@ -1030,7 +1210,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1116,7 +1296,25 @@
           "label": "Player ID",
           "value": "196878136"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Tiny",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tiny.png",
+          "localUrl": "./assets/heroes/tiny-d7e08fb7a6.png"
+        },
+        {
+          "name": "Winter Wyvern",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
+          "localUrl": "./assets/heroes/winter-wyvern-10ba5c7b08.png"
+        },
+        {
+          "name": "Nyx Assassin",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
+          "localUrl": "./assets/heroes/nyx-assassin-0281a75ff0.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "betboom-team-coach-boolk",
@@ -1127,7 +1325,7 @@
       "role": "coach",
       "roleLabel": "Coach",
       "kind": "coach",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1197,7 +1395,9 @@
           "label": "Player ID",
           "value": "38257256"
         }
-      ]
+      ],
+      "signatureHeroes": [],
+      "earnings": ""
     },
     {
       "uid": "team-falcons-1-skiter",
@@ -1208,7 +1408,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1298,7 +1498,25 @@
           "label": "Player ID",
           "value": "100058342"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Lifestealer",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/life_stealer.png",
+          "localUrl": "./assets/heroes/lifestealer-238f9dac19.png"
+        },
+        {
+          "name": "Wraith King",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/skeleton_king.png",
+          "localUrl": "./assets/heroes/wraith-king-b7115e7992.png"
+        },
+        {
+          "name": "Sven",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/sven.png",
+          "localUrl": "./assets/heroes/sven-48edde397d.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-falcons-2-malr1ne",
@@ -1309,7 +1527,7 @@
       "role": "2",
       "roleLabel": "Mid",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1399,7 +1617,25 @@
           "label": "Player ID",
           "value": "898455820"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Puck",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/puck.png",
+          "localUrl": "./assets/heroes/puck-72403bf225.png"
+        },
+        {
+          "name": "Timbersaw",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png",
+          "localUrl": "./assets/heroes/timbersaw-1089d9a662.png"
+        },
+        {
+          "name": "Pangolier",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pangolier.png",
+          "localUrl": "./assets/heroes/pangolier-3a3f4d987f.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-falcons-3-atf",
@@ -1410,7 +1646,7 @@
       "role": "3",
       "roleLabel": "Offlane",
       "kind": "player",
-      "region": "Invite",
+      "region": "MENA",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1500,7 +1736,25 @@
           "label": "Player ID",
           "value": "183719386"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Mars",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png",
+          "localUrl": "./assets/heroes/mars-d91b4f6463.png"
+        },
+        {
+          "name": "Timbersaw",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png",
+          "localUrl": "./assets/heroes/timbersaw-1089d9a662.png"
+        },
+        {
+          "name": "Razor",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/razor.png",
+          "localUrl": "./assets/heroes/razor-a949a6ff52.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-falcons-4-cr1t",
@@ -1511,7 +1765,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1601,7 +1855,25 @@
           "label": "Player ID",
           "value": "25907144"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Earth Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earth_spirit.png",
+          "localUrl": "./assets/heroes/earth-spirit-a5b4ddfd1b.png"
+        },
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Hoodwink",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/hoodwink.png",
+          "localUrl": "./assets/heroes/hoodwink-8fb5437a61.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-falcons-5-sneyking",
@@ -1612,7 +1884,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Invite",
+      "region": "North America",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1694,7 +1966,25 @@
           "label": "Player ID",
           "value": "10366616"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Enchantress",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enchantress.png",
+          "localUrl": "./assets/heroes/enchantress-3ec016a1eb.png"
+        },
+        {
+          "name": "Mirana",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+          "localUrl": "./assets/heroes/mirana-417b8445ab.png"
+        },
+        {
+          "name": "Chen",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/chen.png",
+          "localUrl": "./assets/heroes/chen-c09acf183a.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-falcons-coach-aui-2000",
@@ -1705,7 +1995,7 @@
       "role": "coach",
       "roleLabel": "Coach",
       "kind": "coach",
-      "region": "Invite",
+      "region": "North America",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1795,7 +2085,25 @@
           "label": "Player ID",
           "value": "40547474"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Visage",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/visage.png",
+          "localUrl": "./assets/heroes/visage-39b2269955.png"
+        },
+        {
+          "name": "Chen",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/chen.png",
+          "localUrl": "./assets/heroes/chen-c09acf183a.png"
+        },
+        {
+          "name": "Enchantress",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enchantress.png",
+          "localUrl": "./assets/heroes/enchantress-3ec016a1eb.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-liquid-1-m1cke",
@@ -1806,7 +2114,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1892,7 +2200,25 @@
           "label": "Player ID",
           "value": "152962063"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Nature's Prophet",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/furion.png",
+          "localUrl": "./assets/heroes/nature-s-prophet-843acd62db.png"
+        },
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        },
+        {
+          "name": "Monkey King",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/monkey_king.png",
+          "localUrl": "./assets/heroes/monkey-king-25cd718df2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-liquid-2-nisha",
@@ -1903,7 +2229,7 @@
       "role": "2",
       "roleLabel": "Mid",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -1989,7 +2315,25 @@
           "label": "Player ID",
           "value": "201358612"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Ember Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "localUrl": "./assets/heroes/ember-spirit-c05af97241.png"
+        },
+        {
+          "name": "Puck",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/puck.png",
+          "localUrl": "./assets/heroes/puck-72403bf225.png"
+        },
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-liquid-3-ace",
@@ -2000,7 +2344,7 @@
       "role": "3",
       "roleLabel": "Offlane",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -2090,7 +2434,25 @@
           "label": "Player ID",
           "value": "97590558"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Meepo",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/meepo.png",
+          "localUrl": "./assets/heroes/meepo-4fd493f44d.png"
+        },
+        {
+          "name": "Lone Druid",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lone_druid.png",
+          "localUrl": "./assets/heroes/lone-druid-d018f21fce.png"
+        },
+        {
+          "name": "Broodmother",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/broodmother.png",
+          "localUrl": "./assets/heroes/broodmother-8ff5ff493f.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-liquid-4-boxi",
@@ -2101,7 +2463,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -2191,7 +2553,25 @@
           "label": "Player ID",
           "value": "77490514"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Tusk",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tusk.png",
+          "localUrl": "./assets/heroes/tusk-85729d68ea.png"
+        },
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Clockwerk",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+          "localUrl": "./assets/heroes/clockwerk-14d750a06b.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-liquid-5-tofu",
@@ -2202,7 +2582,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -2276,7 +2656,25 @@
           "label": "Player ID",
           "value": "16497807"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Techies",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/techies.png",
+          "localUrl": "./assets/heroes/techies-57dacfca2b.png"
+        },
+        {
+          "name": "Mirana",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+          "localUrl": "./assets/heroes/mirana-417b8445ab.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-liquid-coach-blitz",
@@ -2287,7 +2685,7 @@
       "role": "coach",
       "roleLabel": "Coach",
       "kind": "coach",
-      "region": "Invite",
+      "region": "North America",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -2373,7 +2771,25 @@
           "label": "Player ID",
           "value": "106781506"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Storm Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/storm_spirit.png",
+          "localUrl": "./assets/heroes/storm-spirit-40f93ec14b.png"
+        },
+        {
+          "name": "Timbersaw",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png",
+          "localUrl": "./assets/heroes/timbersaw-1089d9a662.png"
+        },
+        {
+          "name": "Queen of Pain",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/queenofpain.png",
+          "localUrl": "./assets/heroes/queen-of-pain-6534d383e4.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-liquid-coach-jabbz",
@@ -2384,7 +2800,7 @@
       "role": "coach",
       "roleLabel": "Coach",
       "kind": "coach",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -2462,7 +2878,25 @@
           "label": "Player ID",
           "value": "60943014"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Invoker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+          "localUrl": "./assets/heroes/invoker-2272c8aa0d.png"
+        },
+        {
+          "name": "Bounty Hunter",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bounty_hunter.png",
+          "localUrl": "./assets/heroes/bounty-hunter-2becfb1780.png"
+        },
+        {
+          "name": "Storm Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/storm_spirit.png",
+          "localUrl": "./assets/heroes/storm-spirit-40f93ec14b.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "1w-team-1-pure",
@@ -2473,7 +2907,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -2567,7 +3001,25 @@
           "label": "Player ID",
           "value": "331855530"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Pudge",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pudge.png",
+          "localUrl": "./assets/heroes/pudge-27664f71b2.png"
+        },
+        {
+          "name": "Shadow Fiend",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nevermore.png",
+          "localUrl": "./assets/heroes/shadow-fiend-3090779df0.png"
+        },
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "1w-team-2-bzm",
@@ -2578,7 +3030,7 @@
       "role": "2",
       "roleLabel": "Mid",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -2668,7 +3120,25 @@
           "label": "Player ID",
           "value": "93618577"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Invoker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+          "localUrl": "./assets/heroes/invoker-2272c8aa0d.png"
+        },
+        {
+          "name": "Puck",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/puck.png",
+          "localUrl": "./assets/heroes/puck-72403bf225.png"
+        },
+        {
+          "name": "Ember Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "localUrl": "./assets/heroes/ember-spirit-c05af97241.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "1w-team-3-33",
@@ -2679,7 +3149,7 @@
       "role": "3",
       "roleLabel": "Offlane",
       "kind": "player",
-      "region": "Invite",
+      "region": "MENA",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -2769,7 +3239,25 @@
           "label": "Player ID",
           "value": "86698277"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Doom",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/doom_bringer.png",
+          "localUrl": "./assets/heroes/doom-0018120101.png"
+        },
+        {
+          "name": "Beastmaster",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/beastmaster.png",
+          "localUrl": "./assets/heroes/beastmaster-e86dd63cbc.png"
+        },
+        {
+          "name": "Dark Seer",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dark_seer.png",
+          "localUrl": "./assets/heroes/dark-seer-fd3d097d48.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "1w-team-4-ari",
@@ -2780,7 +3268,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -2866,7 +3354,25 @@
           "label": "Player ID",
           "value": "346412363"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Marci",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/marci.png",
+          "localUrl": "./assets/heroes/marci-e75b061aa0.png"
+        },
+        {
+          "name": "Hoodwink",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/hoodwink.png",
+          "localUrl": "./assets/heroes/hoodwink-8fb5437a61.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "1w-team-5-whitemon",
@@ -2877,7 +3383,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Invite",
+      "region": "Southeast Asia",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -2967,7 +3473,25 @@
           "label": "Player ID",
           "value": "136829091"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Disruptor",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
+          "localUrl": "./assets/heroes/disruptor-2a1a6b8dff.png"
+        },
+        {
+          "name": "Enchantress",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enchantress.png",
+          "localUrl": "./assets/heroes/enchantress-3ec016a1eb.png"
+        },
+        {
+          "name": "Phoenix",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phoenix.png",
+          "localUrl": "./assets/heroes/phoenix-fb4d01cdf3.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "1w-team-coach-moonmeander",
@@ -2978,7 +3502,7 @@
       "role": "coach",
       "roleLabel": "Coach",
       "kind": "coach",
-      "region": "Invite",
+      "region": "North America",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -3072,7 +3596,25 @@
           "label": "Player ID",
           "value": "38628747"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Earthshaker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earthshaker.png",
+          "localUrl": "./assets/heroes/earthshaker-bdf89143e9.png"
+        },
+        {
+          "name": "Clockwerk",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+          "localUrl": "./assets/heroes/clockwerk-14d750a06b.png"
+        },
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "xtreme-gaming-1-ame",
@@ -3083,7 +3625,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "Invite",
+      "region": "China",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -3165,7 +3707,25 @@
           "label": "Player ID",
           "value": "898754153"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Terrorblade",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/terrorblade.png",
+          "localUrl": "./assets/heroes/terrorblade-47406992f2.png"
+        },
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        },
+        {
+          "name": "Phantom Assassin",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phantom_assassin.png",
+          "localUrl": "./assets/heroes/phantom-assassin-60bdd6ed27.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "xtreme-gaming-2-nothingtosay",
@@ -3176,7 +3736,7 @@
       "role": "2",
       "roleLabel": "Mid",
       "kind": "player",
-      "region": "Invite",
+      "region": "Southeast Asia",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -3258,7 +3818,25 @@
           "label": "Player ID",
           "value": "173978074"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Tinker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tinker.png",
+          "localUrl": "./assets/heroes/tinker-52e1fc2e49.png"
+        },
+        {
+          "name": "Ember Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "localUrl": "./assets/heroes/ember-spirit-c05af97241.png"
+        },
+        {
+          "name": "Primal Beast",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/primal_beast.png",
+          "localUrl": "./assets/heroes/primal-beast-6110e3a791.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "xtreme-gaming-3-xxs",
@@ -3269,7 +3847,7 @@
       "role": "3",
       "roleLabel": "Offlane",
       "kind": "player",
-      "region": "Invite",
+      "region": "China",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -3347,7 +3925,25 @@
           "label": "Player ID",
           "value": "129958758"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Batrider",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/batrider.png",
+          "localUrl": "./assets/heroes/batrider-5f5f391ce6.png"
+        },
+        {
+          "name": "Legion Commander",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/legion_commander.png",
+          "localUrl": "./assets/heroes/legion-commander-50f5d2cbe9.png"
+        },
+        {
+          "name": "Centaur Warrunner",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/centaur.png",
+          "localUrl": "./assets/heroes/centaur-warrunner-192fc401fa.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "xtreme-gaming-4-fy",
@@ -3358,7 +3954,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Invite",
+      "region": "China",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -3436,7 +4032,25 @@
           "label": "Player ID",
           "value": "101695162"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Io",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/wisp.png",
+          "localUrl": "./assets/heroes/io-d81a62e33e.png"
+        },
+        {
+          "name": "Earthshaker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earthshaker.png",
+          "localUrl": "./assets/heroes/earthshaker-bdf89143e9.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "xtreme-gaming-5-xnova",
@@ -3447,7 +4061,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Invite",
+      "region": "Southeast Asia",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -3545,7 +4159,25 @@
           "label": "Player ID",
           "value": "94296097"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Disruptor",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
+          "localUrl": "./assets/heroes/disruptor-2a1a6b8dff.png"
+        },
+        {
+          "name": "Witch Doctor",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/witch_doctor.png",
+          "localUrl": "./assets/heroes/witch-doctor-4278378d8d.png"
+        },
+        {
+          "name": "Bane",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
+          "localUrl": "./assets/heroes/bane-7d3d61af0d.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "xtreme-gaming-coach-xiao8",
@@ -3556,7 +4188,7 @@
       "role": "coach",
       "roleLabel": "Coach",
       "kind": "coach",
-      "region": "Invite",
+      "region": "China",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -3634,7 +4266,25 @@
           "label": "Player ID",
           "value": "98887913"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Doom",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/doom_bringer.png",
+          "localUrl": "./assets/heroes/doom-0018120101.png"
+        },
+        {
+          "name": "Nature's Prophet",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/furion.png",
+          "localUrl": "./assets/heroes/nature-s-prophet-843acd62db.png"
+        },
+        {
+          "name": "Beastmaster",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/beastmaster.png",
+          "localUrl": "./assets/heroes/beastmaster-e86dd63cbc.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-yandex-1-watson",
@@ -3645,7 +4295,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -3743,7 +4393,25 @@
           "label": "Player ID",
           "value": "171262902"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Faceless Void",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/faceless_void.png",
+          "localUrl": "./assets/heroes/faceless-void-2facaca990.png"
+        },
+        {
+          "name": "Terrorblade",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/terrorblade.png",
+          "localUrl": "./assets/heroes/terrorblade-47406992f2.png"
+        },
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-yandex-2-chira-junior",
@@ -3754,7 +4422,7 @@
       "role": "2",
       "roleLabel": "Mid",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -3824,7 +4492,25 @@
           "label": "Player ID",
           "value": "312436974"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Pangolier",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pangolier.png",
+          "localUrl": "./assets/heroes/pangolier-3a3f4d987f.png"
+        },
+        {
+          "name": "Zeus",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/zuus.png",
+          "localUrl": "./assets/heroes/zeus-49d838f548.png"
+        },
+        {
+          "name": "Ember Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "localUrl": "./assets/heroes/ember-spirit-c05af97241.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-yandex-3-dm",
@@ -3835,7 +4521,7 @@
       "role": "3",
       "roleLabel": "Offlane",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -3925,7 +4611,25 @@
           "label": "Player ID",
           "value": "56351509"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Timbersaw",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png",
+          "localUrl": "./assets/heroes/timbersaw-1089d9a662.png"
+        },
+        {
+          "name": "Beastmaster",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/beastmaster.png",
+          "localUrl": "./assets/heroes/beastmaster-e86dd63cbc.png"
+        },
+        {
+          "name": "Venomancer",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
+          "localUrl": "./assets/heroes/venomancer-445de21364.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-yandex-4-saksa",
@@ -3936,7 +4640,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Invite",
+      "region": "Europe",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -4022,7 +4726,25 @@
           "label": "Player ID",
           "value": "103735745"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Shadow Demon",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shadow_demon.png",
+          "localUrl": "./assets/heroes/shadow-demon-456c0ecb28.png"
+        },
+        {
+          "name": "Tusk",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tusk.png",
+          "localUrl": "./assets/heroes/tusk-85729d68ea.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-yandex-5-malady",
@@ -4033,7 +4755,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -4119,7 +4841,25 @@
           "label": "Player ID",
           "value": "93817671"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Treant Protector",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/treant.png",
+          "localUrl": "./assets/heroes/treant-protector-ed8c26d381.png"
+        },
+        {
+          "name": "Bane",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
+          "localUrl": "./assets/heroes/bane-7d3d61af0d.png"
+        },
+        {
+          "name": "Io",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/wisp.png",
+          "localUrl": "./assets/heroes/io-d81a62e33e.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-yandex-coach-accell",
@@ -4130,7 +4870,7 @@
       "role": "coach",
       "roleLabel": "Coach",
       "kind": "coach",
-      "region": "Invite",
+      "region": "CIS",
       "qualification": {
         "method": "invite",
         "region": "Invite",
@@ -4216,7 +4956,25 @@
           "label": "Player ID",
           "value": "12692042"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Silencer",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/silencer.png",
+          "localUrl": "./assets/heroes/silencer-6e506ca160.png"
+        },
+        {
+          "name": "Winter Wyvern",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
+          "localUrl": "./assets/heroes/winter-wyvern-10ba5c7b08.png"
+        },
+        {
+          "name": "Bane",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
+          "localUrl": "./assets/heroes/bane-7d3d61af0d.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-spirit-1-yatoro",
@@ -4317,7 +5075,25 @@
           "label": "Player ID",
           "value": "321580662"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        },
+        {
+          "name": "Faceless Void",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/faceless_void.png",
+          "localUrl": "./assets/heroes/faceless-void-2facaca990.png"
+        },
+        {
+          "name": "Terrorblade",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/terrorblade.png",
+          "localUrl": "./assets/heroes/terrorblade-47406992f2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-spirit-2-larl",
@@ -4328,7 +5104,7 @@
       "role": "2",
       "roleLabel": "Mid",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -4418,7 +5194,25 @@
           "label": "Player ID",
           "value": "106305042"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Storm Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/storm_spirit.png",
+          "localUrl": "./assets/heroes/storm-spirit-40f93ec14b.png"
+        },
+        {
+          "name": "Puck",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/puck.png",
+          "localUrl": "./assets/heroes/puck-72403bf225.png"
+        },
+        {
+          "name": "Pangolier",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pangolier.png",
+          "localUrl": "./assets/heroes/pangolier-3a3f4d987f.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-spirit-3-collapse",
@@ -4429,7 +5223,7 @@
       "role": "3",
       "roleLabel": "Offlane",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -4519,7 +5313,25 @@
           "label": "Player ID",
           "value": "302214028"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Magnus",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/magnataur.png",
+          "localUrl": "./assets/heroes/magnus-d6f44ffbf7.png"
+        },
+        {
+          "name": "Mars",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png",
+          "localUrl": "./assets/heroes/mars-d91b4f6463.png"
+        },
+        {
+          "name": "Tidehunter",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tidehunter.png",
+          "localUrl": "./assets/heroes/tidehunter-860f3acb29.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-spirit-4-not-me",
@@ -4530,7 +5342,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -4589,7 +5401,9 @@
           "label": "Player ID",
           "value": "218231587"
         }
-      ]
+      ],
+      "signatureHeroes": [],
+      "earnings": ""
     },
     {
       "uid": "team-spirit-5-rue",
@@ -4600,7 +5414,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -4682,7 +5496,25 @@
           "label": "Player ID",
           "value": "847565596"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Techies",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/techies.png",
+          "localUrl": "./assets/heroes/techies-57dacfca2b.png"
+        },
+        {
+          "name": "Dark Willow",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dark_willow.png",
+          "localUrl": "./assets/heroes/dark-willow-9d31355a8f.png"
+        },
+        {
+          "name": "Hoodwink",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/hoodwink.png",
+          "localUrl": "./assets/heroes/hoodwink-8fb5437a61.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-spirit-coach-miposhka",
@@ -4693,7 +5525,7 @@
       "role": "coach",
       "roleLabel": "Coach",
       "kind": "coach",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -4783,7 +5615,25 @@
           "label": "Player ID",
           "value": "113331514"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Enchantress",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enchantress.png",
+          "localUrl": "./assets/heroes/enchantress-3ec016a1eb.png"
+        },
+        {
+          "name": "Disruptor",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/disruptor.png",
+          "localUrl": "./assets/heroes/disruptor-2a1a6b8dff.png"
+        },
+        {
+          "name": "Bane",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
+          "localUrl": "./assets/heroes/bane-7d3d61af0d.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-spirit-coach-milan",
@@ -4864,7 +5714,25 @@
           "label": "Player ID",
           "value": "98172857"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Earthshaker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earthshaker.png",
+          "localUrl": "./assets/heroes/earthshaker-bdf89143e9.png"
+        },
+        {
+          "name": "Earth Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earth_spirit.png",
+          "localUrl": "./assets/heroes/earth-spirit-a5b4ddfd1b.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-vision-1-satanic",
@@ -4875,7 +5743,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -4973,7 +5841,25 @@
           "label": "Player ID",
           "value": "1044002267"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        },
+        {
+          "name": "Terrorblade",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/terrorblade.png",
+          "localUrl": "./assets/heroes/terrorblade-47406992f2.png"
+        },
+        {
+          "name": "Faceless Void",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/faceless_void.png",
+          "localUrl": "./assets/heroes/faceless-void-2facaca990.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-vision-2-no-o-ne",
@@ -5062,7 +5948,25 @@
           "label": "Player ID",
           "value": "106573901"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Dragon Knight",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dragon_knight.png",
+          "localUrl": "./assets/heroes/dragon-knight-40a3f40f2f.png"
+        },
+        {
+          "name": "Invoker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+          "localUrl": "./assets/heroes/invoker-2272c8aa0d.png"
+        },
+        {
+          "name": "Storm Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/storm_spirit.png",
+          "localUrl": "./assets/heroes/storm-spirit-40f93ec14b.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-vision-3-noticed",
@@ -5073,7 +5977,7 @@
       "role": "3",
       "roleLabel": "Offlane",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -5155,7 +6059,25 @@
           "label": "Player ID",
           "value": "195108598"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Mars",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png",
+          "localUrl": "./assets/heroes/mars-d91b4f6463.png"
+        },
+        {
+          "name": "Monkey King",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/monkey_king.png",
+          "localUrl": "./assets/heroes/monkey-king-25cd718df2.png"
+        },
+        {
+          "name": "Tidehunter",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tidehunter.png",
+          "localUrl": "./assets/heroes/tidehunter-860f3acb29.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-vision-4-9class",
@@ -5166,7 +6088,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -5248,7 +6170,25 @@
           "label": "Player ID",
           "value": "164199202"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Techies",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/techies.png",
+          "localUrl": "./assets/heroes/techies-57dacfca2b.png"
+        },
+        {
+          "name": "Slark",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/slark.png",
+          "localUrl": "./assets/heroes/slark-70ffacbbc6.png"
+        },
+        {
+          "name": "Monkey King",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/monkey_king.png",
+          "localUrl": "./assets/heroes/monkey-king-25cd718df2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-vision-5-dukalis",
@@ -5259,7 +6199,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -5345,7 +6285,25 @@
           "label": "Player ID",
           "value": "73401082"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Bane",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
+          "localUrl": "./assets/heroes/bane-7d3d61af0d.png"
+        },
+        {
+          "name": "Treant Protector",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/treant.png",
+          "localUrl": "./assets/heroes/treant-protector-ed8c26d381.png"
+        },
+        {
+          "name": "Nature's Prophet",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/furion.png",
+          "localUrl": "./assets/heroes/nature-s-prophet-843acd62db.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-vision-coach-puppey",
@@ -5450,7 +6408,25 @@
           "label": "Player ID",
           "value": "87278757"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Chen",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/chen.png",
+          "localUrl": "./assets/heroes/chen-c09acf183a.png"
+        },
+        {
+          "name": "Enchantress",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enchantress.png",
+          "localUrl": "./assets/heroes/enchantress-3ec016a1eb.png"
+        },
+        {
+          "name": "Bane",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
+          "localUrl": "./assets/heroes/bane-7d3d61af0d.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "nigma-galaxy-1-sumail",
@@ -5461,7 +6437,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "Europe",
+      "region": "South Asia",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -5559,7 +6535,25 @@
           "label": "Player ID",
           "value": "111620041"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Storm Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/storm_spirit.png",
+          "localUrl": "./assets/heroes/storm-spirit-40f93ec14b.png"
+        },
+        {
+          "name": "Ember Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "localUrl": "./assets/heroes/ember-spirit-c05af97241.png"
+        },
+        {
+          "name": "Puck",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/puck.png",
+          "localUrl": "./assets/heroes/puck-72403bf225.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "nigma-galaxy-2-lorenof",
@@ -5652,7 +6646,25 @@
           "label": "Player ID",
           "value": "210053851"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Clinkz",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/clinkz.png",
+          "localUrl": "./assets/heroes/clinkz-576505dd62.png"
+        },
+        {
+          "name": "Templar Assassin",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/templar_assassin.png",
+          "localUrl": "./assets/heroes/templar-assassin-028e362664.png"
+        },
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "nigma-galaxy-3-davai",
@@ -5745,7 +6757,25 @@
           "label": "Player ID",
           "value": "138880576"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Timbersaw",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/shredder.png",
+          "localUrl": "./assets/heroes/timbersaw-1089d9a662.png"
+        },
+        {
+          "name": "Enchantress",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enchantress.png",
+          "localUrl": "./assets/heroes/enchantress-3ec016a1eb.png"
+        },
+        {
+          "name": "Mars",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png",
+          "localUrl": "./assets/heroes/mars-d91b4f6463.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "nigma-galaxy-4-omar",
@@ -5756,7 +6786,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Europe",
+      "region": "MENA",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -5838,7 +6868,25 @@
           "label": "Player ID",
           "value": "152168157"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Techies",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/techies.png",
+          "localUrl": "./assets/heroes/techies-57dacfca2b.png"
+        },
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Mirana",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+          "localUrl": "./assets/heroes/mirana-417b8445ab.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "nigma-galaxy-5-gh",
@@ -5849,7 +6897,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Europe",
+      "region": "MENA",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -5939,7 +6987,25 @@
           "label": "Player ID",
           "value": "101356886"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Io",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/wisp.png",
+          "localUrl": "./assets/heroes/io-d81a62e33e.png"
+        },
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Keeper of the Light",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/keeper_of_the_light.png",
+          "localUrl": "./assets/heroes/keeper-of-the-light-302f7375f7.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "nigma-galaxy-coach-kuroky",
@@ -6044,7 +7110,25 @@
           "label": "Player ID",
           "value": "82262664"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Visage",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/visage.png",
+          "localUrl": "./assets/heroes/visage-39b2269955.png"
+        },
+        {
+          "name": "Io",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/wisp.png",
+          "localUrl": "./assets/heroes/io-d81a62e33e.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "huligani-1-ssnovv1",
@@ -6055,7 +7139,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -6137,7 +7221,25 @@
           "label": "Player ID",
           "value": "320017600"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        },
+        {
+          "name": "Terrorblade",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/terrorblade.png",
+          "localUrl": "./assets/heroes/terrorblade-47406992f2.png"
+        },
+        {
+          "name": "Medusa",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/medusa.png",
+          "localUrl": "./assets/heroes/medusa-17f536cfa5.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "huligani-2-mirage",
@@ -6148,7 +7250,7 @@
       "role": "2",
       "roleLabel": "Mid",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -6230,7 +7332,25 @@
           "label": "Player ID",
           "value": "140251702"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Shadow Fiend",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nevermore.png",
+          "localUrl": "./assets/heroes/shadow-fiend-3090779df0.png"
+        },
+        {
+          "name": "Invoker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+          "localUrl": "./assets/heroes/invoker-2272c8aa0d.png"
+        },
+        {
+          "name": "Storm Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/storm_spirit.png",
+          "localUrl": "./assets/heroes/storm-spirit-40f93ec14b.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "huligani-3-corrupted",
@@ -6241,7 +7361,7 @@
       "role": "3",
       "roleLabel": "Offlane",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -6311,7 +7431,25 @@
           "label": "Player ID",
           "value": "92487440"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Centaur Warrunner",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/centaur.png",
+          "localUrl": "./assets/heroes/centaur-warrunner-192fc401fa.png"
+        },
+        {
+          "name": "Mars",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png",
+          "localUrl": "./assets/heroes/mars-d91b4f6463.png"
+        },
+        {
+          "name": "Axe",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/axe.png",
+          "localUrl": "./assets/heroes/axe-f99c2196a1.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "huligani-4-sayuw",
@@ -6322,7 +7460,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -6412,7 +7550,25 @@
           "label": "Player ID",
           "value": "145065875"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Tusk",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tusk.png",
+          "localUrl": "./assets/heroes/tusk-85729d68ea.png"
+        },
+        {
+          "name": "Windranger",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/windrunner.png",
+          "localUrl": "./assets/heroes/windranger-5b7727432c.png"
+        },
+        {
+          "name": "Earth Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earth_spirit.png",
+          "localUrl": "./assets/heroes/earth-spirit-a5b4ddfd1b.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "huligani-5-respect",
@@ -6423,7 +7579,7 @@
       "role": "5",
       "roleLabel": "Hard support",
       "kind": "player",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -6497,7 +7653,25 @@
           "label": "Player ID",
           "value": "123787715"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Bane",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
+          "localUrl": "./assets/heroes/bane-7d3d61af0d.png"
+        },
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Warlock",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
+          "localUrl": "./assets/heroes/warlock-7fed4400ee.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "huligani-coach-thechosenone",
@@ -6508,7 +7682,7 @@
       "role": "coach",
       "roleLabel": "Coach",
       "kind": "coach",
-      "region": "Europe",
+      "region": "CIS",
       "qualification": {
         "method": "qual",
         "region": "Europe",
@@ -6578,7 +7752,25 @@
           "label": "Player ID",
           "value": "296226696"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Centaur Warrunner",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/centaur.png",
+          "localUrl": "./assets/heroes/centaur-warrunner-192fc401fa.png"
+        },
+        {
+          "name": "Dark Seer",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dark_seer.png",
+          "localUrl": "./assets/heroes/dark-seer-fd3d097d48.png"
+        },
+        {
+          "name": "Batrider",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/batrider.png",
+          "localUrl": "./assets/heroes/batrider-5f5f391ce6.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-resilience-1-ysr-04e",
@@ -6671,7 +7863,25 @@
           "label": "Player ID",
           "value": "170896543"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        },
+        {
+          "name": "Weaver",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/weaver.png",
+          "localUrl": "./assets/heroes/weaver-b9127f2a0b.png"
+        },
+        {
+          "name": "Muerta",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/muerta.png",
+          "localUrl": "./assets/heroes/muerta-f7b196fc9c.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-resilience-2-echozz",
@@ -6760,7 +7970,25 @@
           "label": "Player ID",
           "value": "315272623"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Razor",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/razor.png",
+          "localUrl": "./assets/heroes/razor-a949a6ff52.png"
+        },
+        {
+          "name": "Broodmother",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/broodmother.png",
+          "localUrl": "./assets/heroes/broodmother-8ff5ff493f.png"
+        },
+        {
+          "name": "Invoker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+          "localUrl": "./assets/heroes/invoker-2272c8aa0d.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-resilience-3-niu",
@@ -6849,7 +8077,25 @@
           "label": "Player ID",
           "value": "145957968"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Mars",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png",
+          "localUrl": "./assets/heroes/mars-d91b4f6463.png"
+        },
+        {
+          "name": "Centaur Warrunner",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/centaur.png",
+          "localUrl": "./assets/heroes/centaur-warrunner-192fc401fa.png"
+        },
+        {
+          "name": "Pangolier",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pangolier.png",
+          "localUrl": "./assets/heroes/pangolier-3a3f4d987f.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-resilience-4-planet",
@@ -6942,7 +8188,25 @@
           "label": "Player ID",
           "value": "150961567"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Mirana",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+          "localUrl": "./assets/heroes/mirana-417b8445ab.png"
+        },
+        {
+          "name": "Earthshaker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earthshaker.png",
+          "localUrl": "./assets/heroes/earthshaker-bdf89143e9.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-resilience-5-zzq",
@@ -7031,7 +8295,25 @@
           "label": "Player ID",
           "value": "249835593"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Crystal Maiden",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/crystal_maiden.png",
+          "localUrl": "./assets/heroes/crystal-maiden-c902ca82ca.png"
+        },
+        {
+          "name": "Treant Protector",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/treant.png",
+          "localUrl": "./assets/heroes/treant-protector-ed8c26d381.png"
+        },
+        {
+          "name": "Clockwerk",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+          "localUrl": "./assets/heroes/clockwerk-14d750a06b.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "team-resilience-coach-super",
@@ -7112,7 +8394,25 @@
           "label": "Player ID",
           "value": "90882159"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Elder Titan",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/elder_titan.png",
+          "localUrl": "./assets/heroes/elder-titan-20a7514aca.png"
+        },
+        {
+          "name": "Lion",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lion.png",
+          "localUrl": "./assets/heroes/lion-3904be1513.png"
+        },
+        {
+          "name": "Nyx Assassin",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
+          "localUrl": "./assets/heroes/nyx-assassin-0281a75ff0.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "vici-gaming-1-shiro",
@@ -7201,7 +8501,25 @@
           "label": "Player ID",
           "value": "320252024"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        },
+        {
+          "name": "Phantom Lancer",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phantom_lancer.png",
+          "localUrl": "./assets/heroes/phantom-lancer-15bdf71de7.png"
+        },
+        {
+          "name": "Troll Warlord",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/troll_warlord.png",
+          "localUrl": "./assets/heroes/troll-warlord-2e60347f59.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "vici-gaming-2-xm",
@@ -7290,7 +8608,25 @@
           "label": "Player ID",
           "value": "137129583"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Razor",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/razor.png",
+          "localUrl": "./assets/heroes/razor-a949a6ff52.png"
+        },
+        {
+          "name": "Death Prophet",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/death_prophet.png",
+          "localUrl": "./assets/heroes/death-prophet-a65614621a.png"
+        },
+        {
+          "name": "Ember Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "localUrl": "./assets/heroes/ember-spirit-c05af97241.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "vici-gaming-3-bach",
@@ -7387,7 +8723,25 @@
           "label": "Player ID",
           "value": "118134220"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Beastmaster",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/beastmaster.png",
+          "localUrl": "./assets/heroes/beastmaster-e86dd63cbc.png"
+        },
+        {
+          "name": "Batrider",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/batrider.png",
+          "localUrl": "./assets/heroes/batrider-5f5f391ce6.png"
+        },
+        {
+          "name": "Clockwerk",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+          "localUrl": "./assets/heroes/clockwerk-14d750a06b.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "vici-gaming-4-xinq",
@@ -7476,7 +8830,25 @@
           "label": "Player ID",
           "value": "157475523"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Mirana",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+          "localUrl": "./assets/heroes/mirana-417b8445ab.png"
+        },
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Winter Wyvern",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/winter_wyvern.png",
+          "localUrl": "./assets/heroes/winter-wyvern-10ba5c7b08.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "vici-gaming-5-y",
@@ -7573,7 +8945,25 @@
           "label": "Player ID",
           "value": "111114687"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Elder Titan",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/elder_titan.png",
+          "localUrl": "./assets/heroes/elder-titan-20a7514aca.png"
+        },
+        {
+          "name": "Undying",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/undying.png",
+          "localUrl": "./assets/heroes/undying-082dc1fb00.png"
+        },
+        {
+          "name": "Oracle",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/oracle.png",
+          "localUrl": "./assets/heroes/oracle-5057d39cd7.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "vici-gaming-coach-yao",
@@ -7658,7 +9048,25 @@
           "label": "Player ID",
           "value": "98878010"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Dark Seer",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/dark_seer.png",
+          "localUrl": "./assets/heroes/dark-seer-fd3d097d48.png"
+        },
+        {
+          "name": "Clockwerk",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rattletrap.png",
+          "localUrl": "./assets/heroes/clockwerk-14d750a06b.png"
+        },
+        {
+          "name": "Magnus",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/magnataur.png",
+          "localUrl": "./assets/heroes/magnus-d6f44ffbf7.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "og-1-natsumi",
@@ -7751,7 +9159,25 @@
           "label": "Player ID",
           "value": "355168766"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        },
+        {
+          "name": "Troll Warlord",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/troll_warlord.png",
+          "localUrl": "./assets/heroes/troll-warlord-2e60347f59.png"
+        },
+        {
+          "name": "Gyrocopter",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png",
+          "localUrl": "./assets/heroes/gyrocopter-1415c415d7.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "og-2-yopaj",
@@ -7848,7 +9274,25 @@
           "label": "Player ID",
           "value": "324277900"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Templar Assassin",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/templar_assassin.png",
+          "localUrl": "./assets/heroes/templar-assassin-028e362664.png"
+        },
+        {
+          "name": "Ember Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "localUrl": "./assets/heroes/ember-spirit-c05af97241.png"
+        },
+        {
+          "name": "Tiny",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tiny.png",
+          "localUrl": "./assets/heroes/tiny-d7e08fb7a6.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "og-3-raven",
@@ -7949,7 +9393,25 @@
           "label": "Player ID",
           "value": "132309493"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Juggernaut",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/juggernaut.png",
+          "localUrl": "./assets/heroes/juggernaut-072644a8ee.png"
+        },
+        {
+          "name": "Gyrocopter",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/gyrocopter.png",
+          "localUrl": "./assets/heroes/gyrocopter-1415c415d7.png"
+        },
+        {
+          "name": "Terrorblade",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/terrorblade.png",
+          "localUrl": "./assets/heroes/terrorblade-47406992f2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "og-4-tims",
@@ -8054,7 +9516,25 @@
           "label": "Player ID",
           "value": "155494381"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Earth Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earth_spirit.png",
+          "localUrl": "./assets/heroes/earth-spirit-a5b4ddfd1b.png"
+        },
+        {
+          "name": "Earthshaker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/earthshaker.png",
+          "localUrl": "./assets/heroes/earthshaker-bdf89143e9.png"
+        },
+        {
+          "name": "Nyx Assassin",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
+          "localUrl": "./assets/heroes/nyx-assassin-0281a75ff0.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "og-5-skem",
@@ -8155,7 +9635,25 @@
           "label": "Player ID",
           "value": "100594231"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Chen",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/chen.png",
+          "localUrl": "./assets/heroes/chen-c09acf183a.png"
+        },
+        {
+          "name": "Nature's Prophet",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/furion.png",
+          "localUrl": "./assets/heroes/nature-s-prophet-843acd62db.png"
+        },
+        {
+          "name": "Mirana",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mirana.png",
+          "localUrl": "./assets/heroes/mirana-417b8445ab.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "og-coach-343",
@@ -8252,7 +9750,25 @@
           "label": "Player ID",
           "value": "111034589"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Vengeful Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/vengefulspirit.png",
+          "localUrl": "./assets/heroes/vengeful-spirit-a540102162.png"
+        },
+        {
+          "name": "Bane",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bane.png",
+          "localUrl": "./assets/heroes/bane-7d3d61af0d.png"
+        },
+        {
+          "name": "Witch Doctor",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/witch_doctor.png",
+          "localUrl": "./assets/heroes/witch-doctor-4278378d8d.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "gamerlegion-1-ghost",
@@ -8263,7 +9779,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "North America",
+      "region": "Southeast Asia",
       "qualification": {
         "method": "qual",
         "region": "North America",
@@ -8353,7 +9869,25 @@
           "label": "Player ID",
           "value": "206642367"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Juggernaut",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/juggernaut.png",
+          "localUrl": "./assets/heroes/juggernaut-072644a8ee.png"
+        },
+        {
+          "name": "Faceless Void",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/faceless_void.png",
+          "localUrl": "./assets/heroes/faceless-void-2facaca990.png"
+        },
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "gamerlegion-2-rcy",
@@ -8450,7 +9984,25 @@
           "label": "Player ID",
           "value": "154974246"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Invoker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/invoker.png",
+          "localUrl": "./assets/heroes/invoker-2272c8aa0d.png"
+        },
+        {
+          "name": "Tinker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tinker.png",
+          "localUrl": "./assets/heroes/tinker-52e1fc2e49.png"
+        },
+        {
+          "name": "Pangolier",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pangolier.png",
+          "localUrl": "./assets/heroes/pangolier-3a3f4d987f.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "gamerlegion-3-fayde",
@@ -8535,7 +10087,25 @@
           "label": "Player ID",
           "value": "160119017"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Lycan",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/lycan.png",
+          "localUrl": "./assets/heroes/lycan-0a27926b23.png"
+        },
+        {
+          "name": "Enigma",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enigma.png",
+          "localUrl": "./assets/heroes/enigma-5071aa49c3.png"
+        },
+        {
+          "name": "Beastmaster",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/beastmaster.png",
+          "localUrl": "./assets/heroes/beastmaster-e86dd63cbc.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "gamerlegion-4-bignum",
@@ -8546,7 +10116,7 @@
       "role": "4",
       "roleLabel": "Soft support",
       "kind": "player",
-      "region": "North America",
+      "region": "Europe",
       "qualification": {
         "method": "qual",
         "region": "North America",
@@ -8628,7 +10198,25 @@
           "label": "Player ID",
           "value": "90423751"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Nyx Assassin",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/nyx_assassin.png",
+          "localUrl": "./assets/heroes/nyx-assassin-0281a75ff0.png"
+        },
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Tusk",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tusk.png",
+          "localUrl": "./assets/heroes/tusk-85729d68ea.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "gamerlegion-5-speeed",
@@ -8721,7 +10309,25 @@
           "label": "Player ID",
           "value": "191362875"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Chen",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/chen.png",
+          "localUrl": "./assets/heroes/chen-c09acf183a.png"
+        },
+        {
+          "name": "Venomancer",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/venomancer.png",
+          "localUrl": "./assets/heroes/venomancer-445de21364.png"
+        },
+        {
+          "name": "Warlock",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/warlock.png",
+          "localUrl": "./assets/heroes/warlock-7fed4400ee.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "lgd-gaming-1-yuma",
@@ -8732,7 +10338,7 @@
       "role": "1",
       "roleLabel": "Carry",
       "kind": "player",
-      "region": "South America",
+      "region": "North America",
       "qualification": {
         "method": "qual",
         "region": "South America",
@@ -8802,7 +10408,25 @@
           "label": "Player ID",
           "value": "177203952"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Meepo",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/meepo.png",
+          "localUrl": "./assets/heroes/meepo-4fd493f44d.png"
+        },
+        {
+          "name": "Morphling",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/morphling.png",
+          "localUrl": "./assets/heroes/morphling-189464cbc2.png"
+        },
+        {
+          "name": "Monkey King",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/monkey_king.png",
+          "localUrl": "./assets/heroes/monkey-king-25cd718df2.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "lgd-gaming-2-tailung",
@@ -8903,7 +10527,25 @@
           "label": "Player ID",
           "value": "1026694469"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Pangolier",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/pangolier.png",
+          "localUrl": "./assets/heroes/pangolier-3a3f4d987f.png"
+        },
+        {
+          "name": "Tiny",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/tiny.png",
+          "localUrl": "./assets/heroes/tiny-d7e08fb7a6.png"
+        },
+        {
+          "name": "Ember Spirit",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/ember_spirit.png",
+          "localUrl": "./assets/heroes/ember-spirit-c05af97241.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "lgd-gaming-3-wisper",
@@ -9004,7 +10646,25 @@
           "label": "Player ID",
           "value": "292921272"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Batrider",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/batrider.png",
+          "localUrl": "./assets/heroes/batrider-5f5f391ce6.png"
+        },
+        {
+          "name": "Leshrac",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/leshrac.png",
+          "localUrl": "./assets/heroes/leshrac-f19510c004.png"
+        },
+        {
+          "name": "Mars",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/mars.png",
+          "localUrl": "./assets/heroes/mars-d91b4f6463.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "lgd-gaming-4-thiolicor",
@@ -9105,7 +10765,25 @@
           "label": "Player ID",
           "value": "105045291"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Rubick",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/rubick.png",
+          "localUrl": "./assets/heroes/rubick-f67ee79f03.png"
+        },
+        {
+          "name": "Bounty Hunter",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/bounty_hunter.png",
+          "localUrl": "./assets/heroes/bounty-hunter-2becfb1780.png"
+        },
+        {
+          "name": "Spirit Breaker",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/spirit_breaker.png",
+          "localUrl": "./assets/heroes/spirit-breaker-06e9db5564.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "lgd-gaming-5-kj",
@@ -9202,7 +10880,25 @@
           "label": "Player ID",
           "value": "81306398"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Enchantress",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/enchantress.png",
+          "localUrl": "./assets/heroes/enchantress-3ec016a1eb.png"
+        },
+        {
+          "name": "Io",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/wisp.png",
+          "localUrl": "./assets/heroes/io-d81a62e33e.png"
+        },
+        {
+          "name": "Nature's Prophet",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/furion.png",
+          "localUrl": "./assets/heroes/nature-s-prophet-843acd62db.png"
+        }
+      ],
+      "earnings": ""
     },
     {
       "uid": "lgd-gaming-coach-kaffs",
@@ -9287,7 +10983,9 @@
           "label": "Player ID",
           "value": "111750003"
         }
-      ]
+      ],
+      "signatureHeroes": [],
+      "earnings": ""
     },
     {
       "uid": "lgd-gaming-assistant-coach-fcr",
@@ -9380,7 +11078,25 @@
           "label": "Player ID",
           "value": "107579895"
         }
-      ]
+      ],
+      "signatureHeroes": [
+        {
+          "name": "Arc Warden",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/arc_warden.png",
+          "localUrl": "./assets/heroes/arc-warden-f0d0de3537.png"
+        },
+        {
+          "name": "Io",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/wisp.png",
+          "localUrl": "./assets/heroes/io-d81a62e33e.png"
+        },
+        {
+          "name": "Phantom Lancer",
+          "url": "https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/phantom_lancer.png",
+          "localUrl": "./assets/heroes/phantom-lancer-15bdf71de7.png"
+        }
+      ],
+      "earnings": ""
     }
   ]
 }

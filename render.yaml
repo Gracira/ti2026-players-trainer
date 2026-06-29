@@ -1,10 +1,9 @@
 services:
   - type: static_site
     name: ti2026-players-trainer
-    buildCommand: python scripts/fetch_liquipedia.py
+    buildCommand: python -c "print('Using committed static snapshot')"
     staticPublishPath: public
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
-

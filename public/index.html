@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TI 2026 Players Trainer</title>
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
@@ -11,7 +12,7 @@
       <div class="topbar__inner">
         <div>
           <p class="eyebrow">The International 2026</p>
-          <h1>Карточки для запоминания игроков</h1>
+          <h1>Карточки игроков</h1>
         </div>
         <div class="scoreboard" aria-live="polite">
           <div>
@@ -24,7 +25,7 @@
           </div>
           <div>
             <span id="learningCount">0</span>
-            <small>учить</small>
+            <small>не знал</small>
           </div>
         </div>
       </div>
@@ -50,13 +51,18 @@
         </label>
         <div class="actions" aria-label="Действия">
           <button id="shuffleButton" type="button">Перемешать</button>
-          <button id="resetButton" type="button">Сбросить прогресс</button>
+          <button id="resetButton" type="button">Сбросить</button>
         </div>
       </section>
 
+      <nav class="tabs" aria-label="Стопки карточек">
+        <button class="tab is-active" type="button" data-view="all">Все</button>
+        <button class="tab" type="button" data-view="known">Знал</button>
+        <button class="tab" type="button" data-view="learning">Не знал</button>
+      </nav>
+
       <section class="status-line" aria-live="polite">
         <span id="visibleCount">0 карточек</span>
-        <span id="dataUpdated"></span>
       </section>
 
       <section id="trainer" class="trainer" aria-label="Тренажер карточек">
@@ -76,29 +82,25 @@
             <span id="teamName" class="team-pill"></span>
             <span id="roleName" class="role-pill"></span>
           </div>
-          <h2 id="infoTitle">Сначала угадай ник</h2>
-          <p id="infoSummary" class="info-summary"></p>
+          <h2 id="infoTitle">Угадай ник</h2>
           <div id="infoRows" class="info-rows"></div>
-          <a id="profileLink" class="profile-link" href="#" target="_blank" rel="noreferrer">Профиль Liquipedia</a>
         </aside>
       </section>
 
-      <section class="trainer-actions" aria-label="Навигация">
+      <section class="trainer-actions" aria-label="Ответ">
         <button id="prevButton" type="button">Назад</button>
         <button id="revealButton" type="button">Показать ник</button>
         <button id="knownButton" type="button">Знал</button>
         <button id="learningButton" type="button">Не знал</button>
-        <button id="nextButton" type="button">Дальше</button>
       </section>
 
       <section id="emptyState" class="empty-state" hidden>
-        Ничего не найдено.
+        В этой стопке пока пусто.
       </section>
     </main>
 
     <footer class="site-footer">
       <span>Данные: <a href="https://liquipedia.net/dota2/The_International/2026" rel="noreferrer">Liquipedia Dota 2 Wiki</a>.</span>
-      <span>Портреты сохранены локально из ссылок MediaWiki API; лицензии медиа отличаются.</span>
     </footer>
 
     <script src="./app.js" type="module"></script>

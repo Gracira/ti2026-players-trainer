@@ -41,38 +41,38 @@ select {
 }
 
 .topbar__inner {
-  width: min(1180px, calc(100% - 32px));
-  min-height: 132px;
+  width: min(1040px, calc(100% - 32px));
+  min-height: 106px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 20px;
 }
 
 .eyebrow {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   color: var(--gold);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 12px;
+  font-weight: 750;
   text-transform: uppercase;
 }
 
 h1 {
   margin: 0;
-  font-size: 34px;
+  font-size: 28px;
   line-height: 1.12;
 }
 
 .scoreboard {
   display: grid;
-  grid-template-columns: repeat(3, minmax(78px, 1fr));
+  grid-template-columns: repeat(3, minmax(72px, 1fr));
   gap: 8px;
 }
 
 .scoreboard div {
-  min-height: 70px;
-  padding: 12px;
+  min-height: 62px;
+  padding: 9px 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
@@ -81,45 +81,44 @@ h1 {
 
 .scoreboard span {
   display: block;
-  font-size: 23px;
+  font-size: 20px;
   font-weight: 850;
 }
 
 .scoreboard small {
   color: var(--muted);
+  font-size: 12px;
 }
 
 main {
-  width: min(1180px, calc(100% - 32px));
-  margin: 22px auto 48px;
+  width: min(1040px, calc(100% - 32px));
+  margin: 18px auto 38px;
 }
 
 .controls {
   display: grid;
-  grid-template-columns: minmax(190px, 1.4fr) repeat(3, minmax(142px, 1fr)) auto;
-  gap: 12px;
+  grid-template-columns: minmax(180px, 1.25fr) repeat(3, minmax(124px, 0.85fr)) auto;
+  gap: 10px;
   align-items: end;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
 }
 
 .control {
   display: grid;
-  gap: 6px;
+  gap: 5px;
 }
 
 .control span {
   color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 750;
   text-transform: uppercase;
 }
 
 .control input,
 .control select {
   width: 100%;
-  min-height: 42px;
-  padding: 8px 10px;
+  min-height: 38px;
+  padding: 7px 9px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--panel);
@@ -127,15 +126,16 @@ main {
 }
 
 .actions,
-.trainer-actions {
+.trainer-actions,
+.tabs {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
 }
 
 button {
-  min-height: 40px;
-  padding: 9px 13px;
+  min-height: 38px;
+  padding: 8px 12px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--panel-2);
@@ -147,20 +147,27 @@ button:hover {
   border-color: var(--teal);
 }
 
+.tabs {
+  margin: 14px 0 6px;
+}
+
+.tab.is-active {
+  border-color: var(--teal);
+  background: rgba(74, 182, 168, 0.18);
+}
+
 .status-line {
-  min-height: 38px;
+  min-height: 30px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 16px;
   color: var(--muted);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .trainer {
   display: grid;
-  grid-template-columns: minmax(300px, 540px) minmax(280px, 1fr);
-  gap: 18px;
+  grid-template-columns: minmax(280px, 420px) minmax(270px, 1fr);
+  gap: 14px;
   align-items: stretch;
 }
 
@@ -170,16 +177,15 @@ button:hover {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
-  box-shadow: 0 18px 42px var(--shadow);
+  box-shadow: 0 16px 38px var(--shadow);
   overflow: hidden;
 }
 
 .flashcard__button {
   width: 100%;
   height: 100%;
-  min-height: 640px;
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -189,21 +195,19 @@ button:hover {
 }
 
 .flashcard__portrait {
-  position: relative;
-  min-height: 0;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   background: #0b0d11;
 }
 
 .flashcard__portrait img {
   width: 100%;
   height: 100%;
-  min-height: 470px;
   display: block;
   object-fit: cover;
 }
 
 .flashcard__portrait--missing {
-  min-height: 470px;
   display: grid;
   place-items: center;
   color: var(--muted);
@@ -211,11 +215,11 @@ button:hover {
 }
 
 .answer-panel {
-  min-height: 128px;
+  min-height: 94px;
   display: grid;
-  gap: 5px;
+  gap: 3px;
   align-content: center;
-  padding: 18px;
+  padding: 13px;
   border-top: 1px solid var(--line);
   background: rgba(9, 11, 15, 0.92);
   text-align: center;
@@ -223,49 +227,50 @@ button:hover {
 
 .answer-panel__hint {
   color: var(--muted);
-  font-size: 13px;
-  font-weight: 700;
+  font-size: 11px;
+  font-weight: 750;
   text-transform: uppercase;
 }
 
 #answerNick {
-  min-height: 50px;
+  min-height: 38px;
   color: var(--text);
-  font-size: 42px;
-  line-height: 1.1;
+  font-size: 34px;
+  line-height: 1.05;
   overflow-wrap: anywhere;
 }
 
 .flashcard.is-hidden #answerNick {
   color: transparent;
-  text-shadow: 0 0 16px rgba(244, 240, 232, 0.95);
+  text-shadow: 0 0 14px rgba(244, 240, 232, 0.95);
 }
 
 #answerSub {
   color: var(--muted);
+  font-size: 13px;
   overflow-wrap: anywhere;
 }
 
 .info-panel {
-  padding: 18px;
+  padding: 14px;
 }
 
 .info-panel__top {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
+  gap: 7px;
+  margin-bottom: 12px;
 }
 
 .team-pill,
 .role-pill {
-  min-height: 30px;
+  min-height: 28px;
   display: inline-flex;
   align-items: center;
-  padding: 5px 9px;
+  padding: 4px 8px;
   border-radius: 6px;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 850;
 }
 
@@ -278,30 +283,24 @@ button:hover {
 }
 
 .info-panel h2 {
-  margin: 0;
-  font-size: 28px;
-  overflow-wrap: anywhere;
-}
-
-.info-summary {
-  min-height: 26px;
-  margin: 8px 0 18px;
-  color: var(--muted);
+  margin: 0 0 12px;
+  font-size: 25px;
+  line-height: 1.1;
   overflow-wrap: anywhere;
 }
 
 .info-rows {
   display: grid;
-  gap: 9px;
+  gap: 7px;
 }
 
 .info-row {
   display: grid;
-  grid-template-columns: 108px minmax(0, 1fr);
-  gap: 10px;
-  padding-bottom: 9px;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 9px;
+  padding-bottom: 7px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .info-row span {
@@ -313,29 +312,56 @@ button:hover {
   overflow-wrap: anywhere;
 }
 
-.profile-link {
+.info-row--heroes {
+  align-items: start;
+}
+
+.hero-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.hero-chip {
   display: inline-flex;
-  margin-top: 18px;
-  font-weight: 800;
+  align-items: center;
+  gap: 5px;
+  min-height: 28px;
+  padding: 3px 6px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+}
+
+.hero-chip img {
+  width: 38px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.hero-chip span {
+  color: var(--text);
+  font-size: 12px;
 }
 
 .trainer-actions {
   justify-content: center;
-  margin-top: 16px;
+  margin-top: 12px;
 }
 
 #knownButton {
-  border-color: rgba(111, 196, 122, 0.5);
-  background: rgba(111, 196, 122, 0.14);
+  border-color: rgba(111, 196, 122, 0.55);
+  background: rgba(111, 196, 122, 0.15);
 }
 
 #learningButton {
-  border-color: rgba(214, 107, 97, 0.5);
-  background: rgba(214, 107, 97, 0.14);
+  border-color: rgba(214, 107, 97, 0.55);
+  background: rgba(214, 107, 97, 0.15);
 }
 
 .empty-state {
-  min-height: 180px;
+  min-height: 160px;
   display: grid;
   place-items: center;
   border: 1px solid var(--line);
@@ -345,21 +371,21 @@ button:hover {
 }
 
 .site-footer {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto 28px;
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto 24px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px 20px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 12px;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 900px) {
   .topbar__inner {
     align-items: flex-start;
     flex-direction: column;
     justify-content: center;
-    padding: 24px 0;
+    padding: 20px 0;
   }
 
   .scoreboard {
@@ -378,13 +404,9 @@ button:hover {
     grid-template-columns: 1fr;
   }
 
-  .flashcard__button {
-    min-height: 560px;
-  }
-
-  .flashcard__portrait img,
-  .flashcard__portrait--missing {
-    min-height: 410px;
+  .flashcard {
+    max-width: 420px;
+    margin: 0 auto;
   }
 }
 
@@ -392,11 +414,11 @@ button:hover {
   .topbar__inner,
   main,
   .site-footer {
-    width: min(100% - 20px, 1180px);
+    width: min(100% - 20px, 1040px);
   }
 
   h1 {
-    font-size: 28px;
+    font-size: 25px;
   }
 
   .scoreboard,
@@ -404,30 +426,17 @@ button:hover {
     grid-template-columns: 1fr;
   }
 
-  .status-line {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .flashcard__button {
-    min-height: 500px;
-  }
-
-  .flashcard__portrait img,
-  .flashcard__portrait--missing {
-    min-height: 340px;
-  }
-
   #answerNick {
-    font-size: 34px;
+    font-size: 30px;
   }
 
   .info-row {
     grid-template-columns: 1fr;
-    gap: 3px;
+    gap: 2px;
   }
 
-  .trainer-actions button {
-    flex: 1 1 140px;
+  .trainer-actions button,
+  .tabs button {
+    flex: 1 1 120px;
   }
 }

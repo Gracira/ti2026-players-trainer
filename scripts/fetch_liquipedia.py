@@ -17,6 +17,7 @@ TOURNAMENT_PAGE = "The_International/2026"
 SOURCE_URL = "https://liquipedia.net/dota2/The_International/2026"
 OUT_PATH = Path(__file__).resolve().parents[1] / "public" / "data" / "players.json"
 ASSET_DIR = Path(__file__).resolve().parents[1] / "public" / "assets" / "portraits"
+HERO_ASSET_DIR = Path(__file__).resolve().parents[1] / "public" / "assets" / "heroes"
 USER_AGENT = "TI2026PlayersTrainer/1.0 (https://github.com/ti2026-players-trainer; educational static site)"
 REQUEST_DELAY_SECONDS = 2.1
 MAX_TITLES_PER_REQUEST = 45
@@ -57,6 +58,103 @@ INFO_LABELS = {
     "signature": "Signature",
 }
 
+COUNTRY_REGIONS = {
+    "Australia": "Oceania",
+    "Belarus": "CIS",
+    "Belgium": "Europe",
+    "Bolivia": "South America",
+    "Bosnia and Herzegovina": "Europe",
+    "Brazil": "South America",
+    "Bulgaria": "Europe",
+    "Canada": "North America",
+    "China": "China",
+    "Denmark": "Europe",
+    "Estonia": "Europe",
+    "Germany": "Europe",
+    "Indonesia": "Southeast Asia",
+    "Israel": "MENA",
+    "Jordan": "MENA",
+    "Kazakhstan": "CIS",
+    "Lebanon": "MENA",
+    "Malaysia": "Southeast Asia",
+    "Moldova": "Europe",
+    "Nicaragua": "North America",
+    "North Macedonia": "Europe",
+    "Pakistan": "South Asia",
+    "Peru": "South America",
+    "Philippines": "Southeast Asia",
+    "Poland": "Europe",
+    "Russia": "CIS",
+    "Slovakia": "Europe",
+    "Sweden": "Europe",
+    "Ukraine": "Europe",
+    "United Kingdom": "Europe",
+    "United States": "North America",
+}
+
+HERO_ALIASES = {
+    "anti mage": "Anti-Mage",
+    "ench": "Enchantress",
+    "furion": "Nature's Prophet",
+    "fv": "Faceless Void",
+    "io": "Io",
+    "IO": "Io",
+    "kotl": "Keeper of the Light",
+    "mk": "Monkey King",
+    "morph": "Morphling",
+    "pango": "Pangolier",
+    "pl": "Phantom Lancer",
+    "queen of pain": "Queen of Pain",
+    "storm": "Storm Spirit",
+    "tb": "Terrorblade",
+    "timber": "Timbersaw",
+    "wyvern": "Winter Wyvern",
+}
+
+HERO_SLUGS = {
+    "Anti-Mage": "antimage",
+    "Centaur Warrunner": "centaur",
+    "Clockwerk": "rattletrap",
+    "Crystal Maiden": "crystal_maiden",
+    "Dark Seer": "dark_seer",
+    "Dark Willow": "dark_willow",
+    "Death Prophet": "death_prophet",
+    "Doom": "doom_bringer",
+    "Dragon Knight": "dragon_knight",
+    "Earth Spirit": "earth_spirit",
+    "Elder Titan": "elder_titan",
+    "Ember Spirit": "ember_spirit",
+    "Faceless Void": "faceless_void",
+    "Io": "wisp",
+    "Keeper of the Light": "keeper_of_the_light",
+    "Legion Commander": "legion_commander",
+    "Lifestealer": "life_stealer",
+    "Lone Druid": "lone_druid",
+    "Magnus": "magnataur",
+    "Monkey King": "monkey_king",
+    "Nature's Prophet": "furion",
+    "Nyx Assassin": "nyx_assassin",
+    "Phantom Assassin": "phantom_assassin",
+    "Phantom Lancer": "phantom_lancer",
+    "Primal Beast": "primal_beast",
+    "Queen of Pain": "queenofpain",
+    "Shadow Demon": "shadow_demon",
+    "Shadow Fiend": "nevermore",
+    "Shadow Shaman": "shadow_shaman",
+    "Spirit Breaker": "spirit_breaker",
+    "Storm Spirit": "storm_spirit",
+    "Templar Assassin": "templar_assassin",
+    "Timbersaw": "shredder",
+    "Treant Protector": "treant",
+    "Troll Warlord": "troll_warlord",
+    "Vengeful Spirit": "vengefulspirit",
+    "Windranger": "windrunner",
+    "Winter Wyvern": "winter_wyvern",
+    "Witch Doctor": "witch_doctor",
+    "Wraith King": "skeleton_king",
+    "Zeus": "zuus",
+}
+
 
 class LiquipediaClient:
     def __init__(self):
@@ -64,10 +162,6 @@ class LiquipediaClient:
         self.last_request = 0.0
 
     def get(self, params):
-        elapsed = time.monotonic() - self.last_request
-        if elapsed < REQUEST_DELAY_SECONDS:
-            time.sleep(REQUEST_DELAY_SECONDS - elapsed)
-
         query = urllib.parse.urlencode(params)
         request = urllib.request.Request(
             f"{API_URL}?{query}",
@@ -77,12 +171,23 @@ class LiquipediaClient:
                 "Accept": "application/json",
             },
         )
-        with self.opener.open(request, timeout=45) as response:
-            raw = response.read()
-            if response.headers.get("Content-Encoding", "").lower() == "gzip":
-                raw = gzip.decompress(raw)
-            self.last_request = time.monotonic()
-            return json.loads(raw.decode("utf-8"))
+        last_error = None
+        for attempt in range(4):
+            elapsed = time.monotonic() - self.last_request
+            if elapsed < REQUEST_DELAY_SECONDS:
+                time.sleep(REQUEST_DELAY_SECONDS - elapsed)
+            try:
+                with self.opener.open(request, timeout=60) as response:
+                    raw = response.read()
+                    if response.headers.get("Content-Encoding", "").lower() == "gzip":
+                        raw = gzip.decompress(raw)
+                    self.last_request = time.monotonic()
+                    return json.loads(raw.decode("utf-8"))
+            except Exception as exc:
+                last_error = exc
+                self.last_request = time.monotonic()
+                time.sleep(3 + attempt * 3)
+        raise last_error
 
 
 def strip_comments(text):
@@ -220,15 +325,95 @@ def clean_wikitext(value):
     return value
 
 
+def clean_html_text(value):
+    value = html.unescape(value or "").replace("\xa0", " ")
+    value = re.sub(r"<[^>]+>", " ", value)
+    value = re.sub(r"\s+", " ", value).strip()
+    return value
+
+
 def slugify(*parts):
     value = "-".join(clean_wikitext(part).lower() for part in parts if part)
     value = re.sub(r"[^a-z0-9а-яё]+", "-", value, flags=re.I)
     return value.strip("-") or "person"
 
 
+def asset_slug(value):
+    value = clean_wikitext(value).lower()
+    value = re.sub(r"[^a-z0-9]+", "-", value, flags=re.I)
+    return value.strip("-") or "asset"
+
+
 def profile_url(title):
     quoted = urllib.parse.quote(title.replace(" ", "_"), safe="/():")
     return f"https://liquipedia.net/dota2/{quoted}"
+
+
+def absolute_liquipedia_url(url):
+    if not url:
+        return ""
+    if url.startswith("//"):
+        return f"https:{url}"
+    if url.startswith("/"):
+        return f"https://liquipedia.net{url}"
+    return url
+
+
+def region_from_country(country):
+    return COUNTRY_REGIONS.get(country, "")
+
+
+def normalize_hero_name(value):
+    value = clean_wikitext(value)
+    if not value:
+        return ""
+    alias_key = value.strip()
+    lowered = alias_key.lower()
+    if alias_key in HERO_ALIASES:
+        return HERO_ALIASES[alias_key]
+    if lowered in HERO_ALIASES:
+        return HERO_ALIASES[lowered]
+    return " ".join(part.capitalize() for part in value.split())
+
+
+def hero_slug(hero_name):
+    if not hero_name:
+        return ""
+    if hero_name in HERO_SLUGS:
+        return HERO_SLUGS[hero_name]
+    lowered = hero_name.lower()
+    for name, slug in HERO_SLUGS.items():
+        if name.lower() == lowered:
+            return slug
+    return re.sub(r"[^a-z0-9]+", "_", hero_name.lower()).strip("_")
+
+
+def hero_icon_url(hero_name):
+    slug = hero_slug(hero_name)
+    return f"https://cdn.cloudflare.steamstatic.com/apps/dota2/images/dota_react/heroes/{slug}.png" if slug else ""
+
+
+def signature_heroes_from_info(info):
+    heroes = []
+    seen = set()
+    for key in ("hero", "hero2", "hero3"):
+        name = normalize_hero_name(info.get(key, ""))
+        if not name or name in seen:
+            continue
+        seen.add(name)
+        heroes.append({"name": name, "url": hero_icon_url(name), "localUrl": ""})
+    return heroes
+
+
+def profile_extras_from_infobox(profile_infos):
+    extras = {}
+    for title, info in profile_infos.items():
+        extras[title] = {
+            "region": region_from_country(info.get("country", "")),
+            "earnings": "",
+            "signatureHeroes": signature_heroes_from_info(info),
+        }
+    return extras
 
 
 def fetch_wikitext(client, titles):
@@ -358,6 +543,51 @@ def download_portraits(people):
     print(f"Downloaded {downloaded} portraits to {ASSET_DIR}")
 
 
+def download_hero_icons(people):
+    if HERO_ASSET_DIR.exists():
+        shutil.rmtree(HERO_ASSET_DIR)
+    HERO_ASSET_DIR.mkdir(parents=True, exist_ok=True)
+
+    by_url = {}
+    for person in people:
+        for hero in person.get("signatureHeroes", []):
+            url = hero.get("url", "")
+            if url:
+                by_url.setdefault(url, hero.get("name", "hero"))
+
+    local_by_url = {}
+    for url, name in by_url.items():
+        digest = hashlib.sha1(url.encode("utf-8")).hexdigest()[:10]
+        ext = Path(urllib.parse.urlparse(url).path).suffix.lower()
+        if ext not in {".jpg", ".jpeg", ".png", ".webp", ".svg"}:
+            ext = ".png"
+        filename = f"{asset_slug(name)}-{digest}{ext}"
+        target = HERO_ASSET_DIR / filename
+        request = urllib.request.Request(
+            url,
+            headers={
+                "User-Agent": USER_AGENT,
+                "Accept": "image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+                "Referer": SOURCE_URL,
+            },
+        )
+        try:
+            with urllib.request.urlopen(request, timeout=45) as response:
+                target.write_bytes(response.read())
+            local_by_url[url] = f"./assets/heroes/{filename}"
+            time.sleep(0.15)
+        except Exception as exc:
+            print(f"Could not download hero icon {name}: {exc}")
+            local_by_url[url] = ""
+
+    for person in people:
+        for hero in person.get("signatureHeroes", []):
+            hero["localUrl"] = local_by_url.get(hero.get("url", ""), "")
+
+    downloaded = sum(1 for value in local_by_url.values() if value)
+    print(f"Downloaded {downloaded} hero icons to {HERO_ASSET_DIR}")
+
+
 def fetch_page_images(client, titles):
     result = {}
     for offset in range(0, len(titles), MAX_TITLES_PER_REQUEST):
@@ -387,6 +617,57 @@ def fetch_page_images(client, titles):
             title = normalized.get(original, original)
             title = redirects.get(title, title)
             result[original] = pages.get(title, [])
+    return result
+
+
+def extract_infobox_value(rendered_html, label):
+    pattern = (
+        r'<div class="infobox-cell-2 infobox-description">'
+        + re.escape(label)
+        + r':</div><div[^>]*>(.*?)</div></div>'
+    )
+    match = re.search(pattern, rendered_html or "", flags=re.I | re.S)
+    return clean_html_text(match.group(1)) if match else ""
+
+
+def extract_signature_heroes(rendered_html):
+    pattern = (
+        r'<div class="infobox-cell-2 infobox-description">Signature Hero:</div>'
+        r'<div[^>]*>(.*?)</div></div>'
+    )
+    match = re.search(pattern, rendered_html or "", flags=re.I | re.S)
+    if not match:
+        return []
+
+    heroes = []
+    seen = set()
+    for image_match in re.finditer(r'<img[^>]*alt="([^"]+)"[^>]*src="([^"]+)"', match.group(1), flags=re.I):
+        name = html.unescape(image_match.group(1)).strip()
+        url = absolute_liquipedia_url(html.unescape(image_match.group(2)).strip())
+        key = (name, url)
+        if name and url and key not in seen:
+            seen.add(key)
+            heroes.append({"name": name, "url": url, "localUrl": ""})
+    return heroes
+
+
+def fetch_rendered_profile_info(client, titles):
+    result = {}
+    for title in titles:
+        data = client.get(
+            {
+                "action": "parse",
+                "page": title,
+                "prop": "text",
+                "format": "json",
+            }
+        )
+        rendered = data.get("parse", {}).get("text", {}).get("*", "")
+        result[title] = {
+            "region": extract_infobox_value(rendered, "Region"),
+            "earnings": extract_infobox_value(rendered, "Approx. Total Winnings"),
+            "signatureHeroes": extract_signature_heroes(rendered),
+        }
     return result
 
 
@@ -536,12 +817,13 @@ def parse_infobox(wikitext):
     return {key.lower(): clean_wikitext(value) for key, value in named.items()}
 
 
-def build_people(participants, profiles, profile_infos, images, fallback_images):
+def build_people(participants, profiles, profile_infos, rendered_infos, images, fallback_images):
     people = []
     used_uids = set()
     for participant in participants:
         profile = profiles.get(participant["profileTitle"], {})
         info = profile_infos.get(participant["profileTitle"], {})
+        rendered_info = rendered_infos.get(participant["profileTitle"], {})
         image_file = info.get("image", "") or fallback_images.get(participant["profileTitle"], "")
         image = images.get(image_file, {"file": image_file, "url": "", "descriptionUrl": ""}) if image_file else {}
         base_uid = slugify(participant["team"], participant["role"], participant["nickname"])
@@ -568,7 +850,7 @@ def build_people(participants, profiles, profile_infos, images, fallback_images)
                 "role": participant["role"],
                 "roleLabel": participant["roleLabel"],
                 "kind": participant["kind"],
-                "region": participant["region"],
+                "region": rendered_info.get("region") or participant["region"],
                 "qualification": participant["qualification"],
                 "name": info.get("name", ""),
                 "romanizedName": info.get("romanized_name", ""),
@@ -577,6 +859,8 @@ def build_people(participants, profiles, profile_infos, images, fallback_images)
                 "status": info.get("status", ""),
                 "aliases": info.get("ids", ""),
                 "profileRoles": info.get("roles", ""),
+                "earnings": rendered_info.get("earnings", ""),
+                "signatureHeroes": rendered_info.get("signatureHeroes", []),
                 "image": image,
                 "info": info_rows,
             }
@@ -594,6 +878,7 @@ def main():
         title: parse_infobox(profile.get("content", ""))
         for title, profile in profiles.items()
     }
+    rendered_infos = profile_extras_from_infobox(profile_infos)
     missing_image_titles = sorted(
         {
             person["profileTitle"]
@@ -618,8 +903,9 @@ def main():
         - {""}
     )
     images = fetch_imageinfo(client, image_files)
-    people = build_people(participants, profiles, profile_infos, images, fallback_images)
+    people = build_people(participants, profiles, profile_infos, rendered_infos, images, fallback_images)
     download_portraits(people)
+    download_hero_icons(people)
 
     payload = {
         "metadata": {
