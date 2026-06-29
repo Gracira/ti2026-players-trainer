@@ -14,16 +14,35 @@ const $ = (id) => document.getElementById(id);
 
 const controls = {
   search: $("searchInput"),
-  team: $("teamFilter"),
   role: $("roleFilter"),
   region: $("regionFilter"),
   shuffle: $("shuffleButton"),
   reset: $("resetButton"),
   card: $("cardButton"),
   reveal: $("revealButton"),
+  inlineReveal: $("inlineRevealButton"),
   prev: $("prevButton"),
   known: $("knownButton"),
   learning: $("learningButton")
+};
+
+const TEAM_LOGOS = {
+  "1w Team": "https://liquipedia.net/commons/images/5/5c/1win_Team_2024_allmode.png",
+  "Aurora Gaming": "https://liquipedia.net/commons/images/3/32/Aurora_Gaming_2025_full_allmode.png",
+  "BetBoom Team": "https://liquipedia.net/commons/images/5/5b/BetBoom_Team_2024_allmode.png",
+  "GamerLegion": "https://liquipedia.net/commons/images/6/69/GamerLegion_2023_lightmode.png",
+  "HULIGANI": "https://liquipedia.net/commons/images/4/45/L1GA_TEAM_2026_lightmode.png",
+  "LGD Gaming": "https://liquipedia.net/commons/images/2/2f/LGD_Gaming_Dec_2019_allmode.png",
+  "Nigma Galaxy": "https://liquipedia.net/commons/images/e/e8/Nigma_Galaxy_full_lightmode.png",
+  "OG": "https://liquipedia.net/commons/images/7/7b/OG_2026_allmode.png",
+  "TEAM VISION": "https://liquipedia.net/commons/images/9/9d/PARIVISION_allmode.png",
+  "Team Falcons": "https://liquipedia.net/commons/images/e/e9/Team_Falcons_2022_full_lightmode.png",
+  "Team Liquid": "https://liquipedia.net/commons/images/f/f5/Team_Liquid_2024_full_lightmode.png",
+  "Team Resilience": "https://liquipedia.net/commons/images/b/bf/Team_Resilience_%28DOTA2%29_full_lightmode.png",
+  "Team Spirit": "https://liquipedia.net/commons/images/f/f2/Team_Spirit_2022_full_lightmode.png",
+  "Team Yandex": "https://liquipedia.net/commons/images/9/9c/Team_Yandex_2026_lightmode.png",
+  "Vici Gaming": "https://liquipedia.net/commons/images/2/24/VICI_Gaming_full_allmode.png",
+  "Xtreme Gaming": "https://liquipedia.net/commons/images/9/97/Xtreme_Gaming_%28China%29_full_allmode.png"
 };
 
 function normalize(value) {
@@ -48,6 +67,21 @@ function uniqueSorted(items, key) {
   return [...new Set(items.map(key).filter(Boolean))].sort((a, b) => a.localeCompare(b));
 }
 
+function roleWithNumber(person) {
+  if (!person?.roleLabel) return "";
+  return /^\d+$/.test(person.role || "") ? `${person.roleLabel} (${person.role})` : person.roleLabel;
+}
+
+function profileFullName(person) {
+  const given = person.info?.find((item) => item.label === "Given name")?.value || "";
+  const family = person.info?.find((item) => item.label === "Family name")?.value || "";
+  return person.romanizedName || [given, family].filter(Boolean).join(" ") || person.name || person.profileTitle || "";
+}
+
+function teamLogoUrl(team) {
+  return TEAM_LOGOS[team] || "";
+}
+
 function shuffleArray(items) {
   const shuffled = [...items];
   for (let i = shuffled.length - 1; i > 0; i -= 1) {
@@ -60,10 +94,12 @@ function shuffleArray(items) {
 function personSearchText(person) {
   return [
     person.nickname,
+    profileFullName(person),
     person.romanizedName,
     person.country,
     person.team,
     person.roleLabel,
+    roleWithNumber(person),
     person.region,
     person.aliases,
     person.earnings,
@@ -74,8 +110,7 @@ function personSearchText(person) {
 function passesFilters(person) {
   const query = normalize(controls.search.value);
   if (query && !normalize(personSearchText(person)).includes(query)) return false;
-  if (controls.team.value !== "all" && person.team !== controls.team.value) return false;
-  if (controls.role.value !== "all" && person.roleLabel !== controls.role.value) return false;
+  if (controls.role.value !== "all" && roleWithNumber(person) !== controls.role.value) return false;
   if (controls.region.value !== "all" && person.region !== controls.region.value) return false;
   if (state.view === "known" && !state.known.has(person.uid)) return false;
   if (state.view === "learning" && !state.learning.has(person.uid)) return false;
@@ -154,23 +189,40 @@ function resetProgress() {
   state.known.clear();
   state.learning.clear();
   state.view = "all";
-  updateTabs();
   state.revealed = false;
   applyFilters();
 }
 
-function imageUrl(person) {
-  return person.image?.localUrl || person.image?.url || "";
+function imageUrls(person) {
+  return [
+    person.image?.fullUrl,
+    person.image?.localUrl,
+    person.image?.url
+  ].filter((url, index, urls) => url && urls.indexOf(url) === index);
 }
 
 function setPortrait(person) {
   const portrait = $("portrait");
   portrait.replaceChildren();
-  const url = imageUrl(person);
-  if (url) {
+  const urls = imageUrls(person);
+  if (urls.length) {
     const image = document.createElement("img");
-    image.src = url;
+    let sourceIndex = 0;
     image.alt = state.revealed ? `Фото ${person.nickname}` : "Фото игрока";
+    image.referrerPolicy = "no-referrer";
+    const tryNextSource = () => {
+      sourceIndex += 1;
+      if (urls[sourceIndex]) {
+        image.src = urls[sourceIndex];
+      }
+    };
+    image.addEventListener("error", tryNextSource);
+    image.addEventListener("load", () => {
+      if (!image.naturalWidth || !image.naturalHeight) {
+        tryNextSource();
+      }
+    });
+    image.src = urls[sourceIndex];
     portrait.appendChild(image);
     portrait.className = "flashcard__portrait";
   } else {
@@ -217,72 +269,20 @@ function heroesRow(heroes) {
   return row;
 }
 
-function statusLabel(person) {
-  if (state.known.has(person.uid)) return "Знал";
-  if (state.learning.has(person.uid)) return "Не знал";
-  return "";
-}
-
-function renderDeckList() {
-  const list = $("deckList");
-  const current = currentPerson();
-  list.replaceChildren();
-
-  for (const [index, person] of state.deck.entries()) {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = `deck-item ${current?.uid === person.uid ? "is-current" : ""}`;
-    button.addEventListener("click", () => {
-      state.index = index;
-      state.revealed = false;
-      render();
-    });
-
-    const number = document.createElement("span");
-    number.className = "deck-item__number";
-    number.textContent = `${index + 1}`;
-
-    const main = document.createElement("span");
-    main.className = "deck-item__main";
-    const title = document.createElement("strong");
-    const alreadyVisible = state.known.has(person.uid) || state.learning.has(person.uid) || current?.uid === person.uid && state.revealed;
-    title.textContent = alreadyVisible ? person.nickname : "Скрыто";
-    const meta = document.createElement("small");
-    meta.textContent = `${person.team} · ${person.roleLabel}`;
-    main.append(title, meta);
-
-    const status = document.createElement("span");
-    status.className = "deck-item__status";
-    status.textContent = statusLabel(person);
-
-    button.append(number, main, status);
-    list.appendChild(button);
-  }
-}
-
 function renderInfo(person) {
-  $("teamName").textContent = person.team || "";
-  $("roleName").textContent = person.roleLabel || "";
+  $("roleName").textContent = roleWithNumber(person);
   const rows = $("infoRows");
   rows.replaceChildren();
 
   if (!state.revealed) {
-    rows.append(
-      infoRow("Команда", person.team),
-      infoRow("Роль", person.roleLabel),
-      infoRow("Регион", person.region)
-    );
     return;
   }
 
   rows.append(
     ...[
-      infoRow("Имя", person.romanizedName || person.profileTitle),
+      infoRow("Имя", profileFullName(person)),
       infoRow("Родился", displayDateWithAge(person.birthDate)),
       infoRow("Страна", person.country),
-      infoRow("Команда", person.team),
-      infoRow("Роль", person.roleLabel),
-      infoRow("Регион", person.region),
       infoRow("Ники", person.aliases),
       infoRow("Заработал", person.earnings),
       heroesRow(person.signatureHeroes)
@@ -290,9 +290,10 @@ function renderInfo(person) {
   );
 }
 
-function updateTabs() {
-  document.querySelectorAll(".tab").forEach((button) => {
+function updateScoreButtons() {
+  document.querySelectorAll(".score-card").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.view === state.view);
+    button.setAttribute("aria-pressed", button.dataset.view === state.view ? "true" : "false");
   });
 }
 
@@ -303,38 +304,37 @@ function render() {
   document.querySelector(".trainer-actions").hidden = !hasCards;
   $("emptyState").hidden = hasCards;
 
-  $("visibleCount").textContent = `${state.deck.length}`;
   $("positionCount").textContent = hasCards ? `${state.index + 1}/${state.deck.length}` : "0/0";
   $("knownCount").textContent = state.known.size;
   $("learningCount").textContent = state.learning.size;
-  updateTabs();
-  renderDeckList();
+  updateScoreButtons();
 
   if (!person) return;
 
   $("flashcard").className = `flashcard ${state.revealed ? "is-revealed" : "is-hidden"}`;
   $("answerNick").textContent = state.revealed ? person.nickname : "?";
-  $("answerSub").textContent = `${person.team} · ${person.roleLabel} · ${person.region}`;
+  $("answerFullName").textContent = state.revealed ? profileFullName(person) : "";
+  controls.inlineReveal.hidden = state.revealed;
+  $("answerTeam").hidden = !state.revealed;
+  $("answerTeamLogo").src = teamLogoUrl(person.team);
+  $("answerTeamLogo").alt = person.team ? `Логотип ${person.team}` : "";
+  $("answerTeamName").textContent = person.team || "";
   $("answerHint").textContent = state.revealed ? "Ответ открыт" : "Ответ скрыт";
   $("cardHint").textContent = state.revealed ? "Ответ открыт справа" : "Нажми, чтобы открыть ответ";
-  controls.reveal.textContent = state.revealed ? "Скрыть ник" : "Показать ник";
+  controls.reveal.textContent = state.revealed ? "Скрыть ответ" : "Показать ответ";
+  controls.known.classList.toggle("is-selected", state.known.has(person.uid));
+  controls.learning.classList.toggle("is-selected", state.learning.has(person.uid));
+  controls.known.setAttribute("aria-pressed", state.known.has(person.uid) ? "true" : "false");
+  controls.learning.setAttribute("aria-pressed", state.learning.has(person.uid) ? "true" : "false");
 
   setPortrait(person);
   renderInfo(person);
 }
 
 function bindControls() {
-  for (const control of [controls.search, controls.team, controls.role, controls.region]) {
+  for (const control of [controls.search, controls.role, controls.region]) {
     control.addEventListener("input", () => applyFilters());
   }
-  document.querySelectorAll(".tab").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.view = button.dataset.view;
-      state.index = 0;
-      state.revealed = false;
-      applyFilters();
-    });
-  });
   controls.shuffle.addEventListener("click", shuffleDeck);
   controls.reset.addEventListener("click", resetProgress);
   controls.card.addEventListener("click", () => {
@@ -344,6 +344,18 @@ function bindControls() {
   controls.reveal.addEventListener("click", () => {
     state.revealed = !state.revealed;
     render();
+  });
+  controls.inlineReveal.addEventListener("click", () => {
+    state.revealed = true;
+    render();
+  });
+  document.querySelectorAll(".score-card").forEach((button) => {
+    button.addEventListener("click", () => {
+      state.view = button.dataset.view;
+      state.index = 0;
+      state.revealed = false;
+      applyFilters();
+    });
   });
   controls.prev.addEventListener("click", goPrevious);
   controls.known.addEventListener("click", () => mark("known"));
@@ -369,8 +381,7 @@ async function init() {
   state.people = shuffleArray(data.people || []);
   state.deck = [...state.people];
 
-  fillSelect(controls.team, uniqueSorted(state.people, (person) => person.team), "Все команды");
-  fillSelect(controls.role, uniqueSorted(state.people, (person) => person.roleLabel), "Все роли");
+  fillSelect(controls.role, uniqueSorted(state.people, roleWithNumber), "Все роли");
   fillSelect(controls.region, uniqueSorted(state.people, (person) => person.region), "Все регионы");
 
   render();

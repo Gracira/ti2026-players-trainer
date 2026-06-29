@@ -74,13 +74,19 @@ h1 {
   gap: 8px;
 }
 
-.scoreboard div {
+.score-card {
   min-height: 62px;
   padding: 9px 10px;
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
   text-align: center;
+}
+
+.score-card:hover,
+.score-card.is-active {
+  border-color: var(--teal);
+  background: rgba(74, 182, 168, 0.16);
 }
 
 .scoreboard span {
@@ -101,7 +107,7 @@ main {
 
 .controls {
   display: grid;
-  grid-template-columns: minmax(180px, 1.25fr) repeat(3, minmax(124px, 0.85fr)) auto;
+  grid-template-columns: minmax(220px, 1.4fr) repeat(2, minmax(140px, 0.8fr)) auto;
   gap: 10px;
   align-items: end;
 }
@@ -130,8 +136,7 @@ main {
 }
 
 .actions,
-.trainer-actions,
-.tabs {
+.trainer-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -151,118 +156,20 @@ button:hover {
   border-color: var(--teal);
 }
 
-.tabs {
-  margin: 14px 0 6px;
-}
-
-.tab.is-active {
-  border-color: var(--teal);
-  background: rgba(74, 182, 168, 0.18);
+.trainer-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin: 14px 0 10px;
 }
 
 .study-layout {
-  display: grid;
-  grid-template-columns: 330px minmax(0, 1fr);
-  gap: 16px;
-  align-items: start;
-}
-
-.deck-panel {
-  height: clamp(620px, calc(100vh - 250px), 830px);
-  min-width: 0;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  background: var(--panel);
-  box-shadow: 0 16px 38px var(--shadow);
-  overflow: hidden;
-}
-
-.deck-panel__top {
-  min-height: 54px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 12px;
-  border-bottom: 1px solid var(--line);
-}
-
-.deck-panel__top strong {
-  font-size: 18px;
-}
-
-.deck-panel__top span {
-  color: var(--muted);
-  font-weight: 800;
-}
-
-.deck-list {
-  height: calc(100% - 54px);
-  overflow: auto;
-  padding: 8px;
-}
-
-.deck-item {
-  width: 100%;
-  min-height: 58px;
-  display: grid;
-  grid-template-columns: 34px minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 6px;
-  padding: 8px;
-  text-align: left;
-}
-
-.deck-item.is-current {
-  border-color: var(--teal);
-  background: rgba(74, 182, 168, 0.16);
-}
-
-.deck-item__number {
-  width: 28px;
-  height: 28px;
-  display: grid;
-  place-items: center;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.07);
-  color: var(--muted);
-  font-weight: 800;
-  font-size: 12px;
-}
-
-.deck-item__main {
-  min-width: 0;
-  display: grid;
-  gap: 2px;
-}
-
-.deck-item__main strong,
-.deck-item__main small {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.deck-item__main strong {
-  font-size: 14px;
-}
-
-.deck-item__main small {
-  color: var(--muted);
-  font-size: 12px;
-}
-
-.deck-item__status {
-  color: var(--gold);
-  font-size: 12px;
-  font-weight: 800;
+  display: block;
 }
 
 .trainer {
   min-width: 0;
   display: grid;
-  grid-template-columns: minmax(360px, 560px) minmax(420px, 1fr);
+  grid-template-columns: minmax(420px, 760px) minmax(360px, 1fr);
   gap: 16px;
   align-items: stretch;
 }
@@ -300,7 +207,8 @@ button:hover {
   width: 100%;
   height: 100%;
   display: block;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .flashcard__portrait--missing {
@@ -337,6 +245,21 @@ button:hover {
   background: rgba(255, 255, 255, 0.04);
 }
 
+.answer-name {
+  min-height: 20px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.answer-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: clamp(42px, 7vw, 130px);
+}
+
 .answer-box span {
   color: var(--muted);
   font-size: 12px;
@@ -357,10 +280,36 @@ button:hover {
   text-shadow: 0 0 14px rgba(244, 240, 232, 0.95);
 }
 
-#answerSub {
-  color: var(--muted);
-  font-size: 17px;
+.inline-reveal-button {
+  min-width: 150px;
+  border-color: rgba(214, 179, 95, 0.65);
+  background: rgba(214, 179, 95, 0.18);
+  color: var(--text);
+  font-weight: 900;
+}
+
+.answer-team {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 180px;
+  max-width: 280px;
+  padding: 9px 11px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 850;
   overflow-wrap: anywhere;
+}
+
+.answer-team img {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+  border-radius: 9px;
+  object-fit: contain;
 }
 
 .info-panel {
@@ -453,18 +402,39 @@ button:hover {
 }
 
 .trainer-actions {
-  justify-content: center;
-  margin-top: 12px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.ghost-button {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.mark-button {
+  min-width: 112px;
+  border-width: 2px;
+  font-weight: 900;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+  transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
+}
+
+.mark-button:hover {
+  transform: translateY(-1px);
+}
+
+.mark-button.is-selected {
+  outline: 2px solid rgba(244, 240, 232, 0.28);
+  outline-offset: 2px;
 }
 
 #knownButton {
   border-color: rgba(111, 196, 122, 0.55);
-  background: rgba(111, 196, 122, 0.15);
+  background: rgba(111, 196, 122, 0.22);
 }
 
 #learningButton {
   border-color: rgba(214, 107, 97, 0.55);
-  background: rgba(214, 107, 97, 0.15);
+  background: rgba(214, 107, 97, 0.22);
 }
 
 .empty-state {
@@ -507,7 +477,6 @@ button:hover {
     grid-column: 1 / -1;
   }
 
-  .study-layout,
   .trainer {
     grid-template-columns: 1fr;
   }
@@ -517,14 +486,9 @@ button:hover {
     margin: 0 auto;
   }
 
-  .deck-panel,
   .flashcard__button,
   .info-panel {
     height: auto;
-  }
-
-  .deck-panel {
-    max-height: 360px;
   }
 
   .flashcard__button {
@@ -549,8 +513,26 @@ button:hover {
     grid-template-columns: 1fr;
   }
 
+  .trainer-toolbar {
+    justify-content: stretch;
+  }
+
+  .trainer-actions {
+    width: 100%;
+  }
+
   #answerNick {
     font-size: 30px;
+  }
+
+  .answer-main {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .answer-team {
+    width: 100%;
+    max-width: none;
   }
 
   .info-row {
@@ -558,8 +540,7 @@ button:hover {
     gap: 2px;
   }
 
-  .trainer-actions button,
-  .tabs button {
+  .trainer-actions button {
     flex: 1 1 120px;
   }
 }

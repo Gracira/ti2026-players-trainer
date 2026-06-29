@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TI 2026 Players Trainer</title>
+    <title>Кто этот игрок?</title>
     <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
   </head>
@@ -12,21 +12,21 @@
       <div class="topbar__inner">
         <div>
           <p class="eyebrow">The International 2026</p>
-          <h1>Карточки игроков</h1>
+          <h1>Кто этот игрок?</h1>
         </div>
-        <div class="scoreboard" aria-live="polite">
-          <div>
+        <div class="scoreboard" aria-label="Стопки карточек" aria-live="polite">
+          <button class="score-card is-active" type="button" data-view="all">
             <span id="positionCount">0/0</span>
             <small>карточка</small>
-          </div>
-          <div>
+          </button>
+          <button class="score-card" type="button" data-view="known">
             <span id="knownCount">0</span>
             <small>знал</small>
-          </div>
-          <div>
+          </button>
+          <button class="score-card" type="button" data-view="learning">
             <span id="learningCount">0</span>
             <small>не знал</small>
-          </div>
+          </button>
         </div>
       </div>
     </header>
@@ -35,11 +35,7 @@
       <section class="controls" aria-label="Фильтры">
         <label class="control">
           <span>Поиск</span>
-          <input id="searchInput" type="search" placeholder="Ник, имя, команда">
-        </label>
-        <label class="control">
-          <span>Команда</span>
-          <select id="teamFilter"></select>
+          <input id="searchInput" type="search" placeholder="Ник, имя">
         </label>
         <label class="control">
           <span>Роль</span>
@@ -55,21 +51,16 @@
         </div>
       </section>
 
-      <nav class="tabs" aria-label="Стопки карточек">
-        <button class="tab is-active" type="button" data-view="all">Все</button>
-        <button class="tab" type="button" data-view="known">Знал</button>
-        <button class="tab" type="button" data-view="learning">Не знал</button>
-      </nav>
+      <section class="trainer-toolbar" aria-label="Ответ">
+        <div class="trainer-actions">
+          <button id="prevButton" class="ghost-button" type="button">Назад</button>
+          <button id="revealButton" class="ghost-button" type="button">Показать ответ</button>
+          <button id="knownButton" class="mark-button mark-button--known" type="button" aria-pressed="false">Знал</button>
+          <button id="learningButton" class="mark-button mark-button--learning" type="button" aria-pressed="false">Не знал</button>
+        </div>
+      </section>
 
       <section class="study-layout">
-        <aside class="deck-panel" aria-label="Список карточек">
-          <div class="deck-panel__top">
-            <strong>Список</strong>
-            <span id="visibleCount">0</span>
-          </div>
-          <div id="deckList" class="deck-list"></div>
-        </aside>
-
         <section id="trainer" class="trainer" aria-label="Тренажер карточек">
           <article id="flashcard" class="flashcard is-hidden">
             <button id="cardButton" class="flashcard__button" type="button">
@@ -80,24 +71,23 @@
 
           <aside class="info-panel">
             <div class="info-panel__top">
-              <span id="teamName" class="team-pill"></span>
               <span id="roleName" class="role-pill"></span>
             </div>
             <div class="answer-box">
               <span id="answerHint">Ответ</span>
-              <strong id="answerNick">?</strong>
-              <small id="answerSub"></small>
+              <small id="answerFullName" class="answer-name"></small>
+              <div class="answer-main">
+                <strong id="answerNick">?</strong>
+                <button id="inlineRevealButton" class="inline-reveal-button" type="button">Показать ответ</button>
+                <span id="answerTeam" class="answer-team" hidden>
+                  <img id="answerTeamLogo" alt="" referrerpolicy="no-referrer">
+                  <span id="answerTeamName"></span>
+                </span>
+              </div>
             </div>
             <div id="infoRows" class="info-rows"></div>
           </aside>
         </section>
-      </section>
-
-      <section class="trainer-actions" aria-label="Ответ">
-        <button id="prevButton" type="button">Назад</button>
-        <button id="revealButton" type="button">Показать ник</button>
-        <button id="knownButton" type="button">Знал</button>
-        <button id="learningButton" type="button">Не знал</button>
       </section>
 
       <section id="emptyState" class="empty-state" hidden>
