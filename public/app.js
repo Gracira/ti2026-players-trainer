@@ -642,11 +642,12 @@ async function init() {
   if (!response.ok) throw new Error(`Cannot load ${DATA_URL}`);
   const data = await response.json();
   state.people = shuffleArray(data.people || []);
-  state.deck = state.people.filter(passesDeckFilters);
 
   fillSelect(controls.role, orderedRoles(state.people), "Все роли");
   fillSelect(controls.region, uniqueSorted(state.people, (person) => person.region), "Все регионы");
 
+  state.deck = state.people.filter(passesDeckFilters);
+  state.index = 0;
   render();
 }
 
